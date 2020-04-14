@@ -1,14 +1,13 @@
 ===== GCMD DIF
 
 The Global Change Master Directory (GCMD) Directory Interchange Format
-(DIF) link:#anchor-13[[15] ] is a metadata standard that is widely used
+(DIF) <<#anchor-13,[15]>> is a metadata standard that is widely used
 (e.g. by the Antarctic Master Directory) and that was
 
 <<gcmd-dif-elements>> shows elements in GCMD DIF and whether these are **M**andatory, **R**ecommended or **O**ptional, as well as whether they are **U**nique
 (only one occurrence allowed) and require utilisation of **C**ontrolled
 vocabularies.
 
-//Table 2: GCMD DIF elements.
 [[gcmd-dif-elements]]
 [cols=",,,",title="GCMD DIF elements."]
 |=======================================================================
@@ -170,20 +169,25 @@ without reusing existing GCMD defined metadata fields. |O
 |Ofootnote:[Depends on potential requirements within SDMS.]
 |=======================================================================
 
-1.  GCMD comes with a number of predefined controlled vocabularies that
+[horizontal]
+*Recommendation*::
+GCMD comes with a number of predefined controlled vocabularies that
 should be used in specific sections of the metadata. As indicated in the
 table above some sections are free text in GCMD while it is suggested to
 use controlled vocabularies in SDMS context.
-2.  GCMD do not require a controlled vocabulary for the quality element.
+*Recommendation:*::
+GCMD do not require a controlled vocabulary for the quality element.
 SDMS should to improve search resultsfootnote:[This work should relate
 to international activities in this field in the context of e.g. GEO,
 ICES, WMO etc. and must be coordinated within SDMS by the Terminology
 Team. ].
-3.  Related_URL has several subtypes. The existing
+*Recommendation:*:: 
+Related_URL has several subtypes. The existing
 http://gcmdservices.gsfc.nasa.gov/static/kms/rucontenttype/rucontenttype.csv[list
 of type and subtype] must be used to allow the SIOS Data Portal to
 filter the purpose of the URLs provided. When types are “View Data Set
 Landing Page”, “View Extended Metadata”, “View Professional Home Page”,
 and “View Project Home Page”, no subtype is needed.
-4.  All times must be encoded as ISO8601 either as YYYY-MM-DD or
+*Recommendation:*::
+ All times must be encoded as ISO8601 either as YYYY-MM-DD or
 YYYY-MM-DDTHH:MM:SSZ.

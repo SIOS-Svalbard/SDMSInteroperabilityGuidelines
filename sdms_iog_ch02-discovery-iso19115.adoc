@@ -1,30 +1,35 @@
 ===== ISO19115
 
-The WMO Core Profile link:#anchor-9[[10] ] is a profile of the ISO19115
+The WMO Core Profile <<#anchor-9,[10]>> is a profile of the ISO19115
 metadata standard and is recommended for use within SDMS for discovery
 metadata. However, ISO19115 is a container that can be populated with
 several controlled vocabularies in some of the elements. The search
 model for the SIOS Data Portal is currently built around parameter
-descriptions using the GCMD Science Keywords link:#anchor-14[[16] ]. A
+descriptions using the GCMD Science Keywords <<#anchor-14,[16]>>. A
 mapping exist between Climate and Forecast standard names
-link:#anchor-15[[17] ]and GCMD Science Keywords.
+<<#anchor-15,[17]>> and GCMD Science Keywords.
 
-1.  ISO19115 records must at least state the unique id, temporal and
+[horizontal]
+*Recommendation:*::  
+ISO19115 records must at least state the unique id, temporal and
 spatial location, scientific content, responsible data centre and PI as
 well as links to the actual datafootnote:[This recommendation will be
 revisited. ]. Datasets without such specifications are not ingested in
 the catalogue.
-2.  ISO19115 records, regardless of whether being mandatory elements or
+*Recommendation:*::  
+ISO19115 records, regardless of whether being mandatory elements or
 the full WMO Profile should contain GCMD Science Keywords or some other
 machine readable vocabulary following the FAIR guiding
-principleslink:#anchor-22[[24] ].
-3.  It is mandatory that CryoNet and contributing stations at least have
-one keyword from the WMO CategoryCode list link:#anchor-16[[18]
-]footnote:[There is currently no way of including this information in
+principles <<#anchor-22,[24]>>.
+*Recommendation:*::  
+It is mandatory that CryoNet and contributing stations at least have
+one keyword from the WMO CategoryCode list <<#anchor-16,[18]>>
+footnote:[There is currently no way of including this information in
 GCMD DIF, although a mapping to ISO TopicCategories may be used. ].
 Relevant keywords for SDMS are e.g. weatherObservations, meteorology,
 hydrology, climatology, glaciology.
-4.  All times must be encoded as ISO8601.
+*Recommendation:*::  
+All times must be encoded as ISO8601.
 
 <<iso19115-core-elements>> shows elements in ISO19115 and whether these are **M**andatory,
 **R**ecommended or **O**ptional, as well as whether they are **U**nique

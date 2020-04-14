@@ -13,16 +13,16 @@ Guidance for data centres contributing to SDMS
 
 [discrete]
 == Versions
-[cols=">1,>2,5,2",]
+[cols=">1,^2,5,2",]
 |=======================================================================
 ^|Version ^|Date ^|Comment ^|Responsible
 
+|0.6 |2020-04-14 |Corrections of incorrect cross references, added
+descriptions on file formats and cleaned recommendations |Øystein Godøy
 |0.5 |2020-03-15 |Cleaning of comments, preparation for conversion to
 ASCIIDOC and establishment of work flow on GitHub. |Øystein Godøy
-
 |0.4 |2017-05-27 |Comments from SDMS WG incorporated and cleaned.
 |Øystein Godøy
-
 |0.3 |2017-03-17 |Comments from the SDMS WG incorporated. a|
 Stein Tronstad +
 Torill Hamre +
@@ -35,10 +35,8 @@ included. a|
 Øystein Godøy +
 Angela Schäfer +
 Torill Hamre
-
 |0.1 |[[Updated]]2016-10-20 |First draft for internal discussion in the
 SDMS Working Group. |Øystein Godøy
-
 |0.0 |2016-04-15 |First draft based on a similar document developed for
 the WMO Global Cryosphere Watch. |Øystein Godøy
 |=======================================================================

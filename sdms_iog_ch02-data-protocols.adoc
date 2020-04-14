@@ -27,6 +27,12 @@ Common Data Model.
 Segmentation of real time data has to be supported by the contributing
 data centre.
 
+[horizontal]
+*Recommendation:*::
+Whenever data are served as direct download through HTTP or FTP, data
+should be served in a FAIR compliant dataformat using standardised
+encoding structures and vocabularies.
+
 [[opendap]]
 ===== OPeNDAP
 
@@ -43,7 +49,9 @@ OPenDAP can relate to files or relational data base systems and is
 extensively used by e.g. Copernicus services, Earth System Grid
 Federation and others.
 
-SDMS is currently able to consume OGC WFS.
+SDMS is currently able to consume OPeNDAP enabled datasets, but the level
+of support depends on the structure and standards (CF) conformance of the
+data served.
 
 [[ogc-wfs]]
 ===== OGC WFS
@@ -55,7 +63,10 @@ GML behaves like NetCDF without the Climate and Forecast convention. It
 is a container that can hold anything. GML is a XML schema and so it can
 be combined/extended with other XML schemas.
 
-SDMS is currently *not* able to consume OGC WFS.
+SDMS is currently *not* able to consume OGC WFS and implementation is not
+recommended until the OGC API is more mature. The new OGC API will be able
+to serve data as e.g. NetCDF/CF and GeoJSON in addition to the other
+formats.
 
 [[ogc-wcs]]
 ===== OGC WCS
@@ -69,6 +80,9 @@ specific area of interest in space and time by
 “https://en.wikipedia.org/wiki/Web_Coverage_Service[trimming]” or
 “slicing”,
 
+SDMS is currently *not* able to consume OGC WCS and implementation is not
+recommended until the OGC API is more mature. 
+
 [[ogc-wms-map-projections]]
 ===== OGC WMS map projections
 
@@ -76,6 +90,8 @@ OGC Web Mapping Service (WMS) is useful for visualising maps etc. It
 provides a graphical representation of data but no access to data in
 itself.
 
+[horizontal]
+*Recommendation:*::
 Each WMS server must support the following map projections:
 
 1.  EPSG:32661: WGS 84 / UPS North
@@ -87,3 +103,7 @@ Each WMS server must support the following map projections:
 SDMS is only able to consume WMS services that provide a GetCapability
 document per dataset and where the WMS URL is clearly identified using
 standardised vocabularies (currently GCMD and OSGEO are supported).
+
+*Recommendation:*::
+OGC WMS services should present a Getcapabilities document per dataset,
+not a common document for all datasets served.

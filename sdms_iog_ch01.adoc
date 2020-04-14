@@ -37,7 +37,8 @@ manage the data on behalf of the owners/providers of the data.
 A major innovative element of SIOS will be the Knowledge Centre (KC),
 which will facilitate interaction between observation, modelling and
 process research, strategic processes, a service point to user
-communities and a platform for data handling and utilization [3]. The
+communities and a platform for data handling and utilization
+<<#anchor-4,[3]>>. The
 SIOS Data Management System (SDMS) will be a functionality enabling
 component of the Knowledge Centre, supporting data submission,
 discovery, access, use and preservation of SIOS relevant data sets.
@@ -78,10 +79,10 @@ The requirements of the document represents a long term goal which
 require funding for full implementation. Some partners have implemented
 parts of the interfaces mentioned while others have a longer way to go.
 This is reflected in the prioritised functionality to implement. in the
-implementation plan of the SIOS Preparatory Phase link:#anchor-4[[3] ],
+implementation plan of the SIOS Preparatory Phase <<#anchor-4,[3]>>,
 see section 5.3.1footnote:[The official version of this document has
 some issues with references, an updated version will be made available
-within the collaboration area for the SDMS WG. ]..
+within the collaboration area for the SDMS WG. ].
 
 [[intended-audience]]
 === Intended audience

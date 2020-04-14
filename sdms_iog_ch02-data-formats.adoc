@@ -7,12 +7,84 @@
 Most of the exchange mechanisms mentioned above transfer files. In order
 to properly understand the content of a file some use metadata is
 usually necessary. File formats that embed use metadata (and also
-discovery metadata) are preferred. NetCDF in itself is not self
-describing, but NetCDF following the Climate and Forecast Convention is
-self describing. Adding the
+discovery metadata) are preferred (e.g. NetCDF/CF and Darwin Core
+Archive). NetCDF in itself is not self describing, but NetCDF following
+the Climate and Forecast Convention is self describing. Adding the
 http://wiki.esipfed.org/index.php?title=Category:Attribute_Conventions_Dataset_Discovery[NetCDF
-Attribute Convention for Dataset Discovery] embeds full discovery
-metadata (e.g. originator/PI, constraints etc.) in the file.
+Attribute Convention for Dataset Discovery] embeds full discovery metadata
+(e.g. originator/PI, constraints etc.) in the file.
+
+[[darwincorearchive]]
+===== Darwin Core Archive
+Darwin Core Archive is a file format much used within the bilogical
+community and in particular within biodiversity. It is the backbone of the
+Global Biodiversity Information facility (GBIF). in essence it is a set of
+comma separated files (CSV) bundled with a metadata file (meta.xml) and
+using controlled vaocabularies to describe the content. SDMS cannot do
+much on top of Darwin Core Archives (the diversity of types if data is too
+large), but the format is more or less FAIR compliant and is recommended
+for use within SDMS. Further information is available at
+https://dwc.tdwg.org/terms/. 
+
+[horizontal]
+*Recommendation:*::
+Darwin Core Archive is recommended for use for biodiversity data within
+SDMS.
+
+[[jsongeojsonjson-ld]]
+===== JSON/GeoJSON/JSON-LD
+
+JavaScript Object Notation (http://www.json.org/[JSON]) and the
+geographical extension http://geojson.org/[GeoJSON] of this is similar
+to NetCDF in that it is a container lacking standardised metadata.
+http://json-ld.org/[JSON-LD] (JavaScript Object Notation for Linked
+Data,) enables encoding of Linked Data using JSON.
+
+There is currently no standardised FAIR compliant implementation of JSON
+for the types of data SDMS is handling. The CF convention could be
+implemented in JSON and there is work internationally pushing in this
+direction, but yet not mature enough.
+
+SDMS is currently *not* able to consume JSON files.
+
+[[netcdfcf]]
+===== NetCDF/CF
+NetCDF is a container like JSON and XML and such not a recommended file
+format for data within SDMS. However, the Climate and Forecast convention
+constrains the degrees of freedom within NetCDF and enforces structures
+and application of controlled vocabualries to describe the content of the
+data. NetCDF/CF is thus a FAIR compliant file format and recommended for
+use within SDMS. However, even NetCDF/CF have too many de4grees of freedom
+to allow hiugher orders services to be established for datasets. Thus some
+further contraints on granularity and structures are recommended.
+NetCDF/CF is the backbone of the earth System grid Federation serving IPCC
+data, Copernicus Marine Environmental Monitoring Service (CMEMS) and
+several other services. The file format is recommended for meteorological,
+oceanographical, hydrological and glaciological data (although exceptions
+exist).
+
+[horizontal]
+*Recommendation:*::
+NetCDF following the Climate and Forecast Convention with NetCDF
+Attribute Convention for Dataset Discovery is recommended for file
+format where possible as it is a dynamic standard with a semantic
+framework and it maps directly to the generic Common Data Model.
+*Recommendation:*::
+NetCDF/CF files should be encoded according to CF-1.6 or higher, 1.8
+being the last release as of this version of the document.
+*Recommendation:*::
+NetCDF/CF files should also include global attributes according to
+the
+http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery_1-3#Global_Attributes[Attribute
+Convention for Dataset Discovery].
+*Recommendation:*::
+For datasets representing time series or profiles it is required to add
+the global attribute featureType with the appropriate content. If no
+featureType is found in the data it is assumed that the data are gridded
+in nature.
+*Recommendation:*::
+It is *not* recommended to combine information from several stations in a
+single NetCDF/CF file.
 
 [[wmo-bufr]]
 ===== WMO BUFR
@@ -26,6 +98,9 @@ encoded in WMO BUFR. BUFR is a table driven file format, implying that
 the format is not self explaining and the user has to have the correct
 table to understand the content.
 
+BUFR is, although being a standardised format, not recommended for data
+sharing within SDMS
+
 [[wmo-grib]]
 ===== WMO Grib
 
@@ -33,30 +108,8 @@ GRIdded Binary (GRIB) is a binary format maintained by WMO. As BUFR,
 this format is best suited for real time exchange over WMO GTS. It is
 also a table driven format like BUFR, having the same limitations.
 
-[[netcdfcf]]
-===== NetCDF/CF
-
-1.  NetCDF following the Climate and Forecast Convention with NetCDF
-Attribute Convention for Dataset Discovery is recommended for file
-format where possible as it is a dynamic standard with a semantic
-framework and it maps directly to the generic Common Data Model.
-2.  NetCDF/CF files should be encoded according to CF-1.6 or higher, 1.8
-being the last release as of this version of the document.
-3.  NetCDF/CF files should also include global attributes according to
-the
-http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery_1-3#Global_Attributes[Attribute
-Convention for Dataset Discovery].
-
-[[jsongeojsonjson-ld]]
-===== JSON/GeoJSON/JSON-LD
-
-JavaScript Object Notation (http://www.json.org/[JSON]) and the
-geographical extension http://geojson.org/[GeoJSON] of this is similar
-to NetCDF in that it is a container lacking standardised metadata.
-http://json-ld.org/[JSON-LD] (JavaScript Object Notation for Linked
-Data,) enables encoding of Linked Data using JSON.
-
-SDMS is currently *not* able to consume JSON files.
+GRIB is, although being a standardised format, not recommended for data
+sharing within SDMS.
 
 [[xml]]
 ===== XML
@@ -66,4 +119,6 @@ container lacking standardised metadata describing its contents. There
 are many variants of XML and the overhead is large, as the format is
 text-based.
 
-SDMS is currently *not* able to consume XML files.
+SDMS is currently *not* able to consume XML files nor is XML recommended
+as exchange format although standardised representations (e.g. WaterML)
+exist.
