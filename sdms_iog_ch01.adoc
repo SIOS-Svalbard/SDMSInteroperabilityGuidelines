@@ -1,0 +1,132 @@
+== Introduction
+
+=== Background
+
+Environmental and climate changes are currently observed at a global
+scale and in particular in the Arctic. In order to give better estimates
+of the future changes, the Arctic has to be monitored and analysed by a
+multi-disciplinary observation system which is suited to validate and
+gradually improve Earth System Models. The best chance to achieve
+significant results within a relatively short time frame is found in
+regions with a large natural climate gradient, and where processes
+sensitive to the expected changes are particularly important.
+
+Svalbard and the surrounding ocean areas fulfil all these criteria:
+Svalbard is located in a region with a very large climate gradient,
+being alternately influenced by cold central Arctic or mild marine
+climate conditions at time scales of weeks to years. It is also located
+in the region with the strongest inflow and outflow processes between
+the Arctic and lower-latitude oceans. In addition, Svalbard is the only
+region in the world (and has the facilities) where one can study and
+quantify one of the remaining unknowns in the climate puzzle: the
+extraterrestrial and especially solar influence on climate.
+
+The vision for the Svalbard Integrated Arctic Earth Observing System
+(SIOS) is to be a regional observational system for long term
+acquisition and proliferation of fundamental knowledge on global
+environmental change (GEC) within an Earth System Science (ESS)
+perspective in and around Svalbard. SIOS will systematically develop and
+implement methods for how observational networks are to be construed and
+thus become a leader regarding observational systems in the Arctic and
+Polar regions.The SIOS Data Management System (SDMS) Data Portal is the
+entry point to SIOS datasets. It offers a web interface that contains
+information about datasets (metadata). These metadata are harvested on a
+regular basis from data centres contributing to SIOS. These data centres
+manage the data on behalf of the owners/providers of the data.
+
+A major innovative element of SIOS will be the Knowledge Centre (KC),
+which will facilitate interaction between observation, modelling and
+process research, strategic processes, a service point to user
+communities and a platform for data handling and utilization [3]. The
+SIOS Data Management System (SDMS) will be a functionality enabling
+component of the Knowledge Centre, supporting data submission,
+discovery, access, use and preservation of SIOS relevant data sets.
+
+For the SDMS the term “data set” is defined in line with the INSPIRE
+Directive as “an identifiable collection of spatial data”, i.e. a
+collection of data that has a reference by name or coordinates to a
+geographic location or area, and which in addition have a designated
+start and end time. A data set can contain observations (remote or in
+situ), derived quantities (from either of these two types of data
+sources) or forecasts of future states of environmental parameters. The
+data values can be located at a single point, along a line or transect,
+in a regular or irregular grid, and be captured or estimated at one or
+more altitudes/depths. A data set can be stored on paper, in files (one
+or more), or in a database, and is often accompanied by descriptions
+(metadata) of its content. The purpose of the SDMS is to the SIOS user
+community with a single entry point to relevant datasets. It is however
+not the purpose to centralise all data, but rather to integrate existing
+and future data centres contributing to SIOS using machine readable
+interfaces to metadata and data.
+
+The first version of this document is based on a similar document
+developed for WMO Global Cryosphere Watch.
+
+[[scope]]
+=== Scope
+
+This document identifies aspects that have to be handled in establishing
+SDMS. The purpose is to enable transparency on metadata and in the long
+term also on data through limiting the interfaces to be developed and
+maintained. The short term goal is to enable visibility of relevant
+datasets through discovery metadata, in the long term to harmonize
+access to data via defined set of data access interfaces. Emphasis is
+primarily on the semantics and structure of interfaces to metadata and
+data, and less on underlying file formats.
+
+The requirements of the document represents a long term goal which
+require funding for full implementation. Some partners have implemented
+parts of the interfaces mentioned while others have a longer way to go.
+This is reflected in the prioritised functionality to implement. in the
+implementation plan of the SIOS Preparatory Phase link:#anchor-4[[3] ],
+see section 5.3.1footnote:[The official version of this document has
+some issues with references, an updated version will be made available
+within the collaboration area for the SDMS WG. ]..
+
+[[intended-audience]]
+=== Intended audience
+
+System managers at the data centres contributing to the SDMS.
+
+[[applicable-documents]]
+=== Applicable documents
+
+1.  http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22partBSIOS-PPfinal.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415507&ssbinary=true[Svalbard Integrated Arctic Earth Observing System – Preparatory Phase (SIOS-PP) Description of Work].
+2.  Robert Huber and Michael Klages (lead authors), 2012.
+http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[SIOS Data Management System – User Requirements Document]. SIOS Deliverable D6.3.
+3.  [[anchor-4]]http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[Distributed SIOS Data Management System Implementation Plan, 2014, SIOS Deliverable D6.6.]
+4.  SDMS Concepts and acronyms
+5.  SDMS System Requirements Document
+6.  SDMS Architecture Design Document
+7.  SDMS System implementation and integration plan
+8.  [[anchor-7]]SDMS Operations Manual
+9.  [[anchor-8]]http://www.wmo.int/pages/prog/www/WIS/[WMO Information
+System]
+10. [[anchor-9]]http://www.wmo.int/pages/prog/www/WIS/metadata_en.html[WMO
+Core Profile of the ISO 19115]
+11. [[anchor-10]]https://www.wmo.int/pages/prog/www/wigos/index_en.html[WIGOS],
+including the metadata standard
+12. http://www.openarchives.org/OAI/openarchivesprotocol.html[The Open
+Archives Initiative Protocol for Metadata Harvesting, Version 2]
+13. [[anchor-11]]https://www.openarchives.org/pmh/tools/tools.php[OAI-PMH
+tools]
+14. [[anchor-12]]http://www.opengeospatial.org/standards/cat[OGC CSW
+specification]
+15. [[anchor-13]]http://gcmd.gsfc.nasa.gov/add/difguide/index.html[GCMD
+DIF Writers Guide]
+16. [[anchor-14]]http://gcmd.nasa.gov/learn/keyword_list.html[GCMD
+Science Keywords]
+17. [[anchor-15]]http://cfconventions.org/standard-names.html[Climate
+and Forecast Standard Names]
+18. [[anchor-16]]http://wis.wmo.int/2013/metadata/version_1-3-0/WMO_Core_Metadata_Profile_v1.3_Part_2.pdf[WMO
+Code Lists]
+19. [[anchor-17]]http://www.unidata.ucar.edu/software/netcdf/[NetCDF]
+20. [[anchor-18]]http://cfconventions.org/[Climate and Forecast
+Conventions]
+21. [[anchor-19]]http://opendap.org/[OPeNDAP]
+22. [[anchor-20]]http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[UNIDATA's
+Common Data Model]
+23. [[anchor-21]]http://www.opensearch.org/[OpenSearch]
+24. [[anchor-22]]Wilkinson et al., 2016:
+http://www.nature.com/articles/sdata201618[The FAIR Guiding Principles
+for scientific data management and stewardship]

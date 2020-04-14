@@ -1,0 +1,6 @@
+[[interoperability-interfaces]]
+== Interoperability interfaces
+
+include::sdms_iog_ch02-discovery.adoc[]
+
+include::sdms_iog_ch02-data.adoc[]

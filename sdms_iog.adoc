@@ -1,0 +1,51 @@
+:doctype: book
+:pdf-folio-placement: physical
+:title-logo-image: image::Pictures/100002010000064000000416954AF1BF569C4DD3.png[pdfwidth=15cm,align=right]
+= Technical documentation
+Guidance for data centres contributing to SDMS
+:sectanchors:
+:toc: macro
+:toclevels: 4
+:sectnums:
+:sectnumlevels: 6
+:chapter-label:
+:xrefstyle: short
+
+[discrete]
+== Versions
+[cols=">1,>2,5,2",]
+|=======================================================================
+^|Version ^|Date ^|Comment ^|Responsible
+
+|0.5 |2020-03-15 |Cleaning of comments, preparation for conversion to
+ASCIIDOC and establishment of work flow on GitHub. |Øystein Godøy
+
+|0.4 |2017-05-27 |Comments from SDMS WG incorporated and cleaned.
+|Øystein Godøy
+
+|0.3 |2017-03-17 |Comments from the SDMS WG incorporated. a|
+Stein Tronstad +
+Torill Hamre +
+Markus Fiebig +
+Terry Hannant +
+Angelo Viola +
+Øystein Godøy
+|0.2 |2017-01-15 |Comments from Angela Schäfer and Torill Hamre are
+included. a|
+Øystein Godøy +
+Angela Schäfer +
+Torill Hamre
+
+|0.1 |[[Updated]]2016-10-20 |First draft for internal discussion in the
+SDMS Working Group. |Øystein Godøy
+
+|0.0 |2016-04-15 |First draft based on a similar document developed for
+the WMO Global Cryosphere Watch. |Øystein Godøy
+|=======================================================================
+
+toc::[]
+
+include::sdms_iog_ch01.adoc[]
+
+include::sdms_iog_ch02.adoc[]
+

@@ -1,0 +1,189 @@
+===== GCMD DIF
+
+The Global Change Master Directory (GCMD) Directory Interchange Format
+(DIF) link:#anchor-13[[15] ] is a metadata standard that is widely used
+(e.g. by the Antarctic Master Directory) and that was
+
+<<gcmd-dif-elements>> shows elements in GCMD DIF and whether these are **M**andatory, **R**ecommended or **O**ptional, as well as whether they are **U**nique
+(only one occurrence allowed) and require utilisation of **C**ontrolled
+vocabularies.
+
+//Table 2: GCMD DIF elements.
+[[gcmd-dif-elements]]
+[cols=",,,",title="GCMD DIF elements."]
+|=======================================================================
+|Element |Description |GCMD |SDMS 
+
+|Entry_ID |The *<Entry_ID>* is the unique document identifier of the
+metadata record. The *<Entry_ID>* is determined by the metadata author
+or data center contact personnel and may be identical to identifiers
+used by the data provider’s data center or organization. For example,
+the National Snow and Ice Data Center (NSIDC) Distributed Active Archive
+Center (DAAC) identifies their metadata records as _NSIDC-xxxx_, where
+__xxxx __is a numerical designator. Also, the identifier is case
+insensitive meaning nsidc-xxxx and NSIDC-xxx refer to the same metadata
+record. |MU |MU
+
+|Entry_Title |The <Entry_Title> is the title of the data set described
+by the metadata. |MU |MU
+
+|Parameters (Science Keywords) |The *<Parameters>* field allows for the
+specification of Earth science keywords that are representative of the
+data set being described. These keywords are important for the precise
+search and retrieval of information from the GCMD. The author must
+select these keywords from the controlled set of science keywords. The
+*<Parameters>* field consists of a 7-level hierarchical classification
+of science keywords |MC |MC
+
+|ISO Topic Category |The *<ISO_Topic_Category>* field is used to
+identify the keywords in the ISO 19115 - Geographic Information Metadata
+(http://www.isotc211.org/) Topic Category Code List. It is a high-level
+geographic data thematic classification to assist in the grouping and
+search of available geographic data sets.  |MC |MC
+
+|Data Center |The *<Data Center>* is the data center, organization, or
+institution responsible for distributing the data. |M |MC
+
+|Summary |The *<Summary>* field provides a brief description of the data
+set along with the purpose of the data. This allows potential users to
+determine if the data set is useful for their needs. |MU |M
+
+|Metadata Name |The ISO 19115 *<Metadata_Name>* field is used to
+identify the current DIF standard name. |MU |MC
+
+|Metadata Version |The *<Metadata_Version>* field is used to identify
+the current DIF metadata standard. |MU |MU
+
+|Data Set Citation |The *<Data_Set_Citation>* field allows the author to
+properly cite the data set producer. |R |R
+
+|Personnel |*<Personnel>* defines the point of contact for more
+information about the data set or the metadata. |R |R
+
+|Instrument |The Instrument or *<Sensor_Name>* is the name of the
+instrument used to acquire the data. |RC |RC
+
+|Platform |The Platform or *<Source_Name>* is the name of the platform
+used to acquire the data. |RC |RC
+
+|Temporal Coverage |The *<Temporal_Coverage>* field specifies the start
+and stop dates during which the data was collected. |R |M
+
+|Paleo-Temporal Coverage |For paleoclimate or geologic data,
+*<Paleo_Temporal_Coverage>* is the length of time represented by the
+data collected. |R |O
+
+|Spatial Coverage |The *<Spatial_Coverage>* field specifies the
+geographic and vertical (altitude, depth) coverage of the data. |R |M
+
+|Location |The *<Location>* field specifies the name of a place on
+Earth, a location within the Earth, a vertical location, or a location
+outside of Earth. |RC |OC
+
+|Data Resolution |The *<Data_Resolution>* field specifies the resolution
+of the data, which is the difference between two adjacent geographic,
+vertical, or temporal values. Controlled keywords representing
+horizontal, vertical and temporal data resolution ranges can be
+selected. Selection of data resolution ranges will assist users in
+refining their search for data within specific resolution ranges. |RC
+|OC
+
+|Project |The *<Project>* is the name of the scientific program, field
+campaign, or project from which the data were collected. |R |RC
+
+|Quality |The *<Quality>* field allows the author to provide information
+about the quality of the data or any quality assurance procedures
+followed in producing the data described in the metadata. |R |MC
+
+|Access Constraints |The *<Access_Constraints>* field allows the author
+to provide information about any constraints for accessing the data set.
+|R |MC
+
+|Use Constraints |The *<Use_Constraints>* field allows the author to
+describe how the data may or may not be used after access is granted to
+assure the protection of privacy or intellectual property. |R |MC
+
+|Distribution |The *<Distribution>* field describes media options, size,
+data format, and fees involved in distributing the data set. |R |RC
+
+|Data Set Language |*<Data_Set_Language>* describes the language used in
+the preparation, storage, and description of the data. |RC |RC
+
+|Data Set Progress |The *<Data_Set_Progress>* describes the production
+status of the data set regarding its completeness.  |RC |RC
+
+|Related URL |The *<Related_URL>* field specifies links to Internet
+sites that contain information related to the data, as well as related
+Internet sites such as project home pages, related data
+archives/servers, metadata extensions, online software packages, web
+mapping services, and calibration/validation data. |RC
+|MCfootnote:[Further guidelines are required compared to GCMD.]
+
+|DIF Revision History |The *<DIF_Revision_History>* allows the author to
+provide a list of changes made to the DIF over time. |R |R
+
+|Keyword (ancillary keywords) |The *<Keyword>* field allows authors to
+provide any words or phrases needed to further describe the data set. |R
+|R
+
+|Originating Center |The *<Originating_Center>* is the data center or
+data producer who originally generated the dataset. |R |R
+
+|Multimedia Sample |The *<Multimedia_Sample>* field allows the author to
+provide information that will enable the display of a sample image,
+movie or sound clip within the DIF. |R |O
+
+|References (Publications) |The <**Reference>** field describes key
+bibliographic citations pertaining to the data set. |R |R
+
+|Parent DIF |The *<Parent_DIF>* field allows the capability to relate
+generalized aggregated metadata records (parents) to metadata records
+with highly specific information (children). Population of the
+*<Parent_DIF>* field should be reserved for instances where many
+metadata records are basically subsets that can be better represented by
+one parent metadata record, which describes the entire collection.
+Typically, the parent metadata record will have many children metadata
+records, which refer to the parent through the *<Parent_DIF>* field. In
+some instances, a child may point to more than one parent. The
+*<Parent_DIF>* is populated with an *<Entry_ID>. * |R |O
+
+|IDN Node |The Internal Directory Name (IDN) Node *(<IDN_Node>*) field
+is used internally to identify association, responsibility and/or
+ownership of the dataset, service or supplemental information. |R |O
+
+|DIF Creation Date |The *<DIF_Creation_Date>* specifies the date the
+metadata record was created. |R |R
+
+|Last DIF Revision Date |The *<Last_DIF_Revision_Date>* specifies the
+date the metadata record was created. |R |R
+
+|Future DIF Review Date |The *<Future_DIF_Review_Date>* allows for the
+specification of a future date at which the DIF should be reviewed for
+accuracy of scientific or technical content. |R |R
+
+|Privacy Status |The *<Private>* field allows the author to restrict the
+data set description from being publicly available. |RC |RC
+
+|Extended Metadata |The *<Extended_Metadata>* field will allow
+organizations to store user defined values within the metadata record
+without reusing existing GCMD defined metadata fields. |O
+|Ofootnote:[Depends on potential requirements within SDMS.]
+|=======================================================================
+
+1.  GCMD comes with a number of predefined controlled vocabularies that
+should be used in specific sections of the metadata. As indicated in the
+table above some sections are free text in GCMD while it is suggested to
+use controlled vocabularies in SDMS context.
+2.  GCMD do not require a controlled vocabulary for the quality element.
+SDMS should to improve search resultsfootnote:[This work should relate
+to international activities in this field in the context of e.g. GEO,
+ICES, WMO etc. and must be coordinated within SDMS by the Terminology
+Team. ].
+3.  Related_URL has several subtypes. The existing
+http://gcmdservices.gsfc.nasa.gov/static/kms/rucontenttype/rucontenttype.csv[list
+of type and subtype] must be used to allow the SIOS Data Portal to
+filter the purpose of the URLs provided. When types are “View Data Set
+Landing Page”, “View Extended Metadata”, “View Professional Home Page”,
+and “View Project Home Page”, no subtype is needed.
+4.  All times must be encoded as ISO8601 either as YYYY-MM-DD or
+YYYY-MM-DDTHH:MM:SSZ.

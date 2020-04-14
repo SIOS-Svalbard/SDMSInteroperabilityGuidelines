@@ -1,0 +1,69 @@
+[[file-formats]]
+==== File formats
+
+[[introduction-3]]
+===== Introduction
+
+Most of the exchange mechanisms mentioned above transfer files. In order
+to properly understand the content of a file some use metadata is
+usually necessary. File formats that embed use metadata (and also
+discovery metadata) are preferred. NetCDF in itself is not self
+describing, but NetCDF following the Climate and Forecast Convention is
+self describing. Adding the
+http://wiki.esipfed.org/index.php?title=Category:Attribute_Conventions_Dataset_Discovery[NetCDF
+Attribute Convention for Dataset Discovery] embeds full discovery
+metadata (e.g. originator/PI, constraints etc.) in the file.
+
+[[wmo-bufr]]
+===== WMO BUFR
+
+Binary Universal Form for the Representation of meteorological data
+(BUFR) is a binary data format maintained by WMO. Its main purpose is
+operational exchange of real time data and it is adapted for robust
+transfer on varying bandwidth connections. Data that are supposed to be
+exchanged using WMO Global Telecommunication System (GTS) should be
+encoded in WMO BUFR. BUFR is a table driven file format, implying that
+the format is not self explaining and the user has to have the correct
+table to understand the content.
+
+[[wmo-grib]]
+===== WMO Grib
+
+GRIdded Binary (GRIB) is a binary format maintained by WMO. As BUFR,
+this format is best suited for real time exchange over WMO GTS. It is
+also a table driven format like BUFR, having the same limitations.
+
+[[netcdfcf]]
+===== NetCDF/CF
+
+1.  NetCDF following the Climate and Forecast Convention with NetCDF
+Attribute Convention for Dataset Discovery is recommended for file
+format where possible as it is a dynamic standard with a semantic
+framework and it maps directly to the generic Common Data Model.
+2.  NetCDF/CF files should be encoded according to CF-1.6 or higher, 1.8
+being the last release as of this version of the document.
+3.  NetCDF/CF files should also include global attributes according to
+the
+http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery_1-3#Global_Attributes[Attribute
+Convention for Dataset Discovery].
+
+[[jsongeojsonjson-ld]]
+===== JSON/GeoJSON/JSON-LD
+
+JavaScript Object Notation (http://www.json.org/[JSON]) and the
+geographical extension http://geojson.org/[GeoJSON] of this is similar
+to NetCDF in that it is a container lacking standardised metadata.
+http://json-ld.org/[JSON-LD] (JavaScript Object Notation for Linked
+Data,) enables encoding of Linked Data using JSON.
+
+SDMS is currently *not* able to consume JSON files.
+
+[[xml]]
+===== XML
+
+Extensible Markup Language (XML) is similar to NetCDF in that it is a
+container lacking standardised metadata describing its contents. There
+are many variants of XML and the overhead is large, as the format is
+text-based.
+
+SDMS is currently *not* able to consume XML files.
