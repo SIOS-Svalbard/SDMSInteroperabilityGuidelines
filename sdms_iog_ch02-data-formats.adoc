@@ -14,6 +14,13 @@ http://wiki.esipfed.org/index.php?title=Category:Attribute_Conventions_Dataset_D
 Attribute Convention for Dataset Discovery] embeds full discovery metadata
 (e.g. originator/PI, constraints etc.) in the file.
 
+When it is not possible to encode data as NetCDF-CF or Darwin Core
+Archive, data can be uploaded in a non-proprietary file format that is
+easy to consume for users (without specific software) accompanied by a
+detailed product manualfootnote:[There is currently no template for
+product manuals available. This is to be developed.] (in PDF format). This
+approach cannot be used for SIOS Core Data.
+
 [[darwincorearchive]]
 ===== Darwin Core Archive
 Darwin Core Archive is a file format much used within the bilogical

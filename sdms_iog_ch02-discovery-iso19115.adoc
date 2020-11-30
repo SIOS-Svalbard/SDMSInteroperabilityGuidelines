@@ -11,23 +11,25 @@ mapping exist between Climate and Forecast standard names
 
 [horizontal]
 *Recommendation:*::  
-ISO19115 records must at least state the unique id, temporal and
+ISO19115 records *must* at least state the unique id, temporal and
 spatial location, scientific content, responsible data centre and PI as
 well as links to the actual datafootnote:[This recommendation will be
 revisited. ]. Datasets without such specifications are not ingested in
 the catalogue.
 *Recommendation:*::  
 ISO19115 records, regardless of whether being mandatory elements or
-the full WMO Profile should contain GCMD Science Keywords or some other
+the full WMO Profile *should* contain GCMD Science Keywords or some other
 machine readable vocabulary following the FAIR guiding
-principles <<#anchor-22,[24]>>.
+principles <<#anchor-22,[24]>>. The vocabulary used must be identified.
 *Recommendation:*::  
-It is mandatory that CryoNet and contributing stations at least have
+For stations where it is relevant (e.g. stations contributing to WMO GCW
+through CryoNet) it is mandatory to have
 one keyword from the WMO CategoryCode list <<#anchor-16,[18]>>
 footnote:[There is currently no way of including this information in
 GCMD DIF, although a mapping to ISO TopicCategories may be used. ].
 Relevant keywords for SDMS are e.g. weatherObservations, meteorology,
-hydrology, climatology, glaciology.
+hydrology, climatology, glaciology. In the context of SDMS alone, this is
+not a requirement.
 *Recommendation:*::  
 All times must be encoded as ISO8601.
 
@@ -50,6 +52,13 @@ institution as well as contact details. |O |M
 
 |Geographic location of the dataset |Spatial extent of the dataset. |O
 |M
+
+|Keyword |A word or phrase that describes some aspect of a resource. Can
+be one of several types. It is used to describe the parameters in a
+dataset, the project affiliation etc. Proper identification of the purpose
+of the keywords and the vocabularies used is required. Project names are
+used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020
+etc. |O |M
 
 |Dataset language |Should be English. |M |M
 
