@@ -10,7 +10,7 @@ Outline of sections that should be covered by a product manual for data that can
 IMPORTANT: The file formats used should always be free and open, not commercial. 
 
 . Introduction
-.. 
+.. General overview of the data production process
 . Description of the data
 .. Description of which variables that are measured, their characteristics including units on variables etc.
 . Description of the file format
