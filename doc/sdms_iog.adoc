@@ -48,3 +48,4 @@ include::sdms_iog_ch01.adoc[]
 
 include::sdms_iog_ch02.adoc[]
 
+include::sdms_iog_app_prodman.adoc[]

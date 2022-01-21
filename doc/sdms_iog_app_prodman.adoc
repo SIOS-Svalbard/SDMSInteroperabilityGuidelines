@@ -1,0 +1,13 @@
+[appendix]
+== Template for Product Manual
+
+=== Introduction
+When datasets cannot be presented in a FAIR compliant file format (i.e. self describing), a product manual describing the dataset and how to interpret it *should* accompany the dataset. This product manual has to be served as a PDF document and have the sections identified below.
+
+=== Template
+Outline of sections that should be covered by a product manual for data that cannot be described in a FAIR compliant file format.
+
+. Introduction
+. Description of the data
+. Description of the file format
+. References to software

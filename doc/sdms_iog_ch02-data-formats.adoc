@@ -10,7 +10,7 @@ When it is not possible to encode data as NetCDF-CF or Darwin Core Archive, data
 
 [[darwincorearchive]]
 ===== Darwin Core Archive
-Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity. It is the backbone of the Global Biodiversity Information facility (GBIF). in essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vaocabularies to describe the content. SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS. Further information is available at https://dwc.tdwg.org/terms/. 
+Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity. It is the backbone of the Global Biodiversity Information facility (GBIF). In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vaocabularies to describe the content. SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS. Further information is available at https://dwc.tdwg.org/terms/. 
 
 [horizontal]
 *Recommendation:*::
