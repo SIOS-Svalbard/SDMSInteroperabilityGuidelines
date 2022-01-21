@@ -17,7 +17,7 @@ Guidance for data centres contributing to SDMS
 |=======================================================================
 ^|Version ^|Date ^|Comment ^|Responsible
 
-|0.x |202?-??-?? |Updates following lessons learned in harvesting especially from GeoNetwork |Øystein Godøy
+|0.x |{docdate} |Updates following lessons learned in harvesting especially from GeoNetwork |Øystein Godøy
 |0.6 |2020-04-14 |Corrections of incorrect cross references, added
 descriptions on file formats and cleaned recommendations |Øystein Godøy
 |0.5 |2020-03-15 |Cleaning of comments, preparation for conversion to
