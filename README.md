@@ -23,7 +23,7 @@ The intention is to collaborate on the document using issues which are translate
 1. Push local changes to GitHub using git git push origin [name_of_your_new_branch]
 1. Create a PR using the graphical user interface at GitHub.
 
-![WorkFlow](/Pictures/github-workflow4documents.png)
+![WorkFlow](/doc/Pictures/github-workflow4documents.png)
 
 
 ## License
