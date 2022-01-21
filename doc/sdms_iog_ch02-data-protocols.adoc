@@ -69,3 +69,5 @@ SDMS is only able to consume WMS services that provide a GetCapability document 
 
 *Recommendation:*::
 OGC WMS services should present a Getcapabilities document per dataset, not a common document for all datasets served.
+
+IMPORTANT: SDMS is not capable of parsing WMS layers for specific datasets from site specific GetCapabilities documents.
