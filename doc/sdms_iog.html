@@ -650,6 +650,9 @@ data, and less on underlying file formats.</p>
 </div>
 <div class="sect2">
 <h3 id="applicable-documents"><a class="anchor" href="#applicable-documents"></a>1.4. Applicable documents</h3>
+<div class="paragraph">
+<p>TODO: Add SIOS Data Policy and SPDX licenses to this list.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -774,7 +777,10 @@ for scientific data management and stewardship</a></p>
 <p>The first category is the metadata provided by the data centres in a standard format, e.g. GCMD DIF or ISO 19115. The second category is maintained in the central metadata repository and is used for configuration of higher order services like visualisation, transformation, etc., and is created internally in the SIOS Data Portal based on information retrieved from contributing data centres. The third category is covered e.g. by utilisation of NetCDF files formatted according to the Climate and Forecast Convention where sufficient information to actually use the data is provided. The fourth category links directly to WIGOS metadata <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>. These metadata describes the station, its surroundings, instrumentation, procedures etc. There is some overlap between these metadata and the first category.</p>
 </div>
 <div class="paragraph">
-<p>The SIOS Data Portal harvest metadata to a central repository that is used to search for relevant datasets. It does not utilise distributed search as this is a slower process compared to searching in a central repository. Metadata are harvested at regular intervals and checked for conformance according to the standards identified herein and in <a href="#anchor-7">[8]</a>.</p>
+<p>The SIOS Data Portal harvest metadata to a central repository that is used to search for relevant datasets. It does not utilise distributed search as this is a slower process compared to searching in a central repository. Metadata are harvested at regular intervals and checked for conformance according to the standards identified herein and in <a href="#anchor-7">[8]</a>. The discovery metadata are harvested from partner data repositories every night, then converted to the data model used in the data catalogue and ingested if it fulfils the quality check. The nightly harvest is an incremental harvest of changes since the last time the harvest was run. Every 3 months a full harvest is done to clean up potentially stale datasets.</p>
+</div>
+<div class="paragraph">
+<p>TODO: Add a separate document on the harvest process. I.e. convert the old LibreOffice document to ASCIIDOC and add to GitHub.</p>
 </div>
 <div class="paragraph">
 <p>Regardless of the metadata standard used and the mechanism for transport of the information the following recommendation should be implemented at the repositories.</p>
@@ -793,6 +799,17 @@ for scientific data management and stewardship</a></p>
 </div>
 <div class="paragraph">
 <p>This implies that SIOS Data Portal will not specify or change a unique identifier unless the dataset is hosted by the SIOS Data Portal.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Recommendation</strong></dt>
+<dd>
+<p>Always include a license in the discovery metadata. Following the SIOS Data policy, SIOS recommends usage of the Creative Commons Attribution License and use identifiers and URL to license text from <a href="https://spdx.org/licenses/" class="bare">https://spdx.org/licenses/</a>. It is recommended to include both a standardised identifier and a link to the full license text.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>TODO: Add link to SIOS Data Policy.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1962,7 +1979,7 @@ The file formats used should always be free and open, not commercial.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-21 21:23:14 UTC
+Last updated 2022-01-21 21:40:32 UTC
 </div>
 </div>
 </body>
