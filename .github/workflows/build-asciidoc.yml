@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'doc/'
+      - 'doc/**'
 jobs:
   adoc_build:
     runs-on: ubuntu-latest
