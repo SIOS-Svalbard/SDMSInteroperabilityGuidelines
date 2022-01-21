@@ -1183,14 +1183,10 @@ institution as well as contact details.</p></td>
 <div class="sect4">
 <h5 id="_gcmd_dif"><a class="anchor" href="#_gcmd_dif"></a>2.1.3.2. GCMD DIF</h5>
 <div class="paragraph">
-<p>The Global Change Master Directory (GCMD) Directory Interchange Format
-(DIF) <a href="#anchor-13">[15]</a> is a metadata standard that is widely used
-(e.g. by the Antarctic Master Directory) and that was</p>
+<p>The Global Change Master Directory (GCMD) Directory Interchange Format (DIF) <a href="#anchor-13">[15]</a> is a metadata standard that is widely used (e.g. by the Antarctic Master Directory) and that was</p>
 </div>
 <div class="paragraph">
-<p><a href="#gcmd-dif-elements">Table 2</a> shows elements in GCMD DIF and whether these are <strong>M</strong>andatory, <strong>R</strong>ecommended or <strong>O</strong>ptional, as well as whether they are <strong>U</strong>nique
-(only one occurrence allowed) and require utilisation of <strong>C</strong>ontrolled
-vocabularies.</p>
+<p><a href="#gcmd-dif-elements">Table 2</a> shows elements in GCMD DIF and whether these are <strong>M</strong>andatory, <strong>R</strong>ecommended or <strong>O</strong>ptional, as well as whether they are <strong>U</strong>nique (only one occurrence allowed) and require utilisation of <strong>C</strong>ontrolled vocabularies.</p>
 </div>
 <table id="gcmd-dif-elements" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. GCMD DIF elements.</caption>
@@ -1211,15 +1207,7 @@ vocabularies.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Entry_ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Entry_ID&gt;</strong> is the unique document identifier of the
-metadata record. The <strong>&lt;Entry_ID&gt;</strong> is determined by the metadata author
-or data center contact personnel and may be identical to identifiers
-used by the data provider’s data center or organization. For example,
-the National Snow and Ice Data Center (NSIDC) Distributed Active Archive
-Center (DAAC) identifies their metadata records as <em>NSIDC-xxxx</em>, where
-<em>xxxx </em>is a numerical designator. Also, the identifier is case
-insensitive meaning nsidc-xxxx and NSIDC-xxx refer to the same metadata
-record.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Entry_ID&gt;</strong> is the unique document identifier of the metadata record. The <strong>&lt;Entry_ID&gt;</strong> is determined by the metadata author or data center contact personnel and may be identical to identifiers used by the data provider’s data center or organization. For example, the National Snow and Ice Data Center (NSIDC) Distributed Active Archive Center (DAAC) identifies their metadata records as <em>NSIDC-xxxx</em>, where <em>xxxx </em>is a numerical designator. Also, the identifier is case insensitive meaning nsidc-xxxx and NSIDC-xxx refer to the same metadata record.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MU</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MU</p></td>
 </tr>
@@ -1232,211 +1220,164 @@ by the metadata.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Parameters (Science Keywords)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Parameters&gt;</strong> field allows for the
-specification of Earth science keywords that are representative of the
-data set being described. These keywords are important for the precise
-search and retrieval of information from the GCMD. The author must
-select these keywords from the controlled set of science keywords. The
-<strong>&lt;Parameters&gt;</strong> field consists of a 7-level hierarchical classification
-of science keywords</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Parameters&gt;</strong> field allows for the specification of Earth science keywords that are representative of the data set being described. These keywords are important for the precise search and retrieval of information from the GCMD. The author must select these keywords from the controlled set of science keywords. The <strong>&lt;Parameters&gt;</strong> field consists of a 7-level hierarchical classification of science keywords</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ISO Topic Category</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;ISO_Topic_Category&gt;</strong> field is used to
-identify the keywords in the ISO 19115 - Geographic Information Metadata
-(<a href="http://www.isotc211.org/" class="bare">http://www.isotc211.org/</a>) Topic Category Code List. It is a high-level
-geographic data thematic classification to assist in the grouping and
-search of available geographic data sets. </p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;ISO_Topic_Category&gt;</strong> field is used to identify the keywords in the ISO 19115 - Geographic Information Metadata (<a href="http://www.isotc211.org/" class="bare">http://www.isotc211.org/</a>) Topic Category Code List. It is a high-level geographic data thematic classification to assist in the grouping and search of available geographic data sets. </p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Data Center</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Data Center&gt;</strong> is the data center, organization, or
-institution responsible for distributing the data.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Data Center&gt;</strong> is the data center, organization, or institution responsible for distributing the data.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Summary&gt;</strong> field provides a brief description of the data
-set along with the purpose of the data. This allows potential users to
-determine if the data set is useful for their needs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Summary&gt;</strong> field provides a brief description of the data set along with the purpose of the data. This allows potential users to determine if the data set is useful for their needs.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MU</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Metadata Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The ISO 19115 <strong>&lt;Metadata_Name&gt;</strong> field is used to
-identify the current DIF standard name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The ISO 19115 <strong>&lt;Metadata_Name&gt;</strong> field is used to identify the current DIF standard name.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MU</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Metadata Version</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Metadata_Version&gt;</strong> field is used to identify
-the current DIF metadata standard.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Metadata_Version&gt;</strong> field is used to identify the current DIF metadata standard.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MU</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MU</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Data Set Citation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Data_Set_Citation&gt;</strong> field allows the author to
-properly cite the data set producer.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Data_Set_Citation&gt;</strong> field allows the author to properly cite the data set producer.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Personnel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&lt;Personnel&gt;</strong> defines the point of contact for more
-information about the data set or the metadata.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&lt;Personnel&gt;</strong> defines the point of contact for more information about the data set or the metadata.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Instrument</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Instrument or <strong>&lt;Sensor_Name&gt;</strong> is the name of the
-instrument used to acquire the data.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Instrument or <strong>&lt;Sensor_Name&gt;</strong> is the name of the instrument used to acquire the data.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Platform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Platform or <strong>&lt;Source_Name&gt;</strong> is the name of the platform
-used to acquire the data.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Platform or <strong>&lt;Source_Name&gt;</strong> is the name of the platform used to acquire the data.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temporal Coverage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Temporal_Coverage&gt;</strong> field specifies the start
-and stop dates during which the data was collected.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Temporal_Coverage&gt;</strong> field specifies the start and stop dates during which the data was collected.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Paleo-Temporal Coverage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For paleoclimate or geologic data,
-<strong>&lt;Paleo_Temporal_Coverage&gt;</strong> is the length of time represented by the
+<td class="tableblock halign-left valign-top"><p class="tableblock">For paleoclimate or geologic data, <strong>&lt;Paleo_Temporal_Coverage&gt;</strong> is the length of time represented by the
 data collected.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Spatial Coverage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Spatial_Coverage&gt;</strong> field specifies the
-geographic and vertical (altitude, depth) coverage of the data.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Spatial_Coverage&gt;</strong> field specifies the geographic and vertical (altitude, depth) coverage of the data.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Location&gt;</strong> field specifies the name of a place on
-Earth, a location within the Earth, a vertical location, or a location
-outside of Earth.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Location&gt;</strong> field specifies the name of a place on Earth, a location within the Earth, a vertical location, or a location outside of Earth.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Data Resolution</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Data_Resolution&gt;</strong> field specifies the resolution
-of the data, which is the difference between two adjacent geographic,
-vertical, or temporal values. Controlled keywords representing
-horizontal, vertical and temporal data resolution ranges can be
-selected. Selection of data resolution ranges will assist users in
-refining their search for data within specific resolution ranges.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Data_Resolution&gt;</strong> field specifies the resolution of the data, which is the difference between two adjacent geographic, vertical, or temporal values. Controlled keywords representing horizontal, vertical and temporal data resolution ranges can be selected. Selection of data resolution ranges will assist users in refining their search for data within specific resolution ranges.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Project</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Project&gt;</strong> is the name of the scientific program, field
-campaign, or project from which the data were collected.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Project&gt;</strong> is the name of the scientific program, field campaign, or project from which the data were collected.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Quality</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Quality&gt;</strong> field allows the author to provide information
-about the quality of the data or any quality assurance procedures
-followed in producing the data described in the metadata.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Quality&gt;</strong> field allows the author to provide information about the quality of the data or any quality assurance procedures followed in producing the data described in the metadata.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Access Constraints</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Access_Constraints&gt;</strong> field allows the author
-to provide information about any constraints for accessing the data set.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Access_Constraints&gt;</strong> field allows the author to provide information about any constraints for accessing the data set.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Use Constraints</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Use_Constraints&gt;</strong> field allows the author to
-describe how the data may or may not be used after access is granted to
-assure the protection of privacy or intellectual property.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Use_Constraints&gt;</strong> field allows the author to describe how the data may or may not be used after access is granted to assure the protection of privacy or intellectual property.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Distribution</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Distribution&gt;</strong> field describes media options, size,
-data format, and fees involved in distributing the data set.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Distribution&gt;</strong> field describes media options, size, data format, and fees involved in distributing the data set.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Data Set Language</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&lt;Data_Set_Language&gt;</strong> describes the language used in
-the preparation, storage, and description of the data.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&lt;Data_Set_Language&gt;</strong> describes the language used in the preparation, storage, and description of the data.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Data Set Progress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Data_Set_Progress&gt;</strong> describes the production
-status of the data set regarding its completeness. </p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Data_Set_Progress&gt;</strong> describes the production status of the data set regarding its completeness. </p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Related URL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Related_URL&gt;</strong> field specifies links to Internet
-sites that contain information related to the data, as well as related
-Internet sites such as project home pages, related data
-archives/servers, metadata extensions, online software packages, web
-mapping services, and calibration/validation data.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Related_URL&gt;</strong> field specifies links to Internet sites that contain information related to the data, as well as related Internet sites such as project home pages, related data archives/servers, metadata extensions, online software packages, web mapping services, and calibration/validation data.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MC<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DIF Revision History</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;DIF_Revision_History&gt;</strong> allows the author to
-provide a list of changes made to the DIF over time.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;DIF_Revision_History&gt;</strong> allows the author to provide a list of changes made to the DIF over time.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keyword (ancillary keywords)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Keyword&gt;</strong> field allows authors to
-provide any words or phrases needed to further describe the data set.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Keyword&gt;</strong> field allows authors to provide any words or phrases needed to further describe the data set.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Originating Center</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Originating_Center&gt;</strong> is the data center or
-data producer who originally generated the dataset.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Originating_Center&gt;</strong> is the data center or data producer who originally generated the dataset.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multimedia Sample</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Multimedia_Sample&gt;</strong> field allows the author to
-provide information that will enable the display of a sample image,
-movie or sound clip within the DIF.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Multimedia_Sample&gt;</strong> field allows the author to provide information that will enable the display of a sample image, movie or sound clip within the DIF.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 </tr>
@@ -1449,61 +1390,43 @@ bibliographic citations pertaining to the data set.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Parent DIF</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Parent_DIF&gt;</strong> field allows the capability to relate
-generalized aggregated metadata records (parents) to metadata records
-with highly specific information (children). Population of the
-<strong>&lt;Parent_DIF&gt;</strong> field should be reserved for instances where many
-metadata records are basically subsets that can be better represented by
-one parent metadata record, which describes the entire collection.
-Typically, the parent metadata record will have many children metadata
-records, which refer to the parent through the <strong>&lt;Parent_DIF&gt;</strong> field. In
-some instances, a child may point to more than one parent. The
-<strong>&lt;Parent_DIF&gt;</strong> is populated with an <strong>&lt;Entry_ID&gt;. </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Parent_DIF&gt;</strong> field allows the capability to relate generalized aggregated metadata records (parents) to metadata records with highly specific information (children). Population of the <strong>&lt;Parent_DIF&gt;</strong> field should be reserved for instances where many metadata records are basically subsets that can be better represented by one parent metadata record, which describes the entire collection.  Typically, the parent metadata record will have many children metadata records, which refer to the parent through the <strong>&lt;Parent_DIF&gt;</strong> field. In some instances, a child may point to more than one parent. The <strong>&lt;Parent_DIF&gt;</strong> is populated with an <strong>&lt;Entry_ID&gt;. </strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IDN Node</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Internal Directory Name (IDN) Node <strong>(&lt;IDN_Node&gt;</strong>) field
-is used internally to identify association, responsibility and/or
-ownership of the dataset, service or supplemental information.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Internal Directory Name (IDN) Node <strong>(&lt;IDN_Node&gt;</strong>) field is used internally to identify association, responsibility and/or ownership of the dataset, service or supplemental information.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DIF Creation Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;DIF_Creation_Date&gt;</strong> specifies the date the
-metadata record was created.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;DIF_Creation_Date&gt;</strong> specifies the date the metadata record was created.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Last DIF Revision Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Last_DIF_Revision_Date&gt;</strong> specifies the
-date the metadata record was created.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Last_DIF_Revision_Date&gt;</strong> specifies the date the metadata record was created.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Future DIF Review Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Future_DIF_Review_Date&gt;</strong> allows for the
-specification of a future date at which the DIF should be reviewed for
-accuracy of scientific or technical content.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Future_DIF_Review_Date&gt;</strong> allows for the specification of a future date at which the DIF should be reviewed for accuracy of scientific or technical content.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Privacy Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Private&gt;</strong> field allows the author to restrict the
-data set description from being publicly available.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Private&gt;</strong> field allows the author to restrict the data set description from being publicly available.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extended Metadata</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Extended_Metadata&gt;</strong> field will allow
-organizations to store user defined values within the metadata record
-without reusing existing GCMD defined metadata fields.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Extended_Metadata&gt;</strong> field will allow organizations to store user defined values within the metadata record without reusing existing GCMD defined metadata fields.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O<sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup></p></td>
 </tr>
@@ -1516,10 +1439,7 @@ without reusing existing GCMD defined metadata fields.</p></td>
 <strong>Recommendation</strong>
 </td>
 <td class="hdlist2">
-<p>GCMD comes with a number of predefined controlled vocabularies that
-should be used in specific sections of the metadata. As indicated in the
-table above some sections are free text in GCMD while it is suggested to
-use controlled vocabularies in SDMS context.</p>
+<p>GCMD comes with a number of predefined controlled vocabularies that should be used in specific sections of the metadata. As indicated in the table above some sections are free text in GCMD while it is suggested to use controlled vocabularies in SDMS context.</p>
 </td>
 </tr>
 <tr>
@@ -1527,8 +1447,7 @@ use controlled vocabularies in SDMS context.</p>
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>GCMD do not require a controlled vocabulary for the quality element.
-SDMS should to improve search results<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>.</p>
+<p>GCMD do not require a controlled vocabulary for the quality element.  SDMS should to improve search results<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>.</p>
 </td>
 </tr>
 <tr>
@@ -1536,12 +1455,7 @@ SDMS should to improve search results<sup class="footnote">[<a id="_footnoteref_
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>Related_URL has several subtypes. The existing
-<a href="http://gcmdservices.gsfc.nasa.gov/static/kms/rucontenttype/rucontenttype.csv">list
-of type and subtype</a> must be used to allow the SIOS Data Portal to
-filter the purpose of the URLs provided. When types are “View Data Set
-Landing Page”, “View Extended Metadata”, “View Professional Home Page”,
-and “View Project Home Page”, no subtype is needed.</p>
+<p>Related_URL has several subtypes. The existing <a href="http://gcmdservices.gsfc.nasa.gov/static/kms/rucontenttype/rucontenttype.csv">list of type and subtype</a> must be used to allow the SIOS Data Portal to filter the purpose of the URLs provided. When types are “View Data Set Landing Page”, “View Extended Metadata”, “View Professional Home Page”, and “View Project Home Page”, no subtype is needed.</p>
 </td>
 </tr>
 <tr>
@@ -1549,8 +1463,7 @@ and “View Project Home Page”, no subtype is needed.</p>
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p> All times must be encoded as ISO8601 either as YYYY-MM-DD or
-YYYY-MM-DDTHH:MM:SSZ.</p>
+<p>All times must be encoded as ISO8601 either as YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ.</p>
 </td>
 </tr>
 </table>
@@ -1563,35 +1476,13 @@ YYYY-MM-DDTHH:MM:SSZ.</p>
 <div class="sect3">
 <h4 id="_background_3"><a class="anchor" href="#_background_3"></a>2.2.1. Background</h4>
 <div class="paragraph">
-<p>While interoperability at the metadata level is important for SDMS,
-exchange of observations and data products is vital to the success of
-SDMS. This implies both exchange of archived data as well as exchange of
-real time information. In order to facilitate such exchange of
-information within the SDMS community a certain level of standardisation
-is required, especially in order to be able to automatically combine
-multiple datasets into a new dataset fulfilling user requirements (e.g.
-for CalVal activities). This standardisation is also required to ensure
-that all users can easily understand the data that is made available and
-perform intercomparisons as well as use it in analyses.</p>
+<p>While interoperability at the metadata level is important for SDMS, exchange of observations and data products is vital to the success of SDMS. This implies both exchange of archived data as well as exchange of real time information. In order to facilitate such exchange of information within the SDMS community a certain level of standardisation is required, especially in order to be able to automatically combine multiple datasets into a new dataset fulfilling user requirements (e.g.  for CalVal activities). This standardisation is also required to ensure that all users can easily understand the data that is made available and perform intercomparisons as well as use it in analyses.</p>
 </div>
 <div class="paragraph">
-<p>In this context documentation of data through standardised use metadata
-is required. By use metadata is understood identification of the
-variables, their structure (e.g. spatiotemporal dimensions and mapping
-to file format), units of variables, encoding of missing values,
-quality/accuracy estimates, map projection and coordinate reference
-system etc.</p>
+<p>In this context documentation of data through standardised use metadata is required. By use metadata is understood identification of the variables, their structure (e.g. spatiotemporal dimensions and mapping to file format), units of variables, encoding of missing values, quality/accuracy estimates, map projection and coordinate reference system etc.</p>
 </div>
 <div class="paragraph">
-<p>Application of a common data model simplifies integration and
-intercomparison of datasets. Application of NetCDF<a href="#anchor-17">[19]</a>
-as the file format, utilising the Climate and
-Forecast<a href="#anchor-18">[20]</a> convention and serving data through
-OPeNDAP<a href="#anchor-19">[21]</a> simplifies the issue of integration and
-combination of data through the Common Data Model<a href="#anchor-20">[22]</a>.
-Other solutions may be added, but this is an easy win and address
-requirements both within numerical simulation communities, satellite
-CalVal communities and WMO programmes.</p>
+<p>Application of a common data model simplifies integration and intercomparison of datasets. Application of NetCDF<a href="#anchor-17">[19]</a> as the file format, utilising the Climate and Forecast<a href="#anchor-18">[20]</a> convention and serving data through OPeNDAP<a href="#anchor-19">[21]</a> simplifies the issue of integration and combination of data through the Common Data Model<a href="#anchor-20">[22]</a>.  Other solutions may be added, but this is an easy win and address requirements both within numerical simulation communities, satellite CalVal communities and WMO programmes.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1600,23 +1491,13 @@ CalVal communities and WMO programmes.</p>
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>Where possible, OPeNDAP should be supported for data access
-(combining multiple physical files to a single virtual dataset).</p>
+<p>Where possible, OPeNDAP should be supported for data access (combining multiple physical files to a single virtual dataset).</p>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Several OPeNDAP implementations exist (e.g.
-<a href="http://www.unidata.ucar.edu/software/thredds/current/tds/">THREDDS</a>,
-<a href="https://coastwatch.pfeg.noaa.gov/erddap/index.html">ERDDAP</a>,
-<a href="http://docs.opendap.org/index.php/Hyrax">Hyrax</a> and
-<a href="http://www.pydap.org/">pyDAP</a>). pyDAP can integrate with relational
-databases. Utilisation of OPeNDAP simplifies handling of both archive
-and real time data as the real time segmentation of data is performed by
-the client asking for data. <em>OPeNDAP also minimises the overhead as no
-files are moved, the client connects to data streams, reads the
-necessary data and close the connection.</em></p>
+<p>Several OPeNDAP implementations exist (e.g.  <a href="http://www.unidata.ucar.edu/software/thredds/current/tds/">THREDDS</a>, <a href="https://coastwatch.pfeg.noaa.gov/erddap/index.html">ERDDAP</a>, <a href="http://docs.opendap.org/index.php/Hyrax">Hyrax</a> and <a href="http://www.pydap.org/">pyDAP</a>). Utilisation of OPeNDAP simplifies handling of both archive and real time data as the real time segmentation of data is performed by the client asking for data. <em>OPeNDAP also minimises the overhead as no files are moved, the client connects to data streams, reads the necessary data and close the connection.</em></p>
 </div>
 </div>
 <div class="sect3">
@@ -1624,30 +1505,16 @@ necessary data and close the connection.</em></p>
 <div class="sect4">
 <h5 id="introduction-2"><a class="anchor" href="#introduction-2"></a>2.2.2.1. Introduction</h5>
 <div class="paragraph">
-<p>Traditionally data has been exchanged using FTP in various file formats.
-Modern technology opens up for other mechanisms for transporting data.
-Many technologies share some features, but there are differences in
-complexity and cost of implementation.</p>
+<p>Traditionally data has been exchanged using FTP in various file formats.  Modern technology opens up for other mechanisms for transporting data.  Many technologies share some features, but there are differences in complexity and cost of implementation.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="httpftp"><a class="anchor" href="#httpftp"></a>2.2.2.2. HTTP/FTP</h5>
 <div class="paragraph">
-<p>This is the easiest manner to support data exchange, but it has
-limitations for large datasets as well as there is no common data model
-or standardisation of file formats. Often data are served in various
-ASCII formats that differs from data centre to data centre without any
-standardised metadata simplifying the process of understanding and using
-the data. Integration of data from various data centres usually takes
-much human effort. This is simplified if standardised formats like WMO
-BUFR or WMO Grib are used, but also for these additional information is
-required to fully understand the content. Data in NetCDF following the
-Climate and Forecast Convention is self explainable and connects to the
-Common Data Model.</p>
+<p>This is the easiest manner to support data exchange, but it has limitations for large datasets as well as there is no common data model or standardisation of file formats. Often data are served in various ASCII formats that differs from data centre to data centre without any standardised metadata simplifying the process of understanding and using the data. Integration of data from various data centres usually takes much human effort. This is simplified if standardised formats like WMO BUFR or WMO Grib are used, but also for these additional information is required to fully understand the content. Data in NetCDF following the Climate and Forecast Convention is self explainable and connects to the Common Data Model.</p>
 </div>
 <div class="paragraph">
-<p>Segmentation of real time data has to be supported by the contributing
-data centre.</p>
+<p>Segmentation of real time data has to be supported by the contributing data centre.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1656,9 +1523,7 @@ data centre.</p>
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>Whenever data are served as direct download through HTTP or FTP, data
-should be served in a FAIR compliant dataformat using standardised
-encoding structures and vocabularies.</p>
+<p>Whenever data are served as direct download through HTTP or FTP, data should be served in a FAIR compliant data format, see <a href="#file_formats">[file_formats]</a> using standardised encoding structures and vocabularies.</p>
 </td>
 </tr>
 </table>
@@ -1667,65 +1532,106 @@ encoding structures and vocabularies.</p>
 <div class="sect4">
 <h5 id="opendap"><a class="anchor" href="#opendap"></a>2.2.2.3. OPeNDAP</h5>
 <div class="paragraph">
-<p>The Data Access Protocol simplifies integration of data from various
-data centres as it is utilising the
-<a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">Common
-Data Model</a>, provided input data are encoded according to Climate and
-Forecast conventions use metadata follows the data and the application
-of a data stream removes the step of downloading a file and keeping
-track of this while working on the data. It also allows segmentation of
-data in variable space and time and it is
-RESTful<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup>.
-OPenDAP can relate to files or relational data base systems and is
-extensively used by e.g. Copernicus services, Earth System Grid
-Federation and others.</p>
+<p>The Data Access Protocol simplifies integration of data from various data centres as it is utilising the <a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">Common Data Model</a>, provided input data are encoded according to Climate and Forecast conventions use metadata follows the data and the application of a data stream removes the step of downloading a file and keeping track of this while working on the data. It also allows segmentation of data in variable space and time and it is RESTful<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup>.  OPenDAP can relate to files or relational data base systems and is extensively used by e.g. Copernicus services, Earth System Grid Federation and others.</p>
 </div>
 <div class="paragraph">
-<p>SDMS is currently able to consume OPeNDAP enabled datasets, but the level
-of support depends on the structure and standards (CF) conformance of the
-data served.</p>
+<p>SDMS is currently able to consume OPeNDAP enabled datasets, but the level of support depends on the structure and standards (CF) conformance of the data served.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+To enable automatic visualisation of timeseries data at stations, data has to be encoded as NetCDF-CF with the featureType global attribute set.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Further information to be added on visualisation requirements.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect4">
 <h5 id="ogc-wfs"><a class="anchor" href="#ogc-wfs"></a>2.2.2.4. OGC WFS</h5>
 <div class="paragraph">
-<p>OGC Web Feature Service (WFS) is a mechanism allowing subsetting of
-information, but relies on transferring files in Geography Markup
-Language (GML). There is no standardised form for use metadata in GML.
-GML behaves like NetCDF without the Climate and Forecast convention. It
-is a container that can hold anything. GML is a XML schema and so it can
-be combined/extended with other XML schemas.</p>
+<p>OGC Web Feature Service (WFS) is a mechanism allowing subsetting of information, but relies on transferring files in Geography Markup Language (GML). There is no standardised form for use metadata in GML.  GML behaves like NetCDF without the Climate and Forecast convention. It is a container that can hold anything. GML is a XML schema and so it can be combined/extended with other XML schemas.</p>
 </div>
 <div class="paragraph">
-<p>SDMS is currently <strong>not</strong> able to consume OGC WFS and implementation is not
-recommended until the OGC API is more mature. The new OGC API will be able
-to serve data as e.g. NetCDF/CF and GeoJSON in addition to the other
-formats.</p>
+<p>SDMS is currently <strong>not</strong> able to consume OGC WFS and implementation is not recommended until the OGC API is more mature. The new OGC API will be able to serve data as e.g. NetCDF/CF and GeoJSON in addition to the other formats.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Work is in progress to enable support for the upcoming OGC API approaches.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+The data portal is not able to consume data through OGC WFS.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect4">
 <h5 id="ogc-wcs"><a class="anchor" href="#ogc-wcs"></a>2.2.2.5. OGC WCS</h5>
 <div class="paragraph">
-<p>OGC Web Coverage Service (WCS) is similar to OGC WFS but focuses on
-information representing phenomena that varies in time and space. Like
-WFS it transfers files, but the number of file formats may be extended
-and support e.g. GML, GeoTIFF, HDF-EOS, NetCDF. Like WMS, WCS can also
-transform a set of files to a common map projection and extract a
-specific area of interest in space and time by
-“https://en.wikipedia.org/wiki/Web_Coverage_Service[trimming]” or
-“slicing”,</p>
+<p>OGC Web Coverage Service (WCS) is similar to OGC WFS but focuses on information representing phenomena that varies in time and space. Like WFS it transfers files, but the number of file formats may be extended and support e.g. GML, GeoTIFF, HDF-EOS, NetCDF. Like WMS, WCS can also transform a set of files to a common map projection and extract a specific area of interest in space and time by “https://en.wikipedia.org/wiki/Web_Coverage_Service[trimming]” or “slicing”,</p>
 </div>
 <div class="paragraph">
-<p>SDMS is currently <strong>not</strong> able to consume OGC WCS and implementation is not
-recommended until the OGC API is more mature.</p>
+<p>SDMS is currently <strong>not</strong> able to consume OGC WCS and implementation is not recommended until the OGC API is more mature.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Work is in progress to enable support for the upcoming OGC API approaches.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+SDMS is not able to consume data through OGC WCS.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect4">
 <h5 id="ogc-wms-map-projections"><a class="anchor" href="#ogc-wms-map-projections"></a>2.2.2.6. OGC WMS map projections</h5>
 <div class="paragraph">
-<p>OGC Web Mapping Service (WMS) is useful for visualising maps etc. It
-provides a graphical representation of data but no access to data in
-itself.</p>
+<p>OGC Web Mapping Service (WMS) is useful for visualising maps etc. It provides a graphical representation of data but no access to data in itself.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1759,16 +1665,13 @@ itself.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>SDMS is only able to consume WMS services that provide a GetCapability
-document per dataset and where the WMS URL is clearly identified using
-standardised vocabularies (currently GCMD and OSGEO are supported).</p>
+<p>SDMS is only able to consume WMS services that provide a GetCapability document per dataset and where the WMS URL is clearly identified using standardised vocabularies (currently GCMD and OSGEO are supported).</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><strong>Recommendation:</strong></dt>
 <dd>
-<p>OGC WMS services should present a Getcapabilities document per dataset,
-not a common document for all datasets served.</p>
+<p>OGC WMS services should present a Getcapabilities document per dataset, not a common document for all datasets served.</p>
 </dd>
 </dl>
 </div>
@@ -2002,7 +1905,7 @@ exist.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-21 17:03:06 UTC
+Last updated 2022-01-21 17:19:23 UTC
 </div>
 </div>
 </body>
