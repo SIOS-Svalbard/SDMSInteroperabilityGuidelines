@@ -8,7 +8,7 @@ ISO19115 records *must* at least state the unique id, temporal and spatial locat
 *Recommendation:*::  
 ISO19115 records *should* contain GCMD Science Keywords (with full hierarchy from Earth Science and using > as separator) or some other machine readable vocabulary following the FAIR guiding principles <<#anchor-22,[24]>>. The vocabulary used must be identified.
 *Recommendation:*::  
-For stations where it is relevant (e.g. stations contributing to WMO GCW through CryoNet) it is mandatory to have one keyword from the WMO CategoryCode list <<#anchor-16,[18]>> footnote:[There is currently no way of including this information in GCMD DIF, although a mapping to ISO TopicCategories may be used. ]. Relevant keywords for SDMS are e.g. weatherObservations, meteorology, hydrology, climatology, glaciology. In the context of SDMS alone, this is not a requirement.
+For stations where it is relevant (e.g. stations contributing to WMO GCW through CryoNet) it is mandatory to have one keyword from the WMO CategoryCode list <<#anchor-16,[18]>>footnote:[There is currently no way of including this information in GCMD DIF, although a mapping to ISO TopicCategories may be used. ]. Relevant keywords for SDMS are e.g. weatherObservations, meteorology, hydrology, climatology, glaciology. In the context of SDMS alone, this is not a requirement.
 *Recommendation*::
 Metadata records *should* include information on the host data centre for the dataset.
 *Recommendation:*::  
@@ -21,68 +21,58 @@ NOTE: More details to be added on ISO19115 guidance. In particular on how to emb
 (only one occurrence allowed) and require utilisation of **C**ontrolled
 vocabularies.
 
+IMPORTANT: The table below is under review.
+
 [[iso19115-core-elements]]
-[cols=",,,",title="ISO19115 core elements. The WMO Core Profile is more extensive."]
+[cols="~,~,~,~,~",title="ISO19115 core elements."]
 |=======================================================================
-|Element |Description |ISO |SDMS 
+|Element name |Description |ISO element |ISO |SDMS 
 
-|Dataset title |A short title for the dataset. |M |M
+|Dataset title |A short title for the dataset. | |M |M
 
-|Dataset reference date |Temporal extent of the dataset. |M |M
+|Dataset reference date |Temporal extent of the dataset. | |M |M
 
 |Dataset responsible party |Principal investigator and affiliated
-institution as well as contact details. |O |M
+institution as well as contact details. | |O |M
 
-|Geographic location of the dataset |Spatial extent of the dataset. |O
+|Geographic location of the dataset |Spatial extent of the dataset. | |O
 |M
 
-|Keyword |A word or phrase that describes some aspect of a resource. Can
-be one of several types. It is used to describe the parameters in a
-dataset, the project affiliation etc. Proper identification of the purpose
-of the keywords and the vocabularies used is required. Project names are
-used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020
-etc. |O |M
+|Keyword |A word or phrase that describes some aspect of a resource. Can be one of several types. It is used to describe the parameters in a dataset, the project affiliation etc. Proper identification of the purpose of the keywords and the vocabularies used is required. Project names are used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020 etc. | |O |M
 
-|Dataset language |Should be English. |M |M
+|Dataset language |Should be English. | |M |M
 
-|Dataset character set |Should be UTF-8. |O |O
+|Dataset character set |Should be UTF-8. | |O |O
 
-|Dataset topic category |ISO Topic Category. |O |O
+|Dataset topic category |ISO Topic Category. | |O |O
 
 |Spatial resolution of the dataset | |O |O
 
-|Abstract describing the dataset |Short summary describing the dataset.
-|M |M
+|Abstract describing the dataset |Short summary describing the dataset.  | |M |M
 
-|Distribution format |Should be NetCDF/CF or Darwin Core Archive in
-SDMS. Other standardised formats may be supported later. Non standard
-formats should have a detailed product manual. |O |M
+|Distribution format |Should be NetCDF/CF or Darwin Core Archive in SDMS. Other standardised formats may be supported later. Non standard formats should have a detailed product manual. | |O |M
 
-|Additional extent information for the dataset (vertical and temporal) |
-|O |M
+|Additional extent information for the dataset (vertical and temporal) | | |O |M
 
-|Spatial representation type | |O |RC
+|Spatial representation type | | |O |RC
 
-|Reference system | |O |O
+|Reference system | | |O |O
 
-|Lineage |What is done with the data since collection. |O |R
+|Lineage |What is done with the data since collection. | |O |R
 
-|On-line resource |URL to the actual dataset accompanied with
-identification of the protocol supported. OSGEO or GCMD keywords are
-required for proper interpretation. |O |MC
+|On-line resource |URL to the actual dataset accompanied with identification of the protocol supported. OSGEO or GCMD keywords are required for proper interpretation. | |O |MC
 
-|Metadata file identifier |UUID or similar used to remove duplicates and
-interprete data in context. |O |M
+|Metadata file identifier |UUID or similar used to remove duplicates and interpret data in context. | |O |M
 
-|Metadata standard name | |O |RC
+|Metadata standard name | | |O |RC
 
-|Metadata standard version | |O |RC
+|Metadata standard version | | |O |RC
 
-|Metadata language | |O |RC
+|Metadata language | | |O |RC
 
-|Metadata character set | |O |RC
+|Metadata character set | | |O |RC
 
-|Metadata point of contact | |M |M
+|Metadata point of contact | | |M |M
 
-|Metadata date stamp | |M |MC
+|Metadata date stamp | | |M |MC
 |=======================================================================
