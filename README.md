@@ -1,8 +1,12 @@
-# SDMSInteroperabilityGuidelines
-Interoperability Guidelines for the SIOS Data Management System (SDMS).
+# Interoperability Guidelines for the SIOS Data Management System (SDMS).
 
 ## Purpose
 The purpose of this repository is to establish a collaborative work flow developing the SIOS Data Management System (SDMS) interoperability guidelines. These are used to define how contributing data centres can connect to the SDMS. 
+
+The guidelines are automatically processed into a PDF and HTML variant. These versions are available through the links below. Please beware that the document provided through the links is the most recent working copy.
+
+- [PDF](https://github.com/SIOS-Svalbard/SDMSInteroperabilityGuidelines/blob/master/doc/sdms_iog.pdf)
+- [HTML](https://htmlpreview.github.io/?https://github.com/SIOS-Svalbard/SDMSInteroperabilityGuidelines/blob/master/doc/sdms_iog.html)
 
 ## Setup
 Documents are transformed from the original OpenDocumentFormat into ASCIIDOC. Guidelines on how to format ASCIIDOC are available at
