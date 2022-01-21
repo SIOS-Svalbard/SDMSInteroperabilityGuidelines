@@ -467,7 +467,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">0.x</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2022-01-21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Updates following lessons learned in harvesting especially from GeoNetwork</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates following lessons learned in harvesting especially from GeoNetwork. Added outline for product manual.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Øystein Godøy</p></td>
 </tr>
 <tr>
@@ -591,10 +591,10 @@ the WMO Global Cryosphere Watch.</p></td>
 </li>
 </ul>
 </li>
-<li><a href="#_template_for_product_manual">Appendix A: Template for Product Manual</a>
+<li><a href="#_outline_for_product_manual">Appendix A: Outline for Product Manual</a>
 <ul class="sectlevel2">
 <li><a href="#_introduction_3">A.1. Introduction</a></li>
-<li><a href="#_template">A.2. Template</a></li>
+<li><a href="#_outline">A.2. Outline</a></li>
 </ul>
 </li>
 </ul>
@@ -1851,7 +1851,7 @@ SDMS will extract information in BUFR format and convert this to NetCDF-CF and m
 </div>
 </div>
 <div class="sect1">
-<h2 id="_template_for_product_manual"><a class="anchor" href="#_template_for_product_manual"></a>Appendix A: Template for Product Manual</h2>
+<h2 id="_outline_for_product_manual"><a class="anchor" href="#_outline_for_product_manual"></a>Appendix A: Outline for Product Manual</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_introduction_3"><a class="anchor" href="#_introduction_3"></a>A.1. Introduction</h3>
@@ -1860,23 +1860,57 @@ SDMS will extract information in BUFR format and convert this to NetCDF-CF and m
 </div>
 </div>
 <div class="sect2">
-<h3 id="_template"><a class="anchor" href="#_template"></a>A.2. Template</h3>
+<h3 id="_outline"><a class="anchor" href="#_outline"></a>A.2. Outline</h3>
 <div class="paragraph">
 <p>Outline of sections that should be covered by a product manual for data that cannot be described in a FAIR compliant file format.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+The file formats used should always be free and open, not commercial.
+</td>
+</tr>
+</table>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Introduction</p>
+<p>Introduction
+..</p>
 </li>
 <li>
 <p>Description of the data</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Description of which variables that are measured, their characteristics including units on variables etc.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
 <p>Description of the file format</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Description of structure and organisation of the data within this file format. Should include all necessary information to decode the file.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
 <p>References to software</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Description of and links to software that can read and interpret the data. Should focus on open software. Alternatively code snippets for Python, R etc could be embedded in the document.</p>
+</li>
+</ol>
+</div>
 </li>
 </ol>
 </div>
@@ -1922,7 +1956,7 @@ SDMS will extract information in BUFR format and convert this to NetCDF-CF and m
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-21 17:40:19 UTC
+Last updated 2022-01-21 17:46:15 UTC
 </div>
 </div>
 </body>
