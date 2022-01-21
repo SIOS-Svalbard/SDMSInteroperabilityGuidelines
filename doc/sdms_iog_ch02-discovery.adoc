@@ -75,7 +75,7 @@ Work is in progress to enable support for schema.org.
 
 NOTE: More information on schema.org to be added.
 
-==== Structures
+==== Information structures for discovery metadata
 
 include::sdms_iog_ch02-discovery-iso19115.adoc[]
 

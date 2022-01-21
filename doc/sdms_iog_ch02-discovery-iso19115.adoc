@@ -1,37 +1,20 @@
 ===== ISO19115
 
-The WMO Core Profile <<#anchor-9,[10]>> is a profile of the ISO19115
-metadata standard and is recommended for use within SDMS for discovery
-metadata. However, ISO19115 is a container that can be populated with
-several controlled vocabularies in some of the elements. The search
-model for the SIOS Data Portal is currently built around parameter
-descriptions using the GCMD Science Keywords <<#anchor-14,[16]>>. A
-mapping exist between Climate and Forecast standard names
-<<#anchor-15,[17]>> and GCMD Science Keywords.
+ISO19115 is a information container that can be populated with several controlled vocabularies in some of the elements. The search model for the SIOS Data Portal is currently built around parameter descriptions using the GCMD Science Keywords <<#anchor-14,[16]>>. A mapping exist between Climate and Forecast standard names <<#anchor-15,[17]>> and GCMD Science Keywords. ISO 19115 is used by e.g. INSPIRE at the European level and WMO (WMO Core Profile <<#anchor-9,[10]>>) at the global level.
 
 [horizontal]
 *Recommendation:*::  
-ISO19115 records *must* at least state the unique id, temporal and
-spatial location, scientific content, responsible data centre and PI as
-well as links to the actual datafootnote:[This recommendation will be
-revisited. ]. Datasets without such specifications are not ingested in
-the catalogue.
+ISO19115 records *must* at least state the unique id, temporal and spatial location, scientific content, responsible data centre and PI as well as links to the actual datafootnote:[This recommendation will be revisited. ]. Datasets without such specifications are not ingested in the catalogue.
 *Recommendation:*::  
-ISO19115 records, regardless of whether being mandatory elements or
-the full WMO Profile *should* contain GCMD Science Keywords or some other
-machine readable vocabulary following the FAIR guiding
-principles <<#anchor-22,[24]>>. The vocabulary used must be identified.
+ISO19115 records *should* contain GCMD Science Keywords (with full hierarchy from Earth Science and using > as separator) or some other machine readable vocabulary following the FAIR guiding principles <<#anchor-22,[24]>>. The vocabulary used must be identified.
 *Recommendation:*::  
-For stations where it is relevant (e.g. stations contributing to WMO GCW
-through CryoNet) it is mandatory to have
-one keyword from the WMO CategoryCode list <<#anchor-16,[18]>>
-footnote:[There is currently no way of including this information in
-GCMD DIF, although a mapping to ISO TopicCategories may be used. ].
-Relevant keywords for SDMS are e.g. weatherObservations, meteorology,
-hydrology, climatology, glaciology. In the context of SDMS alone, this is
-not a requirement.
+For stations where it is relevant (e.g. stations contributing to WMO GCW through CryoNet) it is mandatory to have one keyword from the WMO CategoryCode list <<#anchor-16,[18]>> footnote:[There is currently no way of including this information in GCMD DIF, although a mapping to ISO TopicCategories may be used. ]. Relevant keywords for SDMS are e.g. weatherObservations, meteorology, hydrology, climatology, glaciology. In the context of SDMS alone, this is not a requirement.
+*Recommendation*::
+Metadata records *should* include information on the host data centre for the dataset.
 *Recommendation:*::  
 All times must be encoded as ISO8601.
+
+NOTE: More details to be added on ISO19115 guidance. In particular on how to embed references to the vocabularies used and information on the data centre hosting the data.
 
 <<iso19115-core-elements>> shows elements in ISO19115 and whether these are **M**andatory,
 **R**ecommended or **O**ptional, as well as whether they are **U**nique
