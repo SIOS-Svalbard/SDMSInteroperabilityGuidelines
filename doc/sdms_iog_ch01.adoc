@@ -2,63 +2,15 @@
 
 === Background
 
-Environmental and climate changes are currently observed at a global
-scale and in particular in the Arctic. In order to give better estimates
-of the future changes, the Arctic has to be monitored and analysed by a
-multi-disciplinary observation system which is suited to validate and
-gradually improve Earth System Models. The best chance to achieve
-significant results within a relatively short time frame is found in
-regions with a large natural climate gradient, and where processes
-sensitive to the expected changes are particularly important.
+Environmental and climate changes are currently observed at a global scale and in particular in the Arctic. In order to give better estimates of the future changes, the Arctic has to be monitored and analysed by a multi-disciplinary observation system which is suited to validate and gradually improve Earth System Models. The best chance to achieve significant results within a relatively short time frame is found in regions with a large natural climate gradient, and where processes sensitive to the expected changes are particularly important.
 
-Svalbard and the surrounding ocean areas fulfil all these criteria:
-Svalbard is located in a region with a very large climate gradient,
-being alternately influenced by cold central Arctic or mild marine
-climate conditions at time scales of weeks to years. It is also located
-in the region with the strongest inflow and outflow processes between
-the Arctic and lower-latitude oceans. In addition, Svalbard is the only
-region in the world (and has the facilities) where one can study and
-quantify one of the remaining unknowns in the climate puzzle: the
-extraterrestrial and especially solar influence on climate.
+Svalbard and the surrounding ocean areas fulfil all these criteria: Svalbard is located in a region with a very large climate gradient, being alternately influenced by cold central Arctic or mild marine climate conditions at time scales of weeks to years. It is also located in the region with the strongest inflow and outflow processes between the Arctic and lower-latitude oceans. In addition, Svalbard is the only region in the world (and has the facilities) where one can study and quantify one of the remaining unknowns in the climate puzzle: the extraterrestrial and especially solar influence on climate.
 
-The vision for the Svalbard Integrated Arctic Earth Observing System
-(SIOS) is to be a regional observational system for long term
-acquisition and proliferation of fundamental knowledge on global
-environmental change (GEC) within an Earth System Science (ESS)
-perspective in and around Svalbard. SIOS will systematically develop and
-implement methods for how observational networks are to be construed and
-thus become a leader regarding observational systems in the Arctic and
-Polar regions.The SIOS Data Management System (SDMS) Data Portal is the
-entry point to SIOS datasets. It offers a web interface that contains
-information about datasets (metadata). These metadata are harvested on a
-regular basis from data centres contributing to SIOS. These data centres
-manage the data on behalf of the owners/providers of the data.
+The vision for the Svalbard Integrated Arctic Earth Observing System (SIOS) is to be a regional observational system for long term acquisition and proliferation of fundamental knowledge on global environmental change (GEC) within an Earth System Science (ESS) perspective in and around Svalbard. SIOS will systematically develop and implement methods for how observational networks are to be construed and thus become a leader regarding observational systems in the Arctic and Polar regions.The SIOS Data Management System (SDMS) Data Portal is the entry point to SIOS datasets. It offers a web interface that contains information about datasets (metadata). These metadata are harvested on a regular basis from data centres contributing to SIOS. These data centres manage the data on behalf of the owners/providers of the data.
 
-A major innovative element of SIOS will be the Knowledge Centre (KC),
-which will facilitate interaction between observation, modelling and
-process research, strategic processes, a service point to user
-communities and a platform for data handling and utilization
-<<#anchor-4,[3]>>. The
-SIOS Data Management System (SDMS) will be a functionality enabling
-component of the Knowledge Centre, supporting data submission,
-discovery, access, use and preservation of SIOS relevant data sets.
+A major innovative element of SIOS will be the Knowledge Centre (KC), which will facilitate interaction between observation, modelling and process research, strategic processes, a service point to user communities and a platform for data handling and utilization <<#anchor-4,[3]>>. The SIOS Data Management System (SDMS) will be a functionality enabling component of the Knowledge Centre, supporting data submission, discovery, access, use and preservation of SIOS relevant data sets.
 
-For the SDMS the term “data set” is defined in line with the INSPIRE
-Directive as “an identifiable collection of spatial data”, i.e. a
-collection of data that has a reference by name or coordinates to a
-geographic location or area, and which in addition have a designated
-start and end time. A data set can contain observations (remote or in
-situ), derived quantities (from either of these two types of data
-sources) or forecasts of future states of environmental parameters. The
-data values can be located at a single point, along a line or transect,
-in a regular or irregular grid, and be captured or estimated at one or
-more altitudes/depths. A data set can be stored on paper, in files (one
-or more), or in a database, and is often accompanied by descriptions
-(metadata) of its content. The purpose of the SDMS is to the SIOS user
-community with a single entry point to relevant datasets. It is however
-not the purpose to centralise all data, but rather to integrate existing
-and future data centres contributing to SIOS using machine readable
-interfaces to metadata and data.
+For the SDMS the term “data set” is defined in line with the INSPIRE Directive as “an identifiable collection of spatial data”, i.e. a collection of data that has a reference by name or coordinates to a geographic location or area, and which in addition have a designated start and end time. A data set can contain observations (remote or in situ), derived quantities (from either of these two types of data sources) or forecasts of future states of environmental parameters. The data values can be located at a single point, along a line or transect, in a regular or irregular grid, and be captured or estimated at one or more altitudes/depths. A data set can be stored on paper, in files (one or more), or in a database, and is often accompanied by descriptions (metadata) of its content. The purpose of the SDMS is to the SIOS user community with a single entry point to relevant datasets. It is however not the purpose to centralise all data, but rather to integrate existing and future data centres contributing to SIOS using machine readable interfaces to metadata and data.
 
 The first version of this document is based on a similar document
 developed for WMO Global Cryosphere Watch.
@@ -75,14 +27,7 @@ access to data via defined set of data access interfaces. Emphasis is
 primarily on the semantics and structure of interfaces to metadata and
 data, and less on underlying file formats.
 
-The requirements of the document represents a long term goal which
-require funding for full implementation. Some partners have implemented
-parts of the interfaces mentioned while others have a longer way to go.
-This is reflected in the prioritised functionality to implement. in the
-implementation plan of the SIOS Preparatory Phase <<#anchor-4,[3]>>,
-see section 5.3.1footnote:[The official version of this document has
-some issues with references, an updated version will be made available
-within the collaboration area for the SDMS WG. ].
+The requirements of the document represents a long term goal which require funding for full implementation. Some partners have implemented parts of the interfaces mentioned while others have a longer way to go. This is reflected in the prioritised functionality to implement as outlined in the implementation plan of the SIOS Preparatory Phase <<#anchor-4,[3]>>, see section 5.3.1footnote:[The official version of this document has some issues with references, an updated version will be made available within the collaboration area for the SDMS WG. ].
 
 [[intended-audience]]
 === Intended audience
