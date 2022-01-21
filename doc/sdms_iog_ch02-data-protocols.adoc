@@ -4,91 +4,56 @@
 [[introduction-2]]
 ===== Introduction
 
-Traditionally data has been exchanged using FTP in various file formats.
-Modern technology opens up for other mechanisms for transporting data.
-Many technologies share some features, but there are differences in
-complexity and cost of implementation.
+Traditionally data has been exchanged using FTP in various file formats.  Modern technology opens up for other mechanisms for transporting data.  Many technologies share some features, but there are differences in complexity and cost of implementation.
 
 [[httpftp]]
 ===== HTTP/FTP
 
-This is the easiest manner to support data exchange, but it has
-limitations for large datasets as well as there is no common data model
-or standardisation of file formats. Often data are served in various
-ASCII formats that differs from data centre to data centre without any
-standardised metadata simplifying the process of understanding and using
-the data. Integration of data from various data centres usually takes
-much human effort. This is simplified if standardised formats like WMO
-BUFR or WMO Grib are used, but also for these additional information is
-required to fully understand the content. Data in NetCDF following the
-Climate and Forecast Convention is self explainable and connects to the
-Common Data Model.
+This is the easiest manner to support data exchange, but it has limitations for large datasets as well as there is no common data model or standardisation of file formats. Often data are served in various ASCII formats that differs from data centre to data centre without any standardised metadata simplifying the process of understanding and using the data. Integration of data from various data centres usually takes much human effort. This is simplified if standardised formats like WMO BUFR or WMO Grib are used, but also for these additional information is required to fully understand the content. Data in NetCDF following the Climate and Forecast Convention is self explainable and connects to the Common Data Model.
 
-Segmentation of real time data has to be supported by the contributing
-data centre.
+Segmentation of real time data has to be supported by the contributing data centre.
 
 [horizontal]
 *Recommendation:*::
-Whenever data are served as direct download through HTTP or FTP, data
-should be served in a FAIR compliant dataformat using standardised
-encoding structures and vocabularies.
+Whenever data are served as direct download through HTTP or FTP, data should be served in a FAIR compliant data format, see <<file_formats>> using standardised encoding structures and vocabularies.
 
 [[opendap]]
 ===== OPeNDAP
 
-The Data Access Protocol simplifies integration of data from various
-data centres as it is utilising the
-http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[Common
-Data Model], provided input data are encoded according to Climate and
-Forecast conventions use metadata follows the data and the application
-of a data stream removes the step of downloading a file and keeping
-track of this while working on the data. It also allows segmentation of
-data in variable space and time and it is
-RESTfulfootnote:[http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/].
-OPenDAP can relate to files or relational data base systems and is
-extensively used by e.g. Copernicus services, Earth System Grid
-Federation and others.
+The Data Access Protocol simplifies integration of data from various data centres as it is utilising the http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[Common Data Model], provided input data are encoded according to Climate and Forecast conventions use metadata follows the data and the application of a data stream removes the step of downloading a file and keeping track of this while working on the data. It also allows segmentation of data in variable space and time and it is RESTfulfootnote:[http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/].  OPenDAP can relate to files or relational data base systems and is extensively used by e.g. Copernicus services, Earth System Grid Federation and others.
 
-SDMS is currently able to consume OPeNDAP enabled datasets, but the level
-of support depends on the structure and standards (CF) conformance of the
-data served.
+SDMS is currently able to consume OPeNDAP enabled datasets, but the level of support depends on the structure and standards (CF) conformance of the data served.
+
+IMPORTANT: To enable automatic visualisation of timeseries data at stations, data has to be encoded as NetCDF-CF with the featureType global attribute set.
+
+NOTE: Further information to be added on visualisation requirements.
 
 [[ogc-wfs]]
 ===== OGC WFS
 
-OGC Web Feature Service (WFS) is a mechanism allowing subsetting of
-information, but relies on transferring files in Geography Markup
-Language (GML). There is no standardised form for use metadata in GML.
-GML behaves like NetCDF without the Climate and Forecast convention. It
-is a container that can hold anything. GML is a XML schema and so it can
-be combined/extended with other XML schemas.
+OGC Web Feature Service (WFS) is a mechanism allowing subsetting of information, but relies on transferring files in Geography Markup Language (GML). There is no standardised form for use metadata in GML.  GML behaves like NetCDF without the Climate and Forecast convention. It is a container that can hold anything. GML is a XML schema and so it can be combined/extended with other XML schemas.
 
-SDMS is currently *not* able to consume OGC WFS and implementation is not
-recommended until the OGC API is more mature. The new OGC API will be able
-to serve data as e.g. NetCDF/CF and GeoJSON in addition to the other
-formats.
+SDMS is currently *not* able to consume OGC WFS and implementation is not recommended until the OGC API is more mature. The new OGC API will be able to serve data as e.g. NetCDF/CF and GeoJSON in addition to the other formats.
+
+NOTE: Work is in progress to enable support for the upcoming OGC API approaches.
+
+IMPORTANT: The data portal is not able to consume data through OGC WFS.
 
 [[ogc-wcs]]
 ===== OGC WCS
 
-OGC Web Coverage Service (WCS) is similar to OGC WFS but focuses on
-information representing phenomena that varies in time and space. Like
-WFS it transfers files, but the number of file formats may be extended
-and support e.g. GML, GeoTIFF, HDF-EOS, NetCDF. Like WMS, WCS can also
-transform a set of files to a common map projection and extract a
-specific area of interest in space and time by
-“https://en.wikipedia.org/wiki/Web_Coverage_Service[trimming]” or
-“slicing”,
+OGC Web Coverage Service (WCS) is similar to OGC WFS but focuses on information representing phenomena that varies in time and space. Like WFS it transfers files, but the number of file formats may be extended and support e.g. GML, GeoTIFF, HDF-EOS, NetCDF. Like WMS, WCS can also transform a set of files to a common map projection and extract a specific area of interest in space and time by “https://en.wikipedia.org/wiki/Web_Coverage_Service[trimming]” or “slicing”,
 
-SDMS is currently *not* able to consume OGC WCS and implementation is not
-recommended until the OGC API is more mature. 
+SDMS is currently *not* able to consume OGC WCS and implementation is not recommended until the OGC API is more mature. 
+
+NOTE: Work is in progress to enable support for the upcoming OGC API approaches.
+
+IMPORTANT: SDMS is not able to consume data through OGC WCS.
 
 [[ogc-wms-map-projections]]
 ===== OGC WMS map projections
 
-OGC Web Mapping Service (WMS) is useful for visualising maps etc. It
-provides a graphical representation of data but no access to data in
-itself.
+OGC Web Mapping Service (WMS) is useful for visualising maps etc. It provides a graphical representation of data but no access to data in itself.
 
 [horizontal]
 *Recommendation:*::
@@ -100,10 +65,7 @@ Each WMS server must support the following map projections:
 4.  EPSG:3410: NSIDC EASE-Grid Global
 5.  EPSG:32633: UTM Zone 33x
 
-SDMS is only able to consume WMS services that provide a GetCapability
-document per dataset and where the WMS URL is clearly identified using
-standardised vocabularies (currently GCMD and OSGEO are supported).
+SDMS is only able to consume WMS services that provide a GetCapability document per dataset and where the WMS URL is clearly identified using standardised vocabularies (currently GCMD and OSGEO are supported).
 
 *Recommendation:*::
-OGC WMS services should present a Getcapabilities document per dataset,
-not a common document for all datasets served.
+OGC WMS services should present a Getcapabilities document per dataset, not a common document for all datasets served.
