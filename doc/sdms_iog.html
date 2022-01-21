@@ -952,7 +952,7 @@ More information on schema.org to be added.
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>For stations where it is relevant (e.g. stations contributing to WMO GCW through CryoNet) it is mandatory to have one keyword from the WMO CategoryCode list <a href="#anchor-16">[18]</a> <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>. Relevant keywords for SDMS are e.g. weatherObservations, meteorology, hydrology, climatology, glaciology. In the context of SDMS alone, this is not a requirement.</p>
+<p>For stations where it is relevant (e.g. stations contributing to WMO GCW through CryoNet) it is mandatory to have one keyword from the WMO CategoryCode list <a href="#anchor-16">[18]</a><sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>. Relevant keywords for SDMS are e.g. weatherObservations, meteorology, hydrology, climatology, glaciology. In the context of SDMS alone, this is not a requirement.</p>
 </td>
 </tr>
 <tr>
@@ -991,18 +991,32 @@ More details to be added on ISO19115 guidance. In particular on how to embed ref
 (only one occurrence allowed) and require utilisation of <strong>C</strong>ontrolled
 vocabularies.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+The table below is under review.
+</td>
+</tr>
+</table>
+</div>
 <table id="iso19115-core-elements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. ISO19115 core elements. The WMO Core Profile is more extensive.</caption>
+<caption class="title">Table 1. ISO19115 core elements.</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col>
+<col>
+<col>
+<col>
+<col>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">Element name</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">ISO element</th>
 <th class="tableblock halign-left valign-top">ISO</th>
 <th class="tableblock halign-left valign-top">SDMS</th>
 </tr>
@@ -1011,12 +1025,14 @@ vocabularies.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dataset title</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A short title for the dataset.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dataset reference date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temporal extent of the dataset.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
@@ -1024,41 +1040,42 @@ vocabularies.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dataset responsible party</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Principal investigator and affiliated
 institution as well as contact details.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Geographic location of the dataset</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Spatial extent of the dataset.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keyword</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A word or phrase that describes some aspect of a resource. Can
-be one of several types. It is used to describe the parameters in a
-dataset, the project affiliation etc. Proper identification of the purpose
-of the keywords and the vocabularies used is required. Project names are
-used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020
-etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A word or phrase that describes some aspect of a resource. Can be one of several types. It is used to describe the parameters in a dataset, the project affiliation etc. Proper identification of the purpose of the keywords and the vocabularies used is required. Project names are used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020 etc.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dataset language</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Should be English.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dataset character set</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Should be UTF-8.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dataset topic category</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ISO Topic Category.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 </tr>
@@ -1067,95 +1084,98 @@ etc.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Abstract describing the dataset</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Short summary describing the dataset.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Distribution format</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Should be NetCDF/CF or Darwin Core Archive in
-SDMS. Other standardised formats may be supported later. Non standard
-formats should have a detailed product manual.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Additional extent information for the dataset (vertical and temporal)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Should be NetCDF/CF or Darwin Core Archive in SDMS. Other standardised formats may be supported later. Non standard formats should have a detailed product manual.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Additional extent information for the dataset (vertical and temporal)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Spatial representation type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reference system</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lineage</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lineage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">What is done with the data since collection.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">On-line resource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URL to the actual dataset accompanied with
-identification of the protocol supported. OSGEO or GCMD keywords are
-required for proper interpretation.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL to the actual dataset accompanied with identification of the protocol supported. OSGEO or GCMD keywords are required for proper interpretation.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Metadata file identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UUID or similar used to remove duplicates and
-interprete data in context.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UUID or similar used to remove duplicates and interpret data in context.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Metadata standard name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Metadata standard version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Metadata language</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Metadata character set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Metadata point of contact</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata date stamp</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata date stamp</p></td>
 </tr>
 </tbody>
 </table>
@@ -1982,7 +2002,7 @@ exist.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-21 16:44:45 UTC
+Last updated 2022-01-21 17:03:06 UTC
 </div>
 </div>
 </body>
