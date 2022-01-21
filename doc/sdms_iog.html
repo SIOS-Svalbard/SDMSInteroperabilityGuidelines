@@ -831,14 +831,7 @@ for scientific data management and stewardship</a></p>
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>When implementing OAI-PMH for large repositories
-containing much more than SIOS relevant data, configuration of a dedicated
-SIOS set is strongly recommended as this reduce the load on the SIOS Data
-Portal which otherwise has to do filtering of all harvested metadata. The
-name of the set that SDMS should harvest has to be communicated and a set
-sepcification like “SIOS” is recommended. More information is available in
-<a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#Set">OAI-PMH Set
-specification</a>.</p>
+<p>When implementing OAI-PMH for large repositories containing much more than SIOS relevant data, configuration of a dedicated SIOS set is strongly recommended as this reduce the load on the SIOS Data Portal which otherwise has to do filtering of all harvested metadata. The name of the set that SDMS should harvest has to be communicated and a set specification like “SIOS” is recommended. More information is available in <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#Set">OAI-PMH Set specification</a>.</p>
 </td>
 </tr>
 <tr>
@@ -846,16 +839,7 @@ specification</a>.</p>
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>When records are deleted in the contributing data
-centres catalogues, information on this has to be communicated to the
-central catalogue. In order to achieve this OAI-PMH identifies the support
-for deleted records through the <strong>deletedRecord</strong> element retrieved in the
-Identify request. Valid responses are no, persistent and transient. SDMS
-contributing data centres must support <strong>transient</strong> and must maintain
-transient records for at least 1 month <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>. More
-information on this feature is available in
-<a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords">OAI-PMH
-specification of deleted records</a>.</p>
+<p>When records are deleted in the contributing data centres catalogues, information on this has to be communicated to the central catalogue. In order to achieve this OAI-PMH identifies the support for deleted records through the <strong>deletedRecord</strong> element retrieved in the Identify request. Valid responses are no, persistent and transient. SDMS contributing data centres must support <strong>transient</strong> and must maintain transient records for at least 1 month <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>. More information on this feature is available in <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords">OAI-PMH specification of deleted records</a>.</p>
 </td>
 </tr>
 <tr>
@@ -863,14 +847,7 @@ specification of deleted records</a>.</p>
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>The OAI-PMH interface by default offers metadata in
-<a href="http://dublincore.org/">Dublin Core</a>. This is insufficient for SDMS
-purposes. Metadata has to be offered in
-<a href="https://github.com/ISO-TC211/XML">ISO19115</a> and/or
-<a href="http://gcmd.nasa.gov/add/difguide/">GCMD DIF</a>. Details on these
-specifications are provided below. In order to properly identify the
-metadata standards it is recommended to use the following keywords: “dif”
-for GCMD DIF, “iso” for ISO19115 minimum profile.</p>
+<p>The OAI-PMH interface by default offers metadata in <a href="http://dublincore.org/">Dublin Core</a>. This is insufficient for SDMS purposes. Metadata has to be offered in <a href="https://github.com/ISO-TC211/XML">ISO19115</a> and/or <a href="http://gcmd.nasa.gov/add/difguide/">GCMD DIF</a>. Details on these specifications are provided below. In order to properly identify the metadata standards it is recommended to use the following keywords: “dif” for GCMD DIF, “iso19139” for the ISO19115 minimum profile.</p>
 </td>
 </tr>
 </table>
@@ -879,15 +856,7 @@ for GCMD DIF, “iso” for ISO19115 minimum profile.</p>
 <div class="sect4">
 <h5 id="_ogc_csw"><a class="anchor" href="#_ogc_csw"></a>2.1.2.3. OGC CSW</h5>
 <div class="paragraph">
-<p>The Open Geospatial Consortium Catalogue Services for the Web (OGC CSW
-<a href="#anchor-12">[14]</a>) is another standard for exposing the content of
-a catalogue in a standardised form. Similar to OAI-PMH records are
-exposed using XML. Compared to OAI-PMH, OGC CSW is more expensive to
-implement from the specification although there are several tools
-supporting it. It is the recommended exchange mechanism for metadata
-within the European framework INSPIRE<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> and will be supported by the SIOS Data Portal although
-OAI-PMH is recommended from a cost benefit perspective for partners not
-having this functionality already implemented.</p>
+<p>The Open Geospatial Consortium Catalogue Services for the Web (OGC CSW <a href="#anchor-12">[14]</a>) is another standard for exposing the content of a catalogue in a standardised form. Similar to OAI-PMH records are exposed using XML. Compared to OAI-PMH, OGC CSW is more expensive to implement from the specification although there are several tools supporting it. It is the recommended exchange mechanism for metadata within the European framework INSPIRE<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> and is supported by the SIOS Data Portal. The portal only consumes ISO 19115/ISO 19139 through OGC CSW.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -896,54 +865,60 @@ having this functionality already implemented.</p>
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>OGC CSW version 2.0.2 must be used.</p>
+<p>Do not use SOAP.</p>
 </td>
 </tr>
 <tr>
 <td class="hdlist1">
-<strong>Recommendation:</strong>
+<strong>Recommendation</strong>
 </td>
 <td class="hdlist2">
-<p>It is <strong>not</strong> recommended to embed OGC CSW requests in messaging
-frameworks like e.g. SOAP.</p>
+<p>Serve ISO19115/ISO 19139.</p>
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>Details on how to interact with a OGC CSW interface has to be discussed
-when there is a SDMS data centre that wants to use this interface.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_sensor_description_not_yet_supported"><a class="anchor" href="#_sensor_description_not_yet_supported"></a>2.1.2.4. Sensor Description (Not yet supported)</h5>
 <div class="paragraph">
-<p>The implementation of Sensor Web Enablement (SWE) as a useful suite of
-standards of the OGC for building the Sensor Web is recommended to allow
-for interoperability and to reduce the integration efforts of new data
-sources, although not supported by the SIOS Data Management System central
-node yet.</p>
+<p>The implementation of Sensor Web Enablement (SWE) as a useful suite of standards of the OGC for building the Sensor Web is recommended to allow for interoperability and to reduce the integration efforts of new data sources, although not supported by the SIOS Data Management System central node yet.</p>
 </div>
 <div class="paragraph">
-<p>Recommended data formats are Observations and Measurements (O&amp;M) and
-SensorML. For describing devices and sensors in terms of metadata to
-NRT-data streams or archived and disseminated data basic SensorML should
-be applicable. These are Standard for modelling/encoding sensor Metadata
-based on XML (latest version: SensorML 2.0). Hence Editors are needed to
-facilitate the provision of these metadata to the SDMS with focus on ISO
-19115 metadata. As controlled vocabulary for device description the
-NERC-SeaDataNet vocabulary could be a useful recommendation if agreed on.</p>
+<p>Recommended data formats are Observations and Measurements (O&amp;M) and SensorML. For describing devices and sensors in terms of metadata to NRT-data streams or archived and disseminated data basic SensorML should be applicable. These are Standard for modelling/encoding sensor Metadata based on XML (latest version: SensorML 2.0). Hence Editors are needed to facilitate the provision of these metadata to the SDMS with focus on ISO 19115 metadata. As controlled vocabulary for device description the NERC-SeaDataNet vocabulary could be a useful recommendation if agreed on.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+SWE is not supported for data discovery purposes, but is considered for other purposes within SIOS.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_other"><a class="anchor" href="#_other"></a>2.1.2.5. Other</h5>
 <div class="paragraph">
-<p>Other mechanisms like OpenSearch could also potentially be supported in
-the future, but is currently not supported. According to
-<a href="#anchor-21">[23]</a> OpenSearch is a “collection of simple formats for
-the sharing of search results. The OpenSearch description document
-format can be used to describe a search engine so that it can be used by
-search client applications.”</p>
+<p>Harvesting of discovery information using OpenSearch is under testing, but not supported for regular exchange of discovery metadata. According to <a href="#anchor-21">[23]</a> OpenSearch is a “collection of simple formats for the sharing of search results. The OpenSearch description document format can be used to describe a search engine so that it can be used by search client applications.”</p>
+</div>
+<div class="paragraph">
+<p>Work is in progress to enable support for schema.org.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+More information on schema.org to be added.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2006,7 +1981,7 @@ exist.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-21 16:17:30 UTC
+Last updated 2022-01-21 16:34:25 UTC
 </div>
 </div>
 </body>
