@@ -37,6 +37,8 @@ System managers at the data centres contributing to the SDMS.
 [[applicable-documents]]
 === Applicable documents
 
+TODO: Add SIOS Data Policy and SPDX licenses to this list.
+
 1.  http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22partBSIOS-PPfinal.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415507&ssbinary=true[Svalbard Integrated Arctic Earth Observing System – Preparatory Phase (SIOS-PP) Description of Work].
 2.  Robert Huber and Michael Klages (lead authors), 2012.
 http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[SIOS Data Management System – User Requirements Document]. SIOS Deliverable D6.3.
