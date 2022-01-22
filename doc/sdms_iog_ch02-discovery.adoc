@@ -14,7 +14,7 @@ The first category is the metadata provided by the data centres in a standard fo
 
 The SIOS Data Portal harvest metadata to a central repository that is used to search for relevant datasets. It does not utilise distributed search as this is a slower process compared to searching in a central repository. Metadata are harvested at regular intervals and checked for conformance according to the standards identified herein and in <<#anchor-7,[8]>>. The discovery metadata are harvested from partner data repositories every night, then converted to the data model used in the data catalogue and ingested if it fulfils the quality check. The nightly harvest is an incremental harvest of changes since the last time the harvest was run. Every 3 months a full harvest is done to clean up potentially stale datasets. 
 
-TODO: Add a separate document on the harvest process. I.e. convert the old LibreOffice document to ASCIIDOC and add to GitHub.
+NOTE: A separate document is developed on the harvest process (release pending conversion from LibreOffice document to ASCIIDOC and addition to GitHub.
 
 Regardless of the metadata standard used and the mechanism for transport of the information the following recommendation should be implemented at the repositories.
 
@@ -65,6 +65,8 @@ The Open Geospatial Consortium Catalogue Services for the Web (OGC CSW <<#anchor
 Do not use SOAP.
 *Recommendation*::
 Serve ISO19115/ISO 19139.
+
+IMPORTANT: Only version 2.0.2 exchange has been thoroughly tested so far.
 
 ===== Sensor Description (Not yet supported)
 

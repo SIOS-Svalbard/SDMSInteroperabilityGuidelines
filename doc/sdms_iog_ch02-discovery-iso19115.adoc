@@ -21,58 +21,55 @@ NOTE: More details to be added on ISO19115 guidance. In particular on how to emb
 (only one occurrence allowed) and require utilisation of **C**ontrolled
 vocabularies.
 
-IMPORTANT: The table below is under review.
+NOTE: SDMS interprets both gmd:MD_Metadata and gmi:MI_Metadata. 
+
+NOTE: How to add dataset landing pages etc are still a bit fuzzy. SDMS still interprets dataSetURI as a dataset landing page, but this is deprecated in ISO. Some data centres put dataset landing pages in gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource and use a combination of various elements like gmd:function/gmd:CI_OnLineFunctionCode, gmd:name/gco:CharacterString to identify relevant additional information. SDMS is currently interpreting phrases like "Extended human readable information about the dataset" and "Landing page" as Dataset landing pages when found. Information tagged "Project on RiS" is translated into the category Other documentation and "Homepage" is interpreted as a project home page reference. More details need to be agreed on this.
+
+NOTE: SDMS will extract name of the project that has generated the data from the descriptiveKeywords if these have gmd:type/gmd:MD_KeywordTypeCode set to 'project'. More details need to be agreed on this.
+
+WARNING: The table below is under review.
 
 [[iso19115-core-elements]]
-[cols="~,~,~,~,~",title="ISO19115 core elements."]
+[cols="~,~,^5,^7",title="ISO19115 core elements."]
 |=======================================================================
-|Element name |Description |ISO element |ISO |SDMS 
+|Element |Description |ISO |SDMS 
 
-|Dataset title |A short title for the dataset. | |M |M
+|gmd:fileIdentifier/gco:CharacterString | A unique identifier (A UUID with namespace is recommended) for the dataset. | | M
 
-|Dataset reference date |Temporal extent of the dataset. | |M |M
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString |A short title for the dataset. |M |M
 
-|Dataset responsible party |Principal investigator and affiliated
-institution as well as contact details. | |O |M
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract |Short summary describing the dataset embedded in gco:CharacterString.  |M |M
 
-|Geographic location of the dataset |Spatial extent of the dataset. | |O
-|M
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod |Temporal extent of the dataset. Currently gaps are not handled. Relies on gml:beginPosition always to be present, if gml:endPosition is missing it is considered an ongoing observational effort. |M |M
 
-|Keyword |A word or phrase that describes some aspect of a resource. Can be one of several types. It is used to describe the parameters in a dataset, the project affiliation etc. Proper identification of the purpose of the keywords and the vocabularies used is required. Project names are used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020 etc. | |O |M
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox |Spatial extent of the dataset.  Requires all 4 corners (gmd:northBoundLatitude/gco:Decimal etc) of the BoundingBox to be set, also for point measurements. Points are interpreted if values are identical. |O |M
 
-|Dataset language |Should be English. | |M |M
+|gmd:contact/gmd:CI_ResponsibleParty |In this field information about the metadata author should be provided as the ISO standard specifies that this element should cover the “party responsible for the metadata information”. |O |M
 
-|Dataset character set |Should be UTF-8. | |O |O
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty|This field is used to identify personnel with various roles in relation to the dataset. It should as far as possible also include contact information, at least email address and affiliated institution, role (see below) and name. Extraction and crediting people involved relies on gmd:role/gmd:CI_RoleCode to have attribute codeListValue set according to a predefined set of values. ISO codes principalInvestigator, pointOfContact, and author are translated into roles of Principal Investigator, Technical Contact, Metadata Author respectively. Roles not listed above are translated into Technical Contact. |O |M
 
-|Dataset topic category |ISO Topic Category. | |O |O
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString |A word or phrase that describes some aspect of a resource. Can be one of several types. It is used to describe the parameters in a dataset, the project affiliation etc. Proper identification of the purpose of the keywords and the vocabularies used is required. Project names are used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020 etc. If the keyword starts with 'EARTH SCIENCE &gt;' keywords are extracted and put in a separate list for GCMD keywords and used in the search interface. The full path of GCMD science keywords including '&gt;' is required. |O |M
 
-|Spatial resolution of the dataset | |O |O
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:language |Should be English. |M |M
 
-|Abstract describing the dataset |Short summary describing the dataset.  | |M |M
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory/gmd:MD_TopicCategoryCode| ISO Topic Category. |O |MC
 
-|Distribution format |Should be NetCDF/CF or Darwin Core Archive in SDMS. Other standardised formats may be supported later. Non standard formats should have a detailed product manual. | |O |M
+|Distribution format |Should be NetCDF/CF or Darwin Core Archive in SDMS. Other standardised formats may be supported later. Non standard formats should have a detailed product manual. |O |M
 
-|Additional extent information for the dataset (vertical and temporal) | | |O |M
+|Spatial representation type | |O |RC
 
-|Spatial representation type | | |O |RC
+|Lineage |What is done with the data since collection. |O |R
 
-|Reference system | | |O |O
+|gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource |URL to the actual dataset accompanied with identification of the protocol supported.  This implies that elements gmd:protocol/gco:CharacterString and gmd:linkage/gmd:URL must be set and the gmd:protocol contains a predefined keywordfootnote:[OSGEO or GCMD keywords are required for proper interpretation. More details to be added for this. These keywords are translated in the harvesting routine.]. This is used both to identify direct download of datasets (i.e. HTTP or FTP) as well as services on top of dataset (e.g. OPeNDAP, OGC WMS). It is important to note that direct download should not refer to a website requiring manual intervention. Direct download will be handled by the basket in the data portal and enables bundling of data for download etc.|O |MC
 
-|Lineage |What is done with the data since collection. | |O |R
+|Metadata character set | |O |RC
 
-|On-line resource |URL to the actual dataset accompanied with identification of the protocol supported. OSGEO or GCMD keywords are required for proper interpretation. | |O |MC
+|Metadata point of contact | |M |M
 
-|Metadata file identifier |UUID or similar used to remove duplicates and interpret data in context. | |O |M
+|gmd:dateStamp | Last date of updated metadata using the form YYYY-MM-DDTHH:MM:SSZ |M |MC
 
-|Metadata standard name | | |O |RC
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation | License for the metadata using https://spdx.org/licenses/[SPDX License List]. The identifier (adhering to the SPDX formatting) goes into gmx:Anchor and the link to the text into  the attribute of this xlink:href. This is currently a recommended field, but it is strongly recommended and suggested to become mandatory in the future. |O | R
 
-|Metadata standard version | | |O |RC
+|gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor |The host data center of the dataset. This should have both a long and short name, but only specification for the long name is currently identified. The long name goes into gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString and the URL for the data center into gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL. More information to be added. |O |M
 
-|Metadata language | | |O |RC
-
-|Metadata character set | | |O |RC
-
-|Metadata point of contact | | |M |M
-
-|Metadata date stamp | | |M |MC
 |=======================================================================
