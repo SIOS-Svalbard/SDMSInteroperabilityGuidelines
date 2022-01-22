@@ -25,9 +25,7 @@ All datasets should have a unique identifier issued by the host data centre. Thi
 This implies that SIOS Data Portal will not specify or change a unique identifier unless the dataset is hosted by the SIOS Data Portal.
 
 *Recommendation*::
-Always include a license in the discovery metadata. Following the SIOS Data policy, SIOS recommends usage of the Creative Commons Attribution License and use identifiers and URL to license text from https://spdx.org/licenses/. It is recommended to include both a standardised identifier and a link to the full license text. 
-
-TODO: Add link to SIOS Data Policy.
+Always include a license in the discovery metadata. Following the xref:siosdatapolicy[SIOS Data Policy], SIOS recommends usage of the Creative Commons Attribution License and use identifiers and URL to license text from https://spdx.org/licenses/. It is recommended to include both a standardised identifier and a link to the full license text. 
 
 ==== Exchange mechanisms for metadata
 
