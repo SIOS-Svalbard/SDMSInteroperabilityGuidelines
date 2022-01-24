@@ -62,4 +62,6 @@ System managers at the data centres contributing to the SDMS.
 . [[anchor-20]]http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[UNIDATA's Common Data Model]
 . [[anchor-21]]http://www.opensearch.org/[OpenSearch]
 . [[anchor-22]]Wilkinson et al., 2016: http://www.nature.com/articles/sdata201618[The FAIR Guiding Principles for scientific data management and stewardship]
-. [[spdxlist]] https://spdx.org/licenses/[SPDX License List]
+. [[spdxlist]]https://spdx.org/licenses/[SPDX License List]
+. https://github.com/OSGeo/Cat-Interop/blob/master/LinkPropertyLookupTable.csv[[#osgeo]#OSGeo Link Properties Lookup Table#]
+. [[gcmd]]https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/rucontenttype/?format=csv[GCMD URL Types]

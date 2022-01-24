@@ -65,7 +65,7 @@ Each WMS server must support the following map projections:
 4.  EPSG:3410: NSIDC EASE-Grid Global
 5.  EPSG:32633: UTM Zone 33x
 
-SDMS is only able to consume WMS services that provide a GetCapability document per dataset and where the WMS URL is clearly identified using standardised vocabularies (currently GCMD and OSGEO are supported).
+SDMS is only able to consume WMS services that provide a GetCapability document per dataset and where the WMS URL is clearly identified using standardised vocabularies (currently GCMD<<gcmd>> and OSGEO<<osgeo>> are supported).
 
 *Recommendation:*::
 OGC WMS services should present a Getcapabilities document per dataset, not a common document for all datasets served.
