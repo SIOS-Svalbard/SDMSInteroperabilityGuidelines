@@ -37,31 +37,32 @@ System managers at the data centres contributing to the SDMS.
 [[applicable-documents]]
 === Applicable documents
 
-. http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22partBSIOS-PPfinal.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415507&ssbinary=true[Svalbard Integrated Arctic Earth Observing System – Preparatory Phase (SIOS-PP) Description of Work].
-. Robert Huber and Michael Klages (lead authors), 2012.  http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[SIOS Data Management System – User Requirements Document]. SIOS Deliverable D6.3.
-. [[anchor-4]]http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[Distributed SIOS Data Management System Implementation Plan, 2014, SIOS Deliverable D6.6.]
-. [[siosdatapolicy]] https://sios-svalbard.org/sites/sios-svalbard.org/files/common/SIOS_Data_Policy.pdf[SIOS Data Policy]
-. SDMS Concepts and acronyms
-. SDMS System Requirements Document
-. SDMS Architecture Design Document
-. SDMS System implementation and integration plan
-. [[anchor-7]]SDMS Operations Manual
-. [[anchor-8]]http://www.wmo.int/pages/prog/www/WIS/[WMO Information System]
-. [[anchor-9]]http://www.wmo.int/pages/prog/www/WIS/metadata_en.html[WMO Core Profile of the ISO 19115]
-. [[anchor-10]]https://www.wmo.int/pages/prog/www/wigos/index_en.html[WIGOS], including the metadata standard
-. http://www.openarchives.org/OAI/openarchivesprotocol.html[The Open Archives Initiative Protocol for Metadata Harvesting, Version 2]
-. [[anchor-11]]https://www.openarchives.org/pmh/tools/tools.php[OAI-PMH tools]
-. [[anchor-12]]http://www.opengeospatial.org/standards/cat[OGC CSW specification]
-. [[anchor-13]]http://gcmd.gsfc.nasa.gov/add/difguide/index.html[GCMD DIF Writers Guide]
-. [[anchor-14]]http://gcmd.nasa.gov/learn/keyword_list.html[GCMD Science Keywords]
-. [[anchor-15]]http://cfconventions.org/standard-names.html[Climate and Forecast Standard Names]
-. [[anchor-16]]http://wis.wmo.int/2013/metadata/version_1-3-0/WMO_Core_Metadata_Profile_v1.3_Part_2.pdf[WMO Code Lists]
-. [[anchor-17]]http://www.unidata.ucar.edu/software/netcdf/[NetCDF]
-. [[anchor-18]]http://cfconventions.org/[Climate and Forecast Conventions]
-. [[anchor-19]]http://opendap.org/[OPeNDAP]
-. [[anchor-20]]http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[UNIDATA's Common Data Model]
-. [[anchor-21]]http://www.opensearch.org/[OpenSearch]
-. [[anchor-22]]Wilkinson et al., 2016: http://www.nature.com/articles/sdata201618[The FAIR Guiding Principles for scientific data management and stewardship]
-. [[spdxlist]]https://spdx.org/licenses/[SPDX License List]
-. https://github.com/OSGeo/Cat-Interop/blob/master/LinkPropertyLookupTable.csv[[#osgeo]#OSGeo Link Properties Lookup Table#]
-. [[gcmd]]https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/rucontenttype/?format=csv[GCMD URL Types]
+[horizontal]
+[[RD-1]][RD-1]:: http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22partBSIOS-PPfinal.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415507&ssbinary=true[Svalbard Integrated Arctic Earth Observing System – Preparatory Phase (SIOS-PP) Description of Work].
+[[RD-2]][RD-2]:: Robert Huber and Michael Klages (lead authors), 2012.  http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[SIOS Data Management System – User Requirements Document]. SIOS Deliverable D6.3.
+[[RD-3]][RD-3]:: [[anchor-4]]http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[Distributed SIOS Data Management System Implementation Plan, 2014, SIOS Deliverable D6.6.]
+[[RD-4]][RD-4]:: [[siosdatapolicy]] https://sios-svalbard.org/sites/sios-svalbard.org/files/common/SIOS_Data_Policy.pdf[SIOS Data Policy]
+[[RD-5]][RD-5]:: SDMS Concepts and acronyms
+[[RD-6]][RD-6]:: SDMS System Requirements Document
+[[RD-7]][RD-7]:: SDMS Architecture Design Document
+[[RD-8]][RD-8]:: SDMS System implementation and integration plan
+[[RD-9]][RD-9]:: [[anchor-7]]SDMS Operations Manual
+[[RD-10]][RD-10]:: [[anchor-8]]http://www.wmo.int/pages/prog/www/WIS/[WMO Information System]
+[[RD-11]][RD-11]:: [[anchor-9]]http://www.wmo.int/pages/prog/www/WIS/metadata_en.html[WMO Core Profile of the ISO 19115]
+[[RD-12]][RD-12]:: [[anchor-10]]https://www.wmo.int/pages/prog/www/wigos/index_en.html[WIGOS], including the metadata standard
+[[RD-13]][RD-13]:: http://www.openarchives.org/OAI/openarchivesprotocol.html[The Open Archives Initiative Protocol for Metadata Harvesting, Version 2]
+[[RD-14]][RD-14]:: [[anchor-11]]https://www.openarchives.org/pmh/tools/tools.php[OAI-PMH tools]
+[[RD-15]][RD-15]:: [[anchor-12]]http://www.opengeospatial.org/standards/cat[OGC CSW specification]
+[[RD-26]][RD-16]:: [[anchor-13]]http://gcmd.gsfc.nasa.gov/add/difguide/index.html[GCMD DIF Writers Guide]
+[[RD-17]][RD-17]:: [[anchor-14]]http://gcmd.nasa.gov/learn/keyword_list.html[GCMD Science Keywords]
+[[RD-18]][RD-18]:: [[anchor-15]]http://cfconventions.org/standard-names.html[Climate and Forecast Standard Names]
+[[RD-19]][RD-19]:: [[anchor-16]]http://wis.wmo.int/2013/metadata/version_1-3-0/WMO_Core_Metadata_Profile_v1.3_Part_2.pdf[WMO Code Lists]
+[[RD-20]][RD-20]:: [[anchor-17]]http://www.unidata.ucar.edu/software/netcdf/[NetCDF]
+[[RD-21]][RD-21]:: [[anchor-18]]http://cfconventions.org/[Climate and Forecast Conventions]
+[[RD-22]][RD-22]:: [[anchor-19]]http://opendap.org/[OPeNDAP]
+[[RD-23]][RD-23]:: [[anchor-20]]http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[UNIDATA's Common Data Model]
+[[RD-24]][RD-24]:: [[anchor-21]]http://www.opensearch.org/[OpenSearch]
+[[RD-25]][RD-25]:: [[anchor-22]]Wilkinson et al., 2016: http://www.nature.com/articles/sdata201618[The FAIR Guiding Principles for scientific data management and stewardship]
+[[RD-26]][RD-26]:: [[spdxlist]]https://spdx.org/licenses/[SPDX License List]
+[[osgeo]][RD-2]:: https://github.com/OSGeo/Cat-Interop/blob/master/LinkPropertyLookupTable.csv[[#osgeo]#OSGeo Link Properties Lookup Table#]
+[[gcmd]][RD-2]:: https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/rucontenttype/?format=csv[GCMD URL Types]
