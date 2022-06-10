@@ -1,6 +1,6 @@
 :doctype: book
 :pdf-folio-placement: physical
-:title-logo-image: image::Pictures/100002010000064000000416954AF1BF569C4DD3.png[pdfwidth=15cm,align=right]
+:title-logo-image: image::Pictures/sios-fc.png[pdfwidth=15cm,align=right]
 = Technical documentation
 Guidance for data centres contributing to SDMS
 :sectanchors:
@@ -17,6 +17,7 @@ Guidance for data centres contributing to SDMS
 |=======================================================================
 ^|Version ^|Date ^|Comment ^|Responsible
 
+|0.8 |2022-06-10 |Minor modifications to text, fixed and removed dead links and updated visual profile.|Ilkka Matero
 |0.7 |2022-01-22 |Updates following lessons learned in harvesting especially from GeoNetwork. Added outline for product manual. Updated information on interpretation of ISO 19115. |Øystein Godøy
 |0.6 |2020-04-14 |Corrections of incorrect cross references, added
 descriptions on file formats and cleaned recommendations |Øystein Godøy

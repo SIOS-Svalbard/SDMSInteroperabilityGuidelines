@@ -9,7 +9,7 @@ Traditionally data has been exchanged using FTP in various file formats.  Modern
 [[httpftp]]
 ===== HTTP/FTP
 
-This is the easiest manner to support data exchange, but it has limitations for large datasets as well as there is no common data model or standardisation of file formats. Often data are served in various ASCII formats that differs from data centre to data centre without any standardised metadata simplifying the process of understanding and using the data. Integration of data from various data centres usually takes much human effort. This is simplified if standardised formats like WMO BUFR or WMO Grib are used, but also for these additional information is required to fully understand the content. Data in NetCDF following the Climate and Forecast Convention is self explainable and connects to the Common Data Model.
+This is the easiest manner to support data exchange, but it has limitations for large datasets as well as there is no common data model or standardisation of file formats. Often data are served in various ASCII formats that differs from data centre to data centre without any standardised metadata simplifying the process of understanding and using the data. Integration of data from various data centres usually takes much human effort. This is simplified if standardised formats like WMO BUFR or WMO Grib are used, but also for these additional information is required to fully understand the content. Data in NetCDF following the Climate and Forecast Convention is self describing and connects to the Common Data Model.
 
 Segmentation of real time data has to be supported by the contributing data centre.
 
@@ -20,7 +20,7 @@ Whenever data are served as direct download through HTTP or FTP, data should be 
 [[opendap]]
 ===== OPeNDAP
 
-The Data Access Protocol simplifies integration of data from various data centres as it is utilising the http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[Common Data Model], provided input data are encoded according to Climate and Forecast conventions use metadata follows the data and the application of a data stream removes the step of downloading a file and keeping track of this while working on the data. It also allows segmentation of data in variable space and time and it is RESTfulfootnote:[http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/].  OPenDAP can relate to files or relational data base systems and is extensively used by e.g. Copernicus services, Earth System Grid Federation and others.
+The Data Access Protocol simplifies integration of data from various data centres as it is utilising the http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[Common Data Model], provided input data are encoded according to Climate and Forecast conventions use metadata follows the data and the application of a data stream removes the step of downloading a file and keeping track of this while working on the data. It also allows segmentation of data in variable space and time and it is RESTfulfootnote:[http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/].  OPenDAP can relate to files or relational database systems and is extensively used by e.g. Copernicus services, Earth System Grid Federation and others.
 
 SDMS is currently able to consume OPeNDAP enabled datasets, but the level of support depends on the structure and standards (CF) conformance of the data served.
 
