@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.16">
 <meta name="author" content="Guidance for data centres contributing to SDMS">
 <title>Technical documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -194,8 +194,7 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
 details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
 details{margin-left:1.25rem}
-details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
-details>summary::-webkit-details-marker{display:none}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;-webkit-tap-highlight-color:transparent}
 details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
 details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
 details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
@@ -237,8 +236,9 @@ pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
 table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
 table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
 table.linenotable td.code{padding-left:.75em}
-table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
-pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+table.linenotable td.linenos{border-right:1px solid;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
 .quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
@@ -275,7 +275,7 @@ table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-c
 table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
 table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
 table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
-table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
 th.halign-center,td.halign-center{text-align:center}
@@ -291,11 +291,10 @@ ol{margin-left:1.75em}
 ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
-li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
 ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
 ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
 ul.unstyled,ol.unstyled{margin-left:0}
-li>p:empty:only-child::before{content:"";display:inline-block}
 ul.checklist>li>p:first-child{margin-left:-1em}
 ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
 ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
@@ -338,6 +337,8 @@ sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
 div.unbreakable{page-break-inside:avoid}
 .big{font-size:larger}
 .small{font-size:smaller}
@@ -464,6 +465,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.8</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2022-06-10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minor modifications to text, correcting links and updated visual profile.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ilkka Matero</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">0.7</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2022-01-22</p></td>
@@ -613,13 +620,13 @@ the WMO Global Cryosphere Watch.</p></td>
 <p>Svalbard and the surrounding ocean areas fulfil all these criteria: Svalbard is located in a region with a very large climate gradient, being alternately influenced by cold central Arctic or mild marine climate conditions at time scales of weeks to years. It is also located in the region with the strongest inflow and outflow processes between the Arctic and lower-latitude oceans. In addition, Svalbard is the only region in the world (and has the facilities) where one can study and quantify one of the remaining unknowns in the climate puzzle: the extraterrestrial and especially solar influence on climate.</p>
 </div>
 <div class="paragraph">
-<p>The vision for the Svalbard Integrated Arctic Earth Observing System (SIOS) is to be a regional observational system for long term acquisition and proliferation of fundamental knowledge on global environmental change (GEC) within an Earth System Science (ESS) perspective in and around Svalbard. SIOS will systematically develop and implement methods for how observational networks are to be construed and thus become a leader regarding observational systems in the Arctic and Polar regions.The SIOS Data Management System (SDMS) Data Portal is the entry point to SIOS datasets. It offers a web interface that contains information about datasets (metadata). These metadata are harvested on a regular basis from data centres contributing to SIOS. These data centres manage the data on behalf of the owners/providers of the data.</p>
+<p>The vision for the Svalbard Integrated Arctic Earth Observing System (SIOS) is to be a regional observational system for long term acquisition and proliferation of fundamental knowledge on global environmental change within an Earth System Science (ESS) perspective in and around Svalbard. SIOS will systematically develop and implement methods for how observational networks are to be construed and thus become a leading observational system in the Arctic and Polar regions.The SIOS Data Management System (SDMS) Data Access Portal is the entry point to SIOS datasets. It offers a web interface that contains information about datasets (metadata). These metadata are harvested on a regular basis from data centres contributing to SIOS. These data centres manage the data on behalf of the owners and providers of the data.</p>
 </div>
 <div class="paragraph">
-<p>A major innovative element of SIOS will be the Knowledge Centre (KC), which will facilitate interaction between observation, modelling and process research, strategic processes, a service point to user communities and a platform for data handling and utilization <a href="#anchor-4">[3]</a>. The SIOS Data Management System (SDMS) will be a functionality enabling component of the Knowledge Centre, supporting data submission, discovery, access, use and preservation of SIOS relevant data sets.</p>
+<p>A major innovative element of SIOS will be the Knowledge Centre, which will facilitate interaction between observation, modelling and process research, strategic processes, a service point to user communities and a platform for data handling and utilization <a href="#anchor-4">[3]</a>. The SIOS Data Management System (SDMS) will be a functionality-enabling component of the Knowledge Centre, supporting data submission, discovery, access, use and preservation of SIOS relevant datasets.</p>
 </div>
 <div class="paragraph">
-<p>For the SDMS the term “data set” is defined in line with the INSPIRE Directive as “an identifiable collection of spatial data”, i.e. a collection of data that has a reference by name or coordinates to a geographic location or area, and which in addition have a designated start and end time. A data set can contain observations (remote or in situ), derived quantities (from either of these two types of data sources) or forecasts of future states of environmental parameters. The data values can be located at a single point, along a line or transect, in a regular or irregular grid, and be captured or estimated at one or more altitudes/depths. A data set can be stored on paper, in files (one or more), or in a database, and is often accompanied by descriptions (metadata) of its content. The purpose of the SDMS is to the SIOS user community with a single entry point to relevant datasets. It is however not the purpose to centralise all data, but rather to integrate existing and future data centres contributing to SIOS using machine readable interfaces to metadata and data.</p>
+<p>For the SDMS the term “dataset” is defined in line with the INSPIRE Directive as “an identifiable collection of spatial data”, i.e. a collection of data that has a reference by name or coordinates to a geographic location or area, as well as designated start and end times. A dataset can contain observations (remote or in situ), derived quantities (from either of these two types of data sources) or forecasts of future states of environmental parameters. The data values can be located at a single point, along a line or transect, in a regular or irregular grid, and be captured or estimated at one or more altitudes/depths. A dataset can be stored on paper, in files (one or more), or in a database, and is often accompanied by descriptions (metadata) of its content. The purpose of the SDMS is to provide the SIOS user community a single entry point to relevant datasets. It is however not the purpose to centralise all data, but rather to integrate existing and future data centres contributing to SIOS using machine readable interfaces to metadata and data.</p>
 </div>
 <div class="paragraph">
 <p>The first version of this document is based on a similar document
@@ -633,13 +640,13 @@ developed for WMO Global Cryosphere Watch.</p>
 SDMS. The purpose is to enable transparency on metadata and in the long
 term also on data through limiting the interfaces to be developed and
 maintained. The short term goal is to enable visibility of relevant
-datasets through discovery metadata, in the long term to harmonize
-access to data via defined set of data access interfaces. Emphasis is
+datasets through discovery metadata, and in the long term to harmonize
+accessing data via a defined set of data access interfaces. Emphasis is
 primarily on the semantics and structure of interfaces to metadata and
 data, and less on underlying file formats.</p>
 </div>
 <div class="paragraph">
-<p>The requirements of the document represents a long term goal which require funding for full implementation. Some partners have implemented parts of the interfaces mentioned while others have a longer way to go. This is reflected in the prioritised functionality to implement as outlined in the implementation plan of the SIOS Preparatory Phase <a href="#anchor-4">[3]</a>, see section 5.3.1<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+<p>The requirements in the document represent long term goals, requiring funding for full implementation. Some partners have implemented parts of the interfaces mentioned, while others have a longer way to go. This is reflected in the prioritised functionality to implement as outlined in the implementation plan of the SIOS Preparatory Phase <a href="#anchor-4">[3]</a>, see section 5.3.1<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -652,15 +659,6 @@ data, and less on underlying file formats.</p>
 <h3 id="applicable-documents"><a class="anchor" href="#applicable-documents"></a>1.4. Applicable documents</h3>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p><a href="http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&amp;blobheader=application%2Fpdf&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=+attachment%3B+filename%3D%22partBSIOS-PPfinal.pdf%22&amp;blobkey=id&amp;blobtable=MungoBlobs&amp;blobwhere=1274505415507&amp;ssbinary=true">Svalbard Integrated Arctic Earth Observing System – Preparatory Phase (SIOS-PP) Description of Work</a>.</p>
-</li>
-<li>
-<p>Robert Huber and Michael Klages (lead authors), 2012.  <a href="http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&amp;blobheader=application%2Fpdf&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&amp;blobkey=id&amp;blobtable=MungoBlobs&amp;blobwhere=1274505415457&amp;ssbinary=true">SIOS Data Management System – User Requirements Document</a>. SIOS Deliverable D6.3.</p>
-</li>
-<li>
-<p><a id="anchor-4"></a><a href="http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&amp;blobheader=application%2Fpdf&amp;blobheadername1=Content-Disposition&amp;blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&amp;blobkey=id&amp;blobtable=MungoBlobs&amp;blobwhere=1274505415457&amp;ssbinary=true">Distributed SIOS Data Management System Implementation Plan, 2014, SIOS Deliverable D6.6.</a></p>
-</li>
 <li>
 <p><a id="siosdatapolicy"></a> <a href="https://sios-svalbard.org/sites/sios-svalbard.org/files/common/SIOS_Data_Policy.pdf">SIOS Data Policy</a></p>
 </li>
@@ -680,13 +678,13 @@ data, and less on underlying file formats.</p>
 <p><a id="anchor-7"></a>SDMS Operations Manual</p>
 </li>
 <li>
-<p><a id="anchor-8"></a><a href="http://www.wmo.int/pages/prog/www/WIS/">WMO Information System</a></p>
+<p><a id="anchor-8"></a><a href="https://community.wmo.int/activity-areas/wis">WMO Information System</a></p>
 </li>
 <li>
-<p><a id="anchor-9"></a><a href="http://www.wmo.int/pages/prog/www/WIS/metadata_en.html">WMO Core Profile of the ISO 19115</a></p>
+<p><a id="anchor-9"></a><a href="https://community.wmo.int/discovery-metadata">WMO Core Profile of the ISO 19115</a></p>
 </li>
 <li>
-<p><a id="anchor-10"></a><a href="https://www.wmo.int/pages/prog/www/wigos/index_en.html">WIGOS</a>, including the metadata standard</p>
+<p><a id="anchor-10"></a><a href="https://community.wmo.int/activity-areas/wigos">WIGOS</a></p>
 </li>
 <li>
 <p><a href="http://www.openarchives.org/OAI/openarchivesprotocol.html">The Open Archives Initiative Protocol for Metadata Harvesting, Version 2</a></p>
@@ -698,10 +696,10 @@ data, and less on underlying file formats.</p>
 <p><a id="anchor-12"></a><a href="http://www.opengeospatial.org/standards/cat">OGC CSW specification</a></p>
 </li>
 <li>
-<p><a id="anchor-13"></a><a href="http://gcmd.gsfc.nasa.gov/add/difguide/index.html">GCMD DIF Writers Guide</a></p>
+<p><a id="anchor-13"></a><a href="https://www.earthdata.nasa.gov/learn/articles/gcmd-retrospective-and-future">GCMD: Data, Services and Tools guide</a></p>
 </li>
 <li>
-<p><a id="anchor-14"></a><a href="http://gcmd.nasa.gov/learn/keyword_list.html">GCMD Science Keywords</a></p>
+<p><a id="anchor-14"></a><a href="https://www.earthdata.nasa.gov/learn/find-data/idn/gcmd-keywords">GCMD Science Keywords</a></p>
 </li>
 <li>
 <p><a id="anchor-15"></a><a href="http://cfconventions.org/standard-names.html">Climate and Forecast Standard Names</a></p>
@@ -719,7 +717,7 @@ data, and less on underlying file formats.</p>
 <p><a id="anchor-19"></a><a href="http://opendap.org/">OPeNDAP</a></p>
 </li>
 <li>
-<p><a id="anchor-20"></a><a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">UNIDATA&#8217;s Common Data Model</a></p>
+<p><a id="anchor-20"></a><a href="https://www.unidata.ucar.edu/software/netcdf-java/v4.6/CDM/index.html">UNIDATA&#8217;s Common Data Model</a></p>
 </li>
 <li>
 <p><a id="anchor-21"></a><a href="http://www.opensearch.org/">OpenSearch</a></p>
@@ -749,7 +747,7 @@ data, and less on underlying file formats.</p>
 <div class="sect3">
 <h4 id="_background_2"><a class="anchor" href="#_background_2"></a>2.1.1. Background</h4>
 <div class="paragraph">
-<p>Metadata are generated by the data centres hosting the data sets.  Metadata are harvested and ingested in the central catalogue for usage by the SIOS Data Portal user community. SIOS Data Portal metadata are divided in 4 categories:</p>
+<p>Metadata are generated by the data centres hosting the datasets.  Metadata are harvested and ingested in the central catalogue for usage by the SIOS Data Access Portal user community. SIOS Data Access Portal metadata are divided in 4 categories:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -757,7 +755,7 @@ data, and less on underlying file formats.</p>
 <p>Index metadata for identifying relevant products for a specific purpose.</p>
 </li>
 <li>
-<p>Configuration metadata for tuning of user services for a specific data set.</p>
+<p>Configuration metadata for tuning of user services for a specific dataset.</p>
 </li>
 <li>
 <p>Use metadata for understanding the data accessed.</p>
@@ -768,10 +766,10 @@ data, and less on underlying file formats.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>The first category is the metadata provided by the data centres in a standard format, e.g. GCMD DIF or ISO 19115. The second category is maintained in the central metadata repository and is used for configuration of higher order services like visualisation, transformation, etc., and is created internally in the SIOS Data Portal based on information retrieved from contributing data centres. The third category is covered e.g. by utilisation of NetCDF files formatted according to the Climate and Forecast Convention where sufficient information to actually use the data is provided. The fourth category links directly to WIGOS metadata <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>. These metadata describes the station, its surroundings, instrumentation, procedures etc. There is some overlap between these metadata and the first category.</p>
+<p>The first category is the metadata provided by the data centres in a standard format, e.g. GCMD DIF or ISO 19115. The second category is maintained in the central metadata repository and is used for configuration of higher order services like visualisation, transformation, etc., and is created internally in the SIOS Data Access Portal based on information retrieved from contributing data centres. The third category is covered e.g. by utilisation of NetCDF files formatted according to the Climate and Forecast Convention where sufficient information to actually use the data is provided. The fourth category links directly to WIGOS metadata <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>. These metadata describes the station, its surroundings, instrumentation, procedures etc. There is some overlap between these metadata and the first category.</p>
 </div>
 <div class="paragraph">
-<p>The SIOS Data Portal harvest metadata to a central repository that is used to search for relevant datasets. It does not utilise distributed search as this is a slower process compared to searching in a central repository. Metadata are harvested at regular intervals and checked for conformance according to the standards identified herein and in <a href="#anchor-7">[8]</a>. The discovery metadata are harvested from partner data repositories every night, then converted to the data model used in the data catalogue and ingested if it fulfils the quality check. The nightly harvest is an incremental harvest of changes since the last time the harvest was run. Every 3 months a full harvest is done to clean up potentially stale datasets.</p>
+<p>The SIOS Data Access Portal harvests metadata to a central repository that is used to search for relevant datasets. It does not utilise distributed search as this is a slower process compared to searching in a central repository. Metadata are harvested at regular intervals and checked for conformance according to the standards identified herein and in <a href="#anchor-7">[8]</a>. The discovery metadata are harvested from partner data repositories every night, then converted to the data model used in the data catalogue and ingested if it passes the quality check. The nightly harvest is an incremental harvest of changes since the last time the harvest was run. Every 3 months a full harvest is done to clean up potentially stale datasets.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -780,7 +778,7 @@ data, and less on underlying file formats.</p>
 <div class="title">Note</div>
 </td>
 <td class="content">
-A separate document is developed on the harvest process (release pending conversion from LibreOffice document to ASCIIDOC and addition to GitHub.
+A separate document is developed on the harvest process (release pending conversion from LibreOffice document to ASCIIDOC and addition to GitHub).
 </td>
 </tr>
 </table>
@@ -801,7 +799,7 @@ A separate document is developed on the harvest process (release pending convers
 </table>
 </div>
 <div class="paragraph">
-<p>This implies that SIOS Data Portal will not specify or change a unique identifier unless the dataset is hosted by the SIOS Data Portal.</p>
+<p>This implies that SIOS Data Access Portal will not specify or change a unique identifier unless the dataset is hosted by the SIOS Data Access Portal.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -817,7 +815,7 @@ A separate document is developed on the harvest process (release pending convers
 <div class="sect4">
 <h5 id="_introduction_2"><a class="anchor" href="#_introduction_2"></a>2.1.2.1. Introduction</h5>
 <div class="paragraph">
-<p>Metadata should be exposed using a suitable interface that allows information on existing datasets as well as changes to the inventory to be conveyed to the SIOS Data Portal. Suitable interfaces for this are OAI-PMH and OGC CSW. Other interfaces may be evaluated, but to ensure a cost effective solution the number interfaces must be limited.</p>
+<p>Metadata should be exposed using a suitable interface that allows information on existing datasets as well as changes to the inventory to be conveyed to the SIOS Data Access Portal. Suitable interfaces for this are OAI-PMH and OGC CSW. Other interfaces may be evaluated, but to ensure a cost effective solution the number interfaces must be limited.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -828,13 +826,13 @@ A separate document is developed on the harvest process (release pending convers
 </dl>
 </div>
 <div class="paragraph">
-<p>Although OAI-PMH is recommended, OGC CSW will also be consumed. Work is in progress with other exchange mechanisms..</p>
+<p>Although OAI-PMH is recommended, OGC CSW will also be harvested. Work is in progress with other exchange mechanisms.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_oai_pmh"><a class="anchor" href="#_oai_pmh"></a>2.1.2.2. OAI-PMH</h5>
 <div class="paragraph">
-<p>The Open Archives Initiatives Protocol for Metadata Harvesting (OAI-PMH) is the recommended interface for providing discovery metadata to the SIOS Data Portal. It is a cost effective and robust implementation for exchange of metadata between data centres. It is much cheaper to implement than most alternatives and there are a number of tools available. Some of these are listed on <a href="#anchor-11">[13]</a>. The central node of SDMS is using <a href="https://pycsw.org/">pyCSW</a> to provide OAI-PMH (and other protocols).</p>
+<p>The Open Archives Initiatives Protocol for Metadata Harvesting (OAI-PMH) is the recommended interface for providing discovery metadata to the SIOS Data Access Portal. It is a cost-effective and robust implementation for exchange of metadata between data centres. It is much cheaper to implement than most alternatives and there are a number of tools available. Some of these are listed on <a href="#anchor-11">[14]</a>. The central node of SDMS is using <a href="https://pycsw.org/">pyCSW</a> to provide OAI-PMH (and other protocols).</p>
 </div>
 <div class="paragraph">
 <p>When implementing OAI-PMH there is a number of SDMS recommendations that are based on experience during the International Polar Year, SIOS Preparatory Phase and the operation of SDMS.</p>
@@ -854,7 +852,7 @@ A separate document is developed on the harvest process (release pending convers
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>When implementing OAI-PMH for large repositories containing much more than SIOS relevant data, configuration of a dedicated SIOS set is strongly recommended as this reduce the load on the SIOS Data Portal which otherwise has to do filtering of all harvested metadata. The name of the set that SDMS should harvest has to be communicated and a set specification like “SIOS” is recommended. More information is available in <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#Set">OAI-PMH Set specification</a>.</p>
+<p>When implementing OAI-PMH for large repositories containing much more than SIOS relevant data, configuration of a dedicated SIOS set is strongly recommended as this reduces the load on the SDMS, which otherwise has to do filtering of all harvested metadata. The name of the set that SDMS should harvest has to be communicated, and a set specification like “SIOS” is recommended. More information is available in <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#Set">OAI-PMH Set specification</a>.</p>
 </td>
 </tr>
 <tr>
@@ -879,7 +877,7 @@ A separate document is developed on the harvest process (release pending convers
 <div class="sect4">
 <h5 id="_ogc_csw"><a class="anchor" href="#_ogc_csw"></a>2.1.2.3. OGC CSW</h5>
 <div class="paragraph">
-<p>The Open Geospatial Consortium Catalogue Services for the Web (OGC CSW <a href="#anchor-12">[14]</a>) is another standard for exposing the content of a catalogue in a standardised form. Similar to OAI-PMH records are exposed using XML. Compared to OAI-PMH, OGC CSW is more expensive to implement from the specification although there are several tools supporting it. It is the recommended exchange mechanism for metadata within the European framework INSPIRE<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> and is supported by the SIOS Data Portal. The portal only consumes ISO 19115/ISO 19139 through OGC CSW.</p>
+<p>The Open Geospatial Consortium Catalogue Services for the Web (OGC CSW <a href="#anchor-12">[14]</a>) is another standard for exposing the content of a catalogue in a standardised form. Similar to OAI-PMH records are exposed using XML. Compared to OAI-PMH, OGC CSW is more expensive to implement from the specification although there are several tools supporting it. It is the recommended exchange mechanism for metadata within the European framework INSPIRE<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> and is supported by the SIOS Data Access Portal. The portal only consumes ISO 19115/ISO 19139 through OGC CSW.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -893,7 +891,7 @@ A separate document is developed on the harvest process (release pending convers
 </tr>
 <tr>
 <td class="hdlist1">
-<strong>Recommendation</strong>
+<strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
 <p>Serve ISO19115/ISO 19139.</p>
@@ -962,16 +960,24 @@ More information on schema.org to be added.
 <div class="sect4">
 <h5 id="_iso19115"><a class="anchor" href="#_iso19115"></a>2.1.3.1. ISO19115</h5>
 <div class="paragraph">
-<p>ISO19115 is a information container that can be populated with several controlled vocabularies in some of the elements. The search model for the SIOS Data Portal is currently built around parameter descriptions using the GCMD Science Keywords <a href="#anchor-14">[16]</a>. A mapping exist between Climate and Forecast standard names <a href="#anchor-15">[17]</a> and GCMD Science Keywords. ISO 19115 is used by e.g. INSPIRE at the European level and WMO (WMO Core Profile <a href="#anchor-9">[10]</a>) at the global level.</p>
+<p>ISO19115 is an information container that can be populated with several controlled vocabularies in some of the elements. The search model for the SIOS Data Portal is currently built around parameter descriptions using the GCMD Science Keywords <a href="#anchor-14">[16]</a>. A mapping exist between Climate and Forecast standard names <a href="#anchor-15">[17]</a> and GCMD Science Keywords. ISO 19115 is used by e.g. INSPIRE at the European level and WMO (WMO Core Profile <a href="#anchor-9">[10]</a>) at the global level.</p>
 </div>
 <div class="hdlist">
 <table>
 <tr>
 <td class="hdlist1">
-<strong>Recommendation:</strong>
+<strong>Requirement:</strong>
 </td>
 <td class="hdlist2">
 <p>ISO19115 records <strong>must</strong> at least state the unique id, temporal and spatial location, scientific content, responsible data centre and PI as well as links to the actual data<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>. Datasets without such specifications are not ingested in the catalogue.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Requirement:</strong>
+</td>
+<td class="hdlist2">
+<p>All times <strong>must</strong> be encoded as ISO8601.</p>
 </td>
 </tr>
 <tr>
@@ -992,18 +998,10 @@ More information on schema.org to be added.
 </tr>
 <tr>
 <td class="hdlist1">
-<strong>Recommendation</strong>
-</td>
-<td class="hdlist2">
-<p>Metadata records <strong>should</strong> include information on the host data centre for the dataset.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>All times must be encoded as ISO8601.</p>
+<p>Metadata records <strong>should</strong> include information on the host data centre for the dataset.</p>
 </td>
 </tr>
 </table>
@@ -1539,7 +1537,7 @@ bibliographic citations pertaining to the data set.</p></td>
 <div class="sect4">
 <h5 id="httpftp"><a class="anchor" href="#httpftp"></a>2.2.2.2. HTTP/FTP</h5>
 <div class="paragraph">
-<p>This is the easiest manner to support data exchange, but it has limitations for large datasets as well as there is no common data model or standardisation of file formats. Often data are served in various ASCII formats that differs from data centre to data centre without any standardised metadata simplifying the process of understanding and using the data. Integration of data from various data centres usually takes much human effort. This is simplified if standardised formats like WMO BUFR or WMO Grib are used, but also for these additional information is required to fully understand the content. Data in NetCDF following the Climate and Forecast Convention is self explainable and connects to the Common Data Model.</p>
+<p>This is the easiest manner to support data exchange, but it has limitations for large datasets as well as there is no common data model or standardisation of file formats. Often data are served in various ASCII formats that differs from data centre to data centre without any standardised metadata simplifying the process of understanding and using the data. Integration of data from various data centres usually takes much human effort. This is simplified if standardised formats like WMO BUFR or WMO Grib are used, but also for these additional information is required to fully understand the content. Data in NetCDF following the Climate and Forecast Convention is self describing and connects to the Common Data Model.</p>
 </div>
 <div class="paragraph">
 <p>Segmentation of real time data has to be supported by the contributing data centre.</p>
@@ -1560,7 +1558,7 @@ bibliographic citations pertaining to the data set.</p></td>
 <div class="sect4">
 <h5 id="opendap"><a class="anchor" href="#opendap"></a>2.2.2.3. OPeNDAP</h5>
 <div class="paragraph">
-<p>The Data Access Protocol simplifies integration of data from various data centres as it is utilising the <a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">Common Data Model</a>, provided input data are encoded according to Climate and Forecast conventions use metadata follows the data and the application of a data stream removes the step of downloading a file and keeping track of this while working on the data. It also allows segmentation of data in variable space and time and it is RESTful<sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup>.  OPenDAP can relate to files or relational data base systems and is extensively used by e.g. Copernicus services, Earth System Grid Federation and others.</p>
+<p>The Data Access Protocol simplifies integration of data from various data centres as it is utilising the <a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">Common Data Model</a>, provided input data are encoded according to Climate and Forecast conventions use metadata follows the data and the application of a data stream removes the step of downloading a file and keeping track of this while working on the data. It also allows segmentation of data in variable space and time and it is RESTful<sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup>.  OPenDAP can relate to files or relational database systems and is extensively used by e.g. Copernicus services, Earth System Grid Federation and others.</p>
 </div>
 <div class="paragraph">
 <p>SDMS is currently able to consume OPeNDAP enabled datasets, but the level of support depends on the structure and standards (CF) conformance of the data served.</p>
@@ -1731,7 +1729,7 @@ SDMS is not capable of parsing WMS layers for specific datasets from site specif
 <div class="sect4">
 <h5 id="darwincorearchive"><a class="anchor" href="#darwincorearchive"></a>2.2.3.2. Darwin Core Archive</h5>
 <div class="paragraph">
-<p>Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity. It is the backbone of the Global Biodiversity Information facility (GBIF). In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vaocabularies to describe the content. SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS. Further information is available at <a href="https://dwc.tdwg.org/terms/" class="bare">https://dwc.tdwg.org/terms/</a>.</p>
+<p>Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity. It is the backbone of the Global Biodiversity Information facility (GBIF). In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content. SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS. Further information is available at <a href="https://dwc.tdwg.org/terms/" class="bare">https://dwc.tdwg.org/terms/</a>.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1782,7 +1780,7 @@ SDMS should work to enable ACDD and CF elements in GeoJSON files.
 <div class="sect4">
 <h5 id="netcdfcf"><a class="anchor" href="#netcdfcf"></a>2.2.3.4. NetCDF/CF</h5>
 <div class="paragraph">
-<p>NetCDF is a container like JSON and XML and such not a recommended file format for data within SDMS. However, the Climate and Forecast convention constrains the degrees of freedom within NetCDF and enforces structures and application of controlled vocabularies to describe the content of the data. NetCDF/CF is thus a FAIR compliant file format and recommended for use within SDMS. However, even NetCDF/CF have too many degrees of freedom to allow higher orders services to be established for datasets. Thus some further constraints on granularity and structures are recommended.  NetCDF/CF is the backbone of the Earth System Grid Federation serving IPCC data, Copernicus Marine Environmental Monitoring Service (CMEMS), SeaDataNet and several other services. The file format is recommended for meteorological, oceanographic, hydrological and glaciological data (although exceptions exist). Work is in progress within WMO to identify specific CF profiles for NetCDF for use within WMO.</p>
+<p>NetCDF is a container like JSON and XML, and as such not a recommended file format for data within SDMS. However, the Climate and Forecast convention constrains the degrees of freedom within NetCDF and enforces structures and application of controlled vocabularies to describe the content of the data. NetCDF/CF is thus a FAIR compliant file format and recommended for use within SDMS. However, even NetCDF/CF have too many degrees of freedom to allow higher orders services to be established for datasets. Thus some further constraints on granularity and structures are recommended.  NetCDF/CF is the backbone of the Earth System Grid Federation serving IPCC data, Copernicus Marine Environmental Monitoring Service (CMEMS), SeaDataNet and several other services. The file format is recommended for meteorological, oceanographic, hydrological and glaciological data (although exceptions exist). Work is in progress within WMO to identify specific CF profiles for NetCDF for use within WMO.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1791,7 +1789,7 @@ SDMS should work to enable ACDD and CF elements in GeoJSON files.
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>NetCDF following the Climate and Forecast Convention with NetCDF Attribute Convention for Dataset Discovery is recommended for file format where possible as it is a dynamic standard with a semantic framework and it maps directly to the generic Common Data Model.</p>
+<p>NetCDF following the Climate and Forecast Convention with NetCDF Attribute Convention for Dataset Discovery is recommended as the go-to file format where possible, as it is a dynamic standard with a semantic framework and it maps directly to the generic Common Data Model.</p>
 </td>
 </tr>
 <tr>
@@ -1987,7 +1985,7 @@ The file formats used should always be free and open, not commercial.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-28 10:15:55 UTC
+Last updated 2022-06-10 15:43:23 +0200
 </div>
 </div>
 </body>
