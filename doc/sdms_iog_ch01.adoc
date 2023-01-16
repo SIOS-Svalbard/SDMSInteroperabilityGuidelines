@@ -4,9 +4,9 @@
 
 Environmental and climate changes are currently observed at a global scale and in particular in the Arctic. In order to give better estimates of the future changes, the Arctic has to be monitored and analysed by a multi-disciplinary observation system which is suited to validate and gradually improve Earth System Models. The best chance to achieve significant results within a relatively short time frame is found in regions with a large natural climate gradient, and where processes sensitive to the expected changes are particularly important.
 
-Svalbard and the surrounding ocean areas fulfil all these criteria: Svalbard is located in a region with a very large climate gradient, being alternately influenced by cold central Arctic or mild marine climate conditions at time scales of weeks to years. It is also located in the region with the strongest inflow and outflow processes between the Arctic and lower-latitude oceans. In addition, Svalbard is the only region in the world (and has the facilities) where one can study and quantify one of the remaining unknowns in the climate puzzle: the extraterrestrial and especially solar influence on climate.
+Svalbard and the surrounding ocean areas fulfil all these criteria; Svalbard is located in a region with a very large climate gradient, being alternately influenced by cold central Arctic or mild marine climate conditions at time scales of weeks to years. It is also located in the region with the strongest inflow and outflow processes between the Arctic and lower-latitude oceans. In addition, Svalbard is the only region in the world (and has the facilities) where one can study and quantify one of the remaining unknowns in the climate puzzle; the extraterrestrial and especially solar influence on climate.
 
-The vision for the Svalbard Integrated Arctic Earth Observing System (SIOS) is to be a regional observational system for long term acquisition and proliferation of fundamental knowledge on global environmental change within an Earth System Science (ESS) perspective in and around Svalbard. SIOS will systematically develop and implement methods for how observational networks are to be construed and thus become a leading observational system in the Arctic and Polar regions.The SIOS Data Management System (SDMS) Data Access Portal is the entry point to SIOS datasets. It offers a web interface that contains information about datasets (metadata). These metadata are harvested on a regular basis from data centres contributing to SIOS. These data centres manage the data on behalf of the owners and providers of the data.
+The vision for the Svalbard Integrated Arctic Earth Observing System (SIOS) is to be a regional observational system for long term acquisition and proliferation of fundamental knowledge on global environmental change within an Earth System Science (ESS) perspective in and around Svalbard. SIOS will systematically develop and implement methods for how observational networks are to be construed and thus become a leading observational system in the Arctic and Polar regions. The SIOS Data Management System (SDMS) [[anchor-2]]https://sios-svalbard.org/metsis/search?f%5B0%5D=dataset_level%3ALevel-1[Data Access Portal] is the entry point to SIOS datasets. It offers a web interface that contains information about datasets (metadata). These metadata are harvested on a regular basis from [[anchor-3]]https://sios-svalbard.org/DataSubmission[data centres contributing to SIOS]. These data centres manage the data on behalf of the owners and providers of the data.
 
 A major innovative element of SIOS will be the Knowledge Centre, which will facilitate interaction between observation, modelling and process research, strategic processes, a service point to user communities and a platform for data handling and utilization <<#anchor-4,[3]>>. The SIOS Data Management System (SDMS) will be a functionality-enabling component of the Knowledge Centre, supporting data submission, discovery, access, use and preservation of SIOS relevant datasets.
 
@@ -33,6 +33,13 @@ The requirements in the document represent long term goals, requiring funding fo
 === Intended audience
 
 System managers at the data centres contributing to the SDMS.
+
+[[training]]
+=== Training and support
+
+SIOS-KC offers help and services related to preparing metadata and data in accordance to the FAIR data management principes (Wilkinson et al., 2016) and the interoperability guidelines outlined within this document. You can find information about training courses, online material, and what support SIOS-KC can offer you [[anchor-6]]https://sios-svalbard.org/DMsupport[here].
+
+
 
 [[applicable-documents]]
 === Applicable documents
