@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.18">
 <meta name="author" content="Guidance for data centres contributing to SDMS">
 <title>Technical documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -85,10 +85,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -465,6 +465,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.9</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2022-11-30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minor modifications to text, added section about SIOS-KC training, added some links.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Luke Marsden</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">0.8</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2022-06-10</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Minor modifications to text, fixed and removed dead links and updated visual profile.</p></td>
@@ -544,7 +550,8 @@ the WMO Global Cryosphere Watch.</p></td>
 <li><a href="#_background">1.1. Background</a></li>
 <li><a href="#scope">1.2. Scope</a></li>
 <li><a href="#intended-audience">1.3. Intended audience</a></li>
-<li><a href="#applicable-documents">1.4. Applicable documents</a></li>
+<li><a href="#training">1.4. Training and support</a></li>
+<li><a href="#applicable-documents">1.5. Applicable documents</a></li>
 </ul>
 </li>
 <li><a href="#interoperability-interfaces">2. Interoperability interfaces</a>
@@ -616,10 +623,10 @@ the WMO Global Cryosphere Watch.</p></td>
 <p>Environmental and climate changes are currently observed at a global scale and in particular in the Arctic. In order to give better estimates of the future changes, the Arctic has to be monitored and analysed by a multi-disciplinary observation system which is suited to validate and gradually improve Earth System Models. The best chance to achieve significant results within a relatively short time frame is found in regions with a large natural climate gradient, and where processes sensitive to the expected changes are particularly important.</p>
 </div>
 <div class="paragraph">
-<p>Svalbard and the surrounding ocean areas fulfil all these criteria: Svalbard is located in a region with a very large climate gradient, being alternately influenced by cold central Arctic or mild marine climate conditions at time scales of weeks to years. It is also located in the region with the strongest inflow and outflow processes between the Arctic and lower-latitude oceans. In addition, Svalbard is the only region in the world (and has the facilities) where one can study and quantify one of the remaining unknowns in the climate puzzle: the extraterrestrial and especially solar influence on climate.</p>
+<p>Svalbard and the surrounding ocean areas fulfil all these criteria; Svalbard is located in a region with a very large climate gradient, being alternately influenced by cold central Arctic or mild marine climate conditions at time scales of weeks to years. It is also located in the region with the strongest inflow and outflow processes between the Arctic and lower-latitude oceans. In addition, Svalbard is the only region in the world (and has the facilities) where one can study and quantify one of the remaining unknowns in the climate puzzle; the extraterrestrial and especially solar influence on climate.</p>
 </div>
 <div class="paragraph">
-<p>The vision for the Svalbard Integrated Arctic Earth Observing System (SIOS) is to be a regional observational system for long term acquisition and proliferation of fundamental knowledge on global environmental change within an Earth System Science (ESS) perspective in and around Svalbard. SIOS will systematically develop and implement methods for how observational networks are to be construed and thus become a leading observational system in the Arctic and Polar regions.The SIOS Data Management System (SDMS) Data Access Portal is the entry point to SIOS datasets. It offers a web interface that contains information about datasets (metadata). These metadata are harvested on a regular basis from data centres contributing to SIOS. These data centres manage the data on behalf of the owners and providers of the data.</p>
+<p>The vision for the Svalbard Integrated Arctic Earth Observing System (SIOS) is to be a regional observational system for long term acquisition and proliferation of fundamental knowledge on global environmental change within an Earth System Science (ESS) perspective in and around Svalbard. SIOS will systematically develop and implement methods for how observational networks are to be construed and thus become a leading observational system in the Arctic and Polar regions. The SIOS Data Management System (SDMS) <a id="anchor-2"></a><a href="https://sios-svalbard.org/metsis/search?f%5B0%5D=dataset_level%3ALevel-1">Data Access Portal</a> is the entry point to SIOS datasets. It offers a web interface that contains information about datasets (metadata). These metadata are harvested on a regular basis from <a id="anchor-3"></a><a href="https://sios-svalbard.org/DataSubmission">data centres contributing to SIOS</a>. These data centres manage the data on behalf of the owners and providers of the data.</p>
 </div>
 <div class="paragraph">
 <p>A major innovative element of SIOS will be the Knowledge Centre, which will facilitate interaction between observation, modelling and process research, strategic processes, a service point to user communities and a platform for data handling and utilization <a href="#anchor-4">[3]</a>. The SIOS Data Management System (SDMS) will be a functionality-enabling component of the Knowledge Centre, supporting data submission, discovery, access, use and preservation of SIOS relevant datasets.</p>
@@ -655,7 +662,13 @@ data, and less on underlying file formats.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="applicable-documents"><a class="anchor" href="#applicable-documents"></a>1.4. Applicable documents</h3>
+<h3 id="training"><a class="anchor" href="#training"></a>1.4. Training and support</h3>
+<div class="paragraph">
+<p>SIOS-KC offers help and services related to preparing metadata and data in accordance to the FAIR data management principes (Wilkinson et al., 2016) and the interoperability guidelines outlined within this document. You can find information about training courses, online material, and what support SIOS-KC can offer you <a id="anchor-6"></a><a href="https://sios-svalbard.org/DMsupport">here</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="applicable-documents"><a class="anchor" href="#applicable-documents"></a>1.5. Applicable documents</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1504,7 +1517,7 @@ bibliographic citations pertaining to the data set.</p></td>
 <p>While interoperability at the metadata level is important for SDMS, exchange of observations and data products is vital to the success of SDMS. This implies both exchange of archived data as well as exchange of real time information. In order to facilitate such exchange of information within the SDMS community a certain level of standardisation is required, especially in order to be able to automatically combine multiple datasets into a new dataset fulfilling user requirements (e.g.  for CalVal activities). This standardisation is also required to ensure that all users can easily understand the data that is made available and perform intercomparisons as well as use it in analyses.</p>
 </div>
 <div class="paragraph">
-<p>In this context documentation of data through standardised use metadata is required. By use metadata is understood identification of the variables, their structure (e.g. spatiotemporal dimensions and mapping to file format), units of variables, encoding of missing values, quality/accuracy estimates, map projection and coordinate reference system etc.</p>
+<p>In this context documentation of data through standardised use metadata is required. Use metadata helps one to identify variables, their structure (e.g. spatiotemporal dimensions and mapping to file format), units of variables, encoding of missing values, quality/accuracy estimates, map projection and coordinate reference system etc.</p>
 </div>
 <div class="paragraph">
 <p>Application of a common data model simplifies integration and intercomparison of datasets. Application of NetCDF<a href="#anchor-17">[19]</a> as the file format, utilising the Climate and Forecast<a href="#anchor-18">[20]</a> convention and serving data through OPeNDAP<a href="#anchor-19">[21]</a> simplifies the issue of integration and combination of data through the Common Data Model<a href="#anchor-20">[22]</a>.  Other solutions may be added, but this is an easy win and address requirements both within numerical simulation communities, satellite CalVal communities and WMO programmes.</p>
@@ -1728,7 +1741,7 @@ SDMS is not capable of parsing WMS layers for specific datasets from site specif
 <div class="sect4">
 <h5 id="darwincorearchive"><a class="anchor" href="#darwincorearchive"></a>2.2.3.2. Darwin Core Archive</h5>
 <div class="paragraph">
-<p>Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity. It is the backbone of the Global Biodiversity Information facility (GBIF). In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content. SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS. Further information is available at <a href="https://dwc.tdwg.org/terms/" class="bare">https://dwc.tdwg.org/terms/</a>.</p>
+<p>Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity. It is the backbone of the Global Biodiversity Information facility (GBIF) and the Ocean Biodiversity Information System (OBIS). In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content. A second file (eml.xml) describes the content and strucuture of the CSVs and links the column headers to the Darwin Core terms. SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS. Further information is available at <a href="https://dwc.tdwg.org/terms/" class="bare">https://dwc.tdwg.org/terms/</a>.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1749,7 +1762,7 @@ SDMS is not capable of parsing WMS layers for specific datasets from site specif
 <p>JavaScript Object Notation (<a href="http://www.json.org/">JSON</a>) and the geographical extension <a href="http://geojson.org/">GeoJSON</a> of this is similar to NetCDF in that it is a container lacking standardised metadata.  <a href="http://json-ld.org/">JSON-LD</a> (JavaScript Object Notation for Linked Data,) enables encoding of Linked Data using JSON.</p>
 </div>
 <div class="paragraph">
-<p>There is currently no standardised FAIR compliant implementation of JSON for the types of data SDMS is handling. The CF convention could be implemented in JSON and there is work internationally pushing in this direction, but yet not mature enough.</p>
+<p>There is currently no standardised FAIR compliant implementation of JSON for the types of data SDMS is handling. The CF convention could be implemented in JSON and there is work internationally pushing in this direction, but not yet mature enough.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1821,6 +1834,14 @@ SDMS should work to enable ACDD and CF elements in GeoJSON files.
 </td>
 <td class="hdlist2">
 <p>It is <strong>not</strong> recommended to combine information from several stations in a single NetCDF/CF file (granularity issue).</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Recommendation:</strong>
+</td>
+<td class="hdlist2">
+<p>You can check your NetCDF file against the CF and ACDD conventions at <a href="https://sios-svalbard.org/dataset_validation/form" class="bare">https://sios-svalbard.org/dataset_validation/form</a></p>
 </td>
 </tr>
 </table>
@@ -1984,7 +2005,7 @@ The file formats used should always be free and open, not commercial.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-12 20:54:13 UTC
+Last updated 2023-01-16 16:12:52 UTC
 </div>
 </div>
 </body>

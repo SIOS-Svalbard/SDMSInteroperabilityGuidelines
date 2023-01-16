@@ -10,7 +10,7 @@ When it is not possible to encode data as NetCDF-CF or Darwin Core Archive, data
 
 [[darwincorearchive]]
 ===== Darwin Core Archive
-Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity. It is the backbone of the Global Biodiversity Information facility (GBIF). In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content. SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS. Further information is available at https://dwc.tdwg.org/terms/. 
+Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity. It is the backbone of the Global Biodiversity Information facility (GBIF) and the Ocean Biodiversity Information System (OBIS). In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content. A second file (eml.xml) describes the content and strucuture of the CSVs and links the column headers to the Darwin Core terms. SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS. Further information is available at https://dwc.tdwg.org/terms/. 
 
 [horizontal]
 *Recommendation:*::
@@ -21,7 +21,7 @@ Darwin Core Archive is recommended for use for biodiversity data within SDMS.
 
 JavaScript Object Notation (http://www.json.org/[JSON]) and the geographical extension http://geojson.org/[GeoJSON] of this is similar to NetCDF in that it is a container lacking standardised metadata.  http://json-ld.org/[JSON-LD] (JavaScript Object Notation for Linked Data,) enables encoding of Linked Data using JSON.
 
-There is currently no standardised FAIR compliant implementation of JSON for the types of data SDMS is handling. The CF convention could be implemented in JSON and there is work internationally pushing in this direction, but yet not mature enough.
+There is currently no standardised FAIR compliant implementation of JSON for the types of data SDMS is handling. The CF convention could be implemented in JSON and there is work internationally pushing in this direction, but not yet mature enough.
 
 IMPORTANT: SDMS is currently *not* able to consume JSON files.
 
@@ -42,6 +42,8 @@ NetCDF/CF files should also include global attributes according to the http://wi
 For datasets representing time series or profiles it is required to add the global attribute featureType with the appropriate content. If no featureType is found in the data it is assumed that the data are gridded in nature.
 *Recommendation:*::
 It is *not* recommended to combine information from several stations in a single NetCDF/CF file (granularity issue).
+*Recommendation:*::
+You can check your NetCDF file against the CF and ACDD conventions at https://sios-svalbard.org/dataset_validation/form
 
 [[wmo-bufr]]
 ===== WMO BUFR
