@@ -17,7 +17,9 @@ Documents are transformed from the original OpenDocumentFormat into ASCIIDOC. Gu
 The document has been seperated into several logical building blocks which can be further separated if required.
 
 ## Work flow
-The intention is to collaborate on the document using issues which are translated into pull requestsn (PR) when agreed. Major revisions will always require a separate review of the PR. In this context every modification should follow the process:
+The intention is to collaborate on the document using issues which are translated into pull requestsn (PR) when agreed. 
+Major revisions will always require a separate review of the PR. 
+In this context every modification should follow the process (assuming all contributors are members of the project, ask if not):
 1. Do a git pull to update your local code
 1. Create a new local branch using git checkout -b [name_of_your_new_branch]
 1. Make you local changes and commit using git commit
