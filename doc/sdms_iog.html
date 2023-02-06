@@ -467,7 +467,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">1.0</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2023-02-??</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Major rewrite</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Major rewrite - in progress</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -953,17 +953,13 @@ A separate document is developed on the harvest process (release pending convers
 <div class="paragraph">
 <p>Regardless of the metadata standard used and the mechanism for transport of the information the following recommendation should be implemented at the repositories.</p>
 </div>
-<div class="hdlist">
-<table>
-<tr>
-<td class="hdlist1">
-<a id="anchor-26"></a><strong>Requirement:</strong>
-</td>
-<td class="hdlist2">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="anchor-26"></a>Requirement</dt>
+<dd>
 <p>All datasets should have a unique identifier issued by the host data centre. This is used to track datasets in the central repository and check for duplicates. The identifier is set by the authoritative source for the dataset.</p>
-</td>
-</tr>
-</table>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
 <p>This implies that SIOS Data Access Portal will not specify or change a unique identifier unless the dataset is hosted by the SIOS Data Access Portal.</p>
@@ -982,7 +978,7 @@ The only exception to this is when SIOS is harvesting discovery metadata using T
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><strong>Recommendation</strong></dt>
+<dt class="hdlist1">Recommendation</dt>
 <dd>
 <p>Always include a license in the discovery metadata. Following the <a href="#siosdatapolicy">SIOS Data Policy</a>, SIOS recommends usage of the Creative Commons Attribution License and use identifiers and URL to license text from <a href="https://spdx.org/licenses/" class="bare">https://spdx.org/licenses/</a>. It is recommended to include both a standardised identifier and a link to the full license text.</p>
 </dd>
@@ -994,63 +990,84 @@ The only exception to this is when SIOS is harvesting discovery metadata using T
 <div class="sect4">
 <h5 id="_introduction_2"><a class="anchor" href="#_introduction_2"></a>2.1.2.1. Introduction</h5>
 <div class="paragraph">
-<p>Metadata should be exposed using a suitable interface that allows information on existing datasets as well as changes to the inventory to be conveyed to the SIOS Data Access Portal. Suitable interfaces for this are OAI-PMH and OGC CSW. Other interfaces may be evaluated, but to ensure a cost effective solution the number interfaces must be limited.</p>
+<p>Metadata should be exposed using a suitable interface that allows information on existing datasets as well as changes to the inventory to be conveyed to the SIOS Data Access Portal.
+Suitable interfaces for this are OAI-PMH and OGC CSW. Other interfaces are constantly evaluated, but to ensure a cost effective solution the number interfaces must be limited.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><strong>Recommendation</strong></dt>
+<dt class="hdlist1">Recommendation</dt>
 <dd>
-<p>OAI-PMH is the recommended interface to use due to its simplicity and cost effective nature. A number of software solutions supporting this is freely available.</p>
+<p>OAI-PMH is the recommended interface to use due to its simplicity and cost effective nature.
+A number of software solutions supporting this is freely available.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>Although OAI-PMH is recommended, OGC CSW will also be harvested. Work is in progress with other exchange mechanisms.</p>
+<p>Although OAI-PMH is recommended, OGC CSW will also be harvested.
+Work is in progress to enable support for other exchange mechanisms for discovery metadata.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_oai_pmh"><a class="anchor" href="#_oai_pmh"></a>2.1.2.2. OAI-PMH</h5>
 <div class="paragraph">
-<p>The Open Archives Initiatives Protocol for Metadata Harvesting (OAI-PMH) is the recommended interface for providing discovery metadata to the SIOS Data Access Portal. It is a cost-effective and robust implementation for exchange of metadata between data centres. It is much cheaper to implement than most alternatives and there are a number of tools available. Some of these are listed on <a href="#anchor-11">[14]</a>. The central node of SDMS is using <a href="https://pycsw.org/">pyCSW</a> to provide OAI-PMH (and other protocols).</p>
+<p>The Open Archives Initiatives Protocol for Metadata Harvesting (OAI-PMH) is the recommended interface for providing discovery metadata to the SIOS Data Access Portal.
+It is a cost-effective and robust implementation for exchange of metadata between data centres.
+It is much cheaper to implement than most alternatives and there are a number of open source tools available that implements this (e.g. pycsw, GeoNetwork).
+Some of these are listed on <a href="#anchor-11">[14]</a>.
+The central node of SDMS is using <a href="https://pycsw.org/">pyCSW</a> to provide OAI-PMH (and other machine readable en points).</p>
 </div>
 <div class="paragraph">
 <p>When implementing OAI-PMH there is a number of SDMS recommendations that are based on experience during the International Polar Year, SIOS Preparatory Phase and the operation of SDMS.</p>
 </div>
-<div class="hdlist">
-<table>
-<tr>
-<td class="hdlist1">
-<strong>Recommendation:</strong>
-</td>
-<td class="hdlist2">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Requirement</dt>
+<dd>
 <p>OAI-PMH version 2 must be used.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<strong>Recommendation:</strong>
-</td>
-<td class="hdlist2">
-<p>When implementing OAI-PMH for large repositories containing much more than SIOS relevant data, configuration of a dedicated SIOS set is strongly recommended as this reduces the load on the SDMS, which otherwise has to do filtering of all harvested metadata. The name of the set that SDMS should harvest has to be communicated, and a set specification like “SIOS” is recommended. More information is available in <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#Set">OAI-PMH Set specification</a>.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<strong>Recommendation:</strong>
-</td>
-<td class="hdlist2">
-<p>When records are deleted in the contributing data centres catalogues, information on this has to be communicated to the central catalogue. In order to achieve this OAI-PMH identifies the support for deleted records through the <strong>deletedRecord</strong> element retrieved in the Identify request. Valid responses are no, persistent and transient. SDMS contributing data centres must support <strong>transient</strong> and must maintain transient records for at least 1 month <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>. More information on this feature is available in <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords">OAI-PMH specification of deleted records</a>.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<strong>Recommendation:</strong>
-</td>
-<td class="hdlist2">
-<p>The OAI-PMH interface by default offers metadata in <a href="http://dublincore.org/">Dublin Core</a>. This is insufficient for SDMS purposes. Metadata has to be offered in <a href="https://github.com/ISO-TC211/XML">ISO19115</a> and/or <a href="http://gcmd.nasa.gov/add/difguide/">GCMD DIF</a>. Details on these specifications are provided below. In order to properly identify the metadata standards it is recommended to use the following keywords: “dif” for GCMD DIF, “iso19139” for the ISO19115 minimum profile.</p>
-</td>
-</tr>
-</table>
+</dd>
+<dt class="hdlist1">Recommendation</dt>
+<dd>
+<p>When implementing OAI-PMH for large repositories containing much more than SIOS relevant data, configuration of a dedicated SIOS set is strongly recommended as this reduces the load on the SDMS, which otherwise has to do filtering of all harvested metadata.
+The name of the set that SDMS should harvest has to be communicated, and a set specification like “SIOS” is recommended.
+More information is available in <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#Set">OAI-PMH Set specification</a>.</p>
+</dd>
+<dt class="hdlist1">Recommendation</dt>
+<dd>
+<p>When records are deleted in the contributing data centres catalogues, information on this has to be communicated to the central catalogue.
+In order to achieve this OAI-PMH identifies the support for deleted records through the <strong>deletedRecord</strong> element retrieved in the Identify request.
+Valid responses are no, persistent and transient.
+SDMS contributing data centres must support <strong>transient</strong> and must maintain transient records for at least 1 month <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.
+More information on this feature is available in <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords">OAI-PMH specification of deleted records</a>.</p>
+</dd>
+<dt class="hdlist1">Requirement</dt>
+<dd>
+<p>The OAI-PMH interface by default offers metadata in <a href="http://dublincore.org/">Dublin Core</a>.
+This is insufficient for SDMS purposes.
+Metadata has to be offered in <a href="https://github.com/ISO-TC211/XML">ISO19115</a> and/or <a href="http://gcmd.nasa.gov/add/difguide/">GCMD DIF</a>.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Recommendation</dt>
+<dd>
+<p>Details on the discovery metadata specifications are provided below.
+In order to properly identify the metadata standards in the OAI-PMH service endpoint it is recommended to use the keywords below.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">Keywords</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>“dif” for GCMD DIF, preferably (dif9 or dif10 to reflect the version)</p>
+</li>
+<li>
+<p>“iso19139” for the ISO19115 minimum profile</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect4">
@@ -1058,25 +1075,17 @@ The only exception to this is when SIOS is harvesting discovery metadata using T
 <div class="paragraph">
 <p>The Open Geospatial Consortium Catalogue Services for the Web (OGC CSW <a href="#anchor-12">[14]</a>) is another standard for exposing the content of a catalogue in a standardised form. Similar to OAI-PMH records are exposed using XML. Compared to OAI-PMH, OGC CSW is more expensive to implement from the specification although there are several tools supporting it. It is the recommended exchange mechanism for metadata within the European framework INSPIRE<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> and is supported by the SIOS Data Access Portal. The portal only consumes ISO 19115/ISO 19139 through OGC CSW.</p>
 </div>
-<div class="hdlist">
-<table>
-<tr>
-<td class="hdlist1">
-<strong>Recommendation:</strong>
-</td>
-<td class="hdlist2">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Recommendation</dt>
+<dd>
 <p>Do not use SOAP.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<strong>Recommendation:</strong>
-</td>
-<td class="hdlist2">
-<p>Serve ISO19115/ISO 19139.</p>
-</td>
-</tr>
-</table>
+</dd>
+<dt class="hdlist1">Recommendation</dt>
+<dd>
+<p>Serve ISO19115/ISO19139. Detailed information is provided later.</p>
+</dd>
+</dl>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -2172,7 +2181,7 @@ The file formats used should always be free and open, not commercial.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-02-06 11:56:36 UTC
+Last updated 2023-02-06 21:10:54 UTC
 </div>
 </div>
 </body>
