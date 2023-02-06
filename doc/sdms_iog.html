@@ -465,6 +465,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1.0</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2023-02-??</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Major rewrite</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">0.9</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2022-11-30</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Minor modifications to text, added section about SIOS-KC training, added some links.</p></td>
@@ -697,7 +703,7 @@ data, and less on underlying file formats.</p>
 </tr>
 <tr>
 <td class="hdlist1">
-<a id="RD-4"></a>[RD-4]
+D-26-4]][RD-4]
 </td>
 <td class="hdlist2">
 <p><a id="siosdatapolicy"></a> <a href="https://sios-svalbard.org/sites/sios-svalbard.org/files/common/SIOS_Data_Policy.pdf">SIOS Data Policy</a></p>
@@ -793,7 +799,7 @@ data, and less on underlying file formats.</p>
 </tr>
 <tr>
 <td class="hdlist1">
-<a id="RD-26"></a>[RD-16]
+<a id="RD-16"></a>[RD-16]
 </td>
 <td class="hdlist2">
 <p><a id="anchor-13"></a><a href="http://gcmd.gsfc.nasa.gov/add/difguide/index.html">GCMD DIF Writers Guide</a></p>
@@ -951,7 +957,7 @@ A separate document is developed on the harvest process (release pending convers
 <table>
 <tr>
 <td class="hdlist1">
-<a id="anchor-26"></a><strong>Recommendation:</strong>
+<a id="anchor-26"></a><strong>Requirement:</strong>
 </td>
 <td class="hdlist2">
 <p>All datasets should have a unique identifier issued by the host data centre. This is used to track datasets in the central repository and check for duplicates. The identifier is set by the authoritative source for the dataset.</p>
@@ -961,6 +967,18 @@ A separate document is developed on the harvest process (release pending convers
 </div>
 <div class="paragraph">
 <p>This implies that SIOS Data Access Portal will not specify or change a unique identifier unless the dataset is hosted by the SIOS Data Access Portal.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The only exception to this is when SIOS is harvesting discovery metadata using THREDDS Data Catalogues (described later) and the underlying NetCDF files doesn&#8217;t have a proper and guaranteed unique identifier.
+</td>
+</tr>
+</table>
 </div>
 <div class="dlist">
 <dl>
@@ -2154,7 +2172,7 @@ The file formats used should always be free and open, not commercial.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-01-16 16:18:22 UTC
+Last updated 2023-02-06 11:56:36 UTC
 </div>
 </div>
 </body>
