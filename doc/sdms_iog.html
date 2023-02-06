@@ -1044,16 +1044,13 @@ More information on this feature is available in <a href="http://www.openarchive
 <p>The OAI-PMH interface by default offers metadata in <a href="http://dublincore.org/">Dublin Core</a>.
 This is insufficient for SDMS purposes.
 Metadata has to be offered in <a href="https://github.com/ISO-TC211/XML">ISO19115</a> and/or <a href="http://gcmd.nasa.gov/add/difguide/">GCMD DIF</a>.</p>
-<div class="dlist">
-<dl>
+</dd>
 <dt class="hdlist1">Recommendation</dt>
 <dd>
 <p>Details on the discovery metadata specifications are provided below.
 In order to properly identify the metadata standards in the OAI-PMH service endpoint it is recommended to use the keywords below.</p>
-</dd>
-</dl>
-</div>
-</dd>
+<div class="dlist">
+<dl>
 <dt class="hdlist1">Keywords</dt>
 <dd>
 <div class="ulist">
@@ -1069,19 +1066,25 @@ In order to properly identify the metadata standards in the OAI-PMH service endp
 </dd>
 </dl>
 </div>
+</dd>
+</dl>
+</div>
 </div>
 <div class="sect4">
 <h5 id="_ogc_csw"><a class="anchor" href="#_ogc_csw"></a>2.1.2.3. OGC CSW</h5>
 <div class="paragraph">
-<p>The Open Geospatial Consortium Catalogue Services for the Web (OGC CSW <a href="#anchor-12">[14]</a>) is another standard for exposing the content of a catalogue in a standardised form. Similar to OAI-PMH records are exposed using XML. Compared to OAI-PMH, OGC CSW is more expensive to implement from the specification although there are several tools supporting it. It is the recommended exchange mechanism for metadata within the European framework INSPIRE<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> and is supported by the SIOS Data Access Portal. The portal only consumes ISO 19115/ISO 19139 through OGC CSW.</p>
+<p>The Open Geospatial Consortium Catalogue Services for the Web (OGC CSW <a href="#anchor-12">[14]</a>) is another standard for exposing the content of a catalogue in a standardised form.
+Similar to OAI-PMH records are exposed using XML.
+Compared to OAI-PMH, OGC CSW is more expensive to implement from the specification although there are several tools supporting it.
+It is the recommended exchange mechanism for metadata within the European framework INSPIRE<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> and is supported by the SIOS Data Access Portal.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Recommendation</dt>
+<dt class="hdlist1">Requirement</dt>
 <dd>
 <p>Do not use SOAP.</p>
 </dd>
-<dt class="hdlist1">Recommendation</dt>
+<dt class="hdlist1">Requirement</dt>
 <dd>
 <p>Serve ISO19115/ISO19139. Detailed information is provided later.</p>
 </dd>
@@ -1106,13 +1109,17 @@ Only version 2.0.2 exchange has been thoroughly tested so far.
 <p>The implementation of Sensor Web Enablement (SWE) as a useful suite of standards of the OGC for building the Sensor Web is recommended to allow for interoperability and to reduce the integration efforts of new data sources, although not supported by the SIOS Data Management System central node yet.</p>
 </div>
 <div class="paragraph">
-<p>Recommended data formats are Observations and Measurements (O&amp;M) and SensorML. For describing devices and sensors in terms of metadata to NRT-data streams or archived and disseminated data basic SensorML should be applicable. These are Standard for modelling/encoding sensor Metadata based on XML (latest version: SensorML 2.0). Hence Editors are needed to facilitate the provision of these metadata to the SDMS with focus on ISO 19115 metadata. As controlled vocabulary for device description the NERC-SeaDataNet vocabulary could be a useful recommendation if agreed on.</p>
+<p>Recommended data formats are Observations and Measurements (O&amp;M) and SensorML.
+For describing devices and sensors in terms of metadata to NRT-data streams or archived and disseminated data basic SensorML should be applicable.
+These are Standard for modelling/encoding sensor Metadata based on XML (latest version: SensorML 2.0).
+Hence Editors are needed to facilitate the provision of these metadata to the SDMS with focus on ISO 19115 metadata.
+As controlled vocabulary for device description the NERC-SeaDataNet vocabulary could be a useful recommendation if agreed on.</p>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<div class="title">Important</div>
+<div class="title">Warning</div>
 </td>
 <td class="content">
 SWE is not supported for data discovery purposes, but is considered for other purposes within SIOS.
@@ -1124,10 +1131,15 @@ SWE is not supported for data discovery purposes, but is considered for other pu
 <div class="sect4">
 <h5 id="_other"><a class="anchor" href="#_other"></a>2.1.2.5. Other</h5>
 <div class="paragraph">
-<p>Harvesting of discovery information using OpenSearch is under testing, but not supported for regular exchange of discovery metadata. According to <a href="#anchor-21">[23]</a> OpenSearch is a “collection of simple formats for the sharing of search results. The OpenSearch description document format can be used to describe a search engine so that it can be used by search client applications.”</p>
+<p>Harvesting of discovery information using OpenSearch being tested, but is yet not supported for regular exchange of discovery metadata within SIOS.
+According to <a href="#anchor-21">[23]</a> OpenSearch is a “collection of simple formats for the sharing of search results.
+The OpenSearch description document format can be used to describe a search engine so that it can be used by search client applications.”</p>
 </div>
 <div class="paragraph">
-<p>Work is in progress to enable support for schema.org.</p>
+<p>Within the Polar Data Management Community an effort has been addressing exchange of discovery metadata using schema.org.
+The intention is to make it easier for data repositories to announce their datasets by embedding schema.org in web pages.
+The work is based on ESIP&#8217;s Science on schema.org<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.
+Harvesting information from data repositories serving schema.org is under testing for third party data repositories.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1157,7 +1169,7 @@ More information on schema.org to be added.
 <strong>Requirement:</strong>
 </td>
 <td class="hdlist2">
-<p>ISO19115 records <strong>must</strong> at least state the unique id, temporal and spatial location, scientific content, responsible data centre and PI as well as links to the actual data<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>. Datasets without such specifications are not ingested in the catalogue.</p>
+<p>ISO19115 records <strong>must</strong> at least state the unique id, temporal and spatial location, scientific content, responsible data centre and PI as well as links to the actual data<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>. Datasets without such specifications are not ingested in the catalogue.</p>
 </td>
 </tr>
 <tr>
@@ -1181,7 +1193,7 @@ More information on schema.org to be added.
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>For stations where it is relevant (e.g. stations contributing to WMO GCW through CryoNet) it is mandatory to have one keyword from the WMO CategoryCode list <a href="#anchor-16">[18]</a><sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>. Relevant keywords for SDMS are e.g. weatherObservations, meteorology, hydrology, climatology, glaciology. In the context of SDMS alone, this is not a requirement.</p>
+<p>For stations where it is relevant (e.g. stations contributing to WMO GCW through CryoNet) it is mandatory to have one keyword from the WMO CategoryCode list <a href="#anchor-16">[18]</a><sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup>. Relevant keywords for SDMS are e.g. weatherObservations, meteorology, hydrology, climatology, glaciology. In the context of SDMS alone, this is not a requirement.</p>
 </td>
 </tr>
 <tr>
@@ -1357,7 +1369,7 @@ The table below is under review.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URL to the actual dataset accompanied with identification of the protocol supported.  This implies that elements gmd:protocol/gco:CharacterString and gmd:linkage/gmd:URL must be set and the gmd:protocol contains a predefined keyword<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup>. This is used both to identify direct download of datasets (i.e. HTTP or FTP) as well as services on top of dataset (e.g. OPeNDAP, OGC WMS). It is important to note that direct download should not refer to a website requiring manual intervention. Direct download will be handled by the basket in the data portal and enables bundling of data for download etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL to the actual dataset accompanied with identification of the protocol supported.  This implies that elements gmd:protocol/gco:CharacterString and gmd:linkage/gmd:URL must be set and the gmd:protocol contains a predefined keyword<sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup>. This is used both to identify direct download of datasets (i.e. HTTP or FTP) as well as services on top of dataset (e.g. OPeNDAP, OGC WMS). It is important to note that direct download should not refer to a website requiring manual intervention. Direct download will be handled by the basket in the data portal and enables bundling of data for download etc.</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">MC</p></td>
 </tr>
@@ -1569,7 +1581,7 @@ data collected.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Related URL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Related_URL&gt;</strong> field specifies links to Internet sites that contain information related to the data, as well as related Internet sites such as project home pages, related data archives/servers, metadata extensions, online software packages, web mapping services, and calibration/validation data.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MC<sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MC<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DIF Revision History</p></td>
@@ -1642,7 +1654,7 @@ bibliographic citations pertaining to the data set.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extended Metadata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>&lt;Extended_Metadata&gt;</strong> field will allow organizations to store user defined values within the metadata record without reusing existing GCMD defined metadata fields.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup></p></td>
 </tr>
 </tbody>
 </table>
@@ -1661,7 +1673,7 @@ bibliographic citations pertaining to the data set.</p></td>
 <strong>Recommendation:</strong>
 </td>
 <td class="hdlist2">
-<p>GCMD do not require a controlled vocabulary for the quality element.  SDMS should to improve search results<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup>.</p>
+<p>GCMD do not require a controlled vocabulary for the quality element.  SDMS should to improve search results<sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup>.</p>
 </td>
 </tr>
 <tr>
@@ -1746,7 +1758,7 @@ bibliographic citations pertaining to the data set.</p></td>
 <div class="sect4">
 <h5 id="opendap"><a class="anchor" href="#opendap"></a>2.2.2.3. OPeNDAP</h5>
 <div class="paragraph">
-<p>The Data Access Protocol simplifies integration of data from various data centres as it is utilising the <a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">Common Data Model</a>, provided input data are encoded according to Climate and Forecast conventions use metadata follows the data and the application of a data stream removes the step of downloading a file and keeping track of this while working on the data. It also allows segmentation of data in variable space and time and it is RESTful<sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup>.  OPenDAP can relate to files or relational database systems and is extensively used by e.g. Copernicus services, Earth System Grid Federation and others.</p>
+<p>The Data Access Protocol simplifies integration of data from various data centres as it is utilising the <a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">Common Data Model</a>, provided input data are encoded according to Climate and Forecast conventions use metadata follows the data and the application of a data stream removes the step of downloading a file and keeping track of this while working on the data. It also allows segmentation of data in variable space and time and it is RESTful<sup class="footnote">[<a id="_footnoteref_12" class="footnote" href="#_footnotedef_12" title="View footnote.">12</a>]</sup>.  OPenDAP can relate to files or relational database systems and is extensively used by e.g. Copernicus services, Earth System Grid Federation and others.</p>
 </div>
 <div class="paragraph">
 <p>SDMS is currently able to consume OPeNDAP enabled datasets, but the level of support depends on the structure and standards (CF) conformance of the data served.</p>
@@ -1911,7 +1923,7 @@ SDMS is not capable of parsing WMS layers for specific datasets from site specif
 <p>Most of the exchange mechanisms mentioned above transfer files. In order to properly understand the content of a file some use metadata is usually necessary. File formats that embed use metadata (and also discovery metadata) are preferred (e.g. NetCDF/CF and Darwin Core Archive). NetCDF in itself is not self describing, but NetCDF following the Climate and Forecast Convention is self describing. Adding the <a href="http://wiki.esipfed.org/index.php?title=Category:Attribute_Conventions_Dataset_Discovery">NetCDF Attribute Convention for Dataset Discovery</a> embeds full discovery metadata (e.g. originator/PI, constraints etc.) in the file.</p>
 </div>
 <div class="paragraph">
-<p>When it is not possible to encode data as NetCDF-CF or Darwin Core Archive, data can be uploaded in a non-proprietary file format that is easy to consume for users (without specific software) accompanied by a detailed product manual<sup class="footnote">[<a id="_footnoteref_12" class="footnote" href="#_footnotedef_12" title="View footnote.">12</a>]</sup> (in PDF format). <em>This approach cannot be used for SIOS Core Data</em>.</p>
+<p>When it is not possible to encode data as NetCDF-CF or Darwin Core Archive, data can be uploaded in a non-proprietary file format that is easy to consume for users (without specific software) accompanied by a detailed product manual<sup class="footnote">[<a id="_footnoteref_13" class="footnote" href="#_footnotedef_13" title="View footnote.">13</a>]</sup> (in PDF format). <em>This approach cannot be used for SIOS Core Data</em>.</p>
 </div>
 </div>
 <div class="sect4">
@@ -2155,33 +2167,36 @@ The file formats used should always be free and open, not commercial.
 <a href="#_footnoteref_4">4</a>. Not required for scientific data.
 </div>
 <div class="footnote" id="_footnotedef_5">
-<a href="#_footnoteref_5">5</a>. This recommendation will be revisited.
+<a href="#_footnoteref_5">5</a>. <a href="https://github.com/ESIPFed/science-on-schema.org" class="bare">https://github.com/ESIPFed/science-on-schema.org</a>
 </div>
 <div class="footnote" id="_footnotedef_6">
-<a href="#_footnoteref_6">6</a>. There is currently no way of including this information in GCMD DIF, although a mapping to ISO TopicCategories may be used.
+<a href="#_footnoteref_6">6</a>. This recommendation will be revisited.
 </div>
 <div class="footnote" id="_footnotedef_7">
-<a href="#_footnoteref_7">7</a>. OSGEO or GCMD keywords are required for proper interpretation. More details to be added for this. These keywords are translated in the harvesting routine.
+<a href="#_footnoteref_7">7</a>. There is currently no way of including this information in GCMD DIF, although a mapping to ISO TopicCategories may be used.
 </div>
 <div class="footnote" id="_footnotedef_8">
-<a href="#_footnoteref_8">8</a>. Further guidelines are required compared to GCMD.
+<a href="#_footnoteref_8">8</a>. OSGEO or GCMD keywords are required for proper interpretation. More details to be added for this. These keywords are translated in the harvesting routine.
 </div>
 <div class="footnote" id="_footnotedef_9">
-<a href="#_footnoteref_9">9</a>. Depends on potential requirements within SDMS.
+<a href="#_footnoteref_9">9</a>. Further guidelines are required compared to GCMD.
 </div>
 <div class="footnote" id="_footnotedef_10">
-<a href="#_footnoteref_10">10</a>. This work should relate to international activities in this field in the context of e.g. GEO, ICES, WMO etc. and must be coordinated within SDMS by the Terminology Team.
+<a href="#_footnoteref_10">10</a>. Depends on potential requirements within SDMS.
 </div>
 <div class="footnote" id="_footnotedef_11">
-<a href="#_footnoteref_11">11</a>. <a href="http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/" class="bare">http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/</a>
+<a href="#_footnoteref_11">11</a>. This work should relate to international activities in this field in the context of e.g. GEO, ICES, WMO etc. and must be coordinated within SDMS by the Terminology Team.
 </div>
 <div class="footnote" id="_footnotedef_12">
-<a href="#_footnoteref_12">12</a>. There is currently no template for product manuals available. This is to be developed.
+<a href="#_footnoteref_12">12</a>. <a href="http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/" class="bare">http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/</a>
+</div>
+<div class="footnote" id="_footnotedef_13">
+<a href="#_footnoteref_13">13</a>. There is currently no template for product manuals available. This is to be developed.
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-02-06 21:10:54 UTC
+Last updated 2023-02-06 21:32:20 UTC
 </div>
 </div>
 </body>
