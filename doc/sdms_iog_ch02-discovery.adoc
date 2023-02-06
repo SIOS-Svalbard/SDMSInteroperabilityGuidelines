@@ -18,53 +18,72 @@ NOTE: A separate document is developed on the harvest process (release pending c
 
 Regardless of the metadata standard used and the mechanism for transport of the information the following recommendation should be implemented at the repositories.
 
-[horizontal]
-[[anchor-26]]*Requirement:*:: 
+[[anchor-26]]Requirement:: 
 All datasets should have a unique identifier issued by the host data centre. This is used to track datasets in the central repository and check for duplicates. The identifier is set by the authoritative source for the dataset.
 
 This implies that SIOS Data Access Portal will not specify or change a unique identifier unless the dataset is hosted by the SIOS Data Access Portal.
 
 NOTE: The only exception to this is when SIOS is harvesting discovery metadata using THREDDS Data Catalogues (described later) and the underlying NetCDF files doesn't have a proper and guaranteed unique identifier.
 
-*Recommendation*::
+Recommendation::
 Always include a license in the discovery metadata. Following the xref:siosdatapolicy[SIOS Data Policy], SIOS recommends usage of the Creative Commons Attribution License and use identifiers and URL to license text from https://spdx.org/licenses/. It is recommended to include both a standardised identifier and a link to the full license text. 
 
 ==== Exchange mechanisms for metadata
 
 ===== Introduction
 
-Metadata should be exposed using a suitable interface that allows information on existing datasets as well as changes to the inventory to be conveyed to the SIOS Data Access Portal. Suitable interfaces for this are OAI-PMH and OGC CSW. Other interfaces may be evaluated, but to ensure a cost effective solution the number interfaces must be limited.
+Metadata should be exposed using a suitable interface that allows information on existing datasets as well as changes to the inventory to be conveyed to the SIOS Data Access Portal. 
+Suitable interfaces for this are OAI-PMH and OGC CSW. Other interfaces are constantly evaluated, but to ensure a cost effective solution the number interfaces must be limited.
 
-*Recommendation*::
-OAI-PMH is the recommended interface to use due to its simplicity and cost effective nature. A number of software solutions supporting this is freely available.
+Recommendation::
+OAI-PMH is the recommended interface to use due to its simplicity and cost effective nature. 
+A number of software solutions supporting this is freely available.
 
-Although OAI-PMH is recommended, OGC CSW will also be harvested. Work is in progress with other exchange mechanisms.
+Although OAI-PMH is recommended, OGC CSW will also be harvested. 
+Work is in progress to enable support for other exchange mechanisms for discovery metadata.
 
 ===== OAI-PMH
 
-The Open Archives Initiatives Protocol for Metadata Harvesting (OAI-PMH) is the recommended interface for providing discovery metadata to the SIOS Data Access Portal. It is a cost-effective and robust implementation for exchange of metadata between data centres. It is much cheaper to implement than most alternatives and there are a number of tools available. Some of these are listed on <<#anchor-11,[14]>>. The central node of SDMS is using https://pycsw.org/[pyCSW] to provide OAI-PMH (and other protocols).
+The Open Archives Initiatives Protocol for Metadata Harvesting (OAI-PMH) is the recommended interface for providing discovery metadata to the SIOS Data Access Portal. 
+It is a cost-effective and robust implementation for exchange of metadata between data centres. 
+It is much cheaper to implement than most alternatives and there are a number of open source tools available that implements this (e.g. pycsw, GeoNetwork).
+Some of these are listed on <<#anchor-11,[14]>>. 
+The central node of SDMS is using https://pycsw.org/[pyCSW] to provide OAI-PMH (and other machine readable en points).
 
 When implementing OAI-PMH there is a number of SDMS recommendations that are based on experience during the International Polar Year, SIOS Preparatory Phase and the operation of SDMS.
 
-[horizontal]
-*Recommendation:*:: 
+Requirement::: 
 OAI-PMH version 2 must be used.
-*Recommendation:*:: 
-When implementing OAI-PMH for large repositories containing much more than SIOS relevant data, configuration of a dedicated SIOS set is strongly recommended as this reduces the load on the SDMS, which otherwise has to do filtering of all harvested metadata. The name of the set that SDMS should harvest has to be communicated, and a set specification like “SIOS” is recommended. More information is available in http://www.openarchives.org/OAI/openarchivesprotocol.html#Set[OAI-PMH Set specification].
-*Recommendation:*:: 
-When records are deleted in the contributing data centres catalogues, information on this has to be communicated to the central catalogue. In order to achieve this OAI-PMH identifies the support for deleted records through the *deletedRecord* element retrieved in the Identify request. Valid responses are no, persistent and transient. SDMS contributing data centres must support *transient* and must maintain transient records for at least 1 month footnote:[This may change.]. More information on this feature is available in http://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords[OAI-PMH specification of deleted records].
-*Recommendation:*:: 
-The OAI-PMH interface by default offers metadata in http://dublincore.org/[Dublin Core]. This is insufficient for SDMS purposes. Metadata has to be offered in https://github.com/ISO-TC211/XML[ISO19115] and/or http://gcmd.nasa.gov/add/difguide/[GCMD DIF]. Details on these specifications are provided below. In order to properly identify the metadata standards it is recommended to use the following keywords: “dif” for GCMD DIF, “iso19139” for the ISO19115 minimum profile.
+Recommendation::: 
+When implementing OAI-PMH for large repositories containing much more than SIOS relevant data, configuration of a dedicated SIOS set is strongly recommended as this reduces the load on the SDMS, which otherwise has to do filtering of all harvested metadata. 
+The name of the set that SDMS should harvest has to be communicated, and a set specification like “SIOS” is recommended. 
+More information is available in http://www.openarchives.org/OAI/openarchivesprotocol.html#Set[OAI-PMH Set specification].
+Recommendation::: 
+When records are deleted in the contributing data centres catalogues, information on this has to be communicated to the central catalogue. 
+In order to achieve this OAI-PMH identifies the support for deleted records through the *deletedRecord* element retrieved in the Identify request. 
+Valid responses are no, persistent and transient. 
+SDMS contributing data centres must support *transient* and must maintain transient records for at least 1 month footnote:[This may change.]. 
+More information on this feature is available in http://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords[OAI-PMH specification of deleted records].
+Requirement::: 
+The OAI-PMH interface by default offers metadata in http://dublincore.org/[Dublin Core]. 
+This is insufficient for SDMS purposes. 
+Metadata has to be offered in https://github.com/ISO-TC211/XML[ISO19115] and/or http://gcmd.nasa.gov/add/difguide/[GCMD DIF]. 
+
+Recommendation::
+Details on the discovery metadata specifications are provided below. 
+In order to properly identify the metadata standards in the OAI-PMH service endpoint it is recommended to use the keywords below.
+Keywords::: 
+- “dif” for GCMD DIF, preferably (dif9 or dif10 to reflect the version)
+- “iso19139” for the ISO19115 minimum profile
 
 ===== OGC CSW
 
 The Open Geospatial Consortium Catalogue Services for the Web (OGC CSW <<#anchor-12,[14]>>) is another standard for exposing the content of a catalogue in a standardised form. Similar to OAI-PMH records are exposed using XML. Compared to OAI-PMH, OGC CSW is more expensive to implement from the specification although there are several tools supporting it. It is the recommended exchange mechanism for metadata within the European framework INSPIREfootnote:[Not required for scientific data.] and is supported by the SIOS Data Access Portal. The portal only consumes ISO 19115/ISO 19139 through OGC CSW.
 
-[horizontal] 
-*Recommendation:*:: 
+Recommendation:: 
 Do not use SOAP.
-*Recommendation:*::
-Serve ISO19115/ISO 19139.
+Recommendation::
+Serve ISO19115/ISO19139. Detailed information is provided later.
 
 IMPORTANT: Only version 2.0.2 exchange has been thoroughly tested so far.
 

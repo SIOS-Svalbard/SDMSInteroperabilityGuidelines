@@ -17,7 +17,7 @@ Guidance for data centres contributing to SDMS
 |=======================================================================
 ^|Version ^|Date ^|Comment ^|Responsible
 
-|1.0 |2023-02-?? |Major rewrite|
+|1.0 |2023-02-?? |Major rewrite - in progress|
 |0.9 |2022-11-30 |Minor modifications to text, added section about SIOS-KC training, added some links.|Luke Marsden
 |0.8 |2022-06-10 |Minor modifications to text, fixed and removed dead links and updated visual profile.|Ilkka Matero
 |0.7 |2022-01-22 |Updates following lessons learned in harvesting especially from GeoNetwork. Added outline for product manual. Updated information on interpretation of ISO 19115. |Øystein Godøy
