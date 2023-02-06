@@ -48,7 +48,7 @@ SIOS-KC offers help and services related to preparing metadata and data in accor
 [[RD-1]][RD-1]:: http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22partBSIOS-PPfinal.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415507&ssbinary=true[Svalbard Integrated Arctic Earth Observing System – Preparatory Phase (SIOS-PP) Description of Work].
 [[RD-2]][RD-2]:: Robert Huber and Michael Klages (lead authors), 2012.  http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[SIOS Data Management System – User Requirements Document]. SIOS Deliverable D6.3.
 [[RD-3]][RD-3]:: [[anchor-4]]http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[Distributed SIOS Data Management System Implementation Plan, 2014, SIOS Deliverable D6.6.]
-[[RD-4]][RD-4]:: [[siosdatapolicy]] https://sios-svalbard.org/sites/sios-svalbard.org/files/common/SIOS_Data_Policy.pdf[SIOS Data Policy]
+D-26-4]][RD-4]:: [[siosdatapolicy]] https://sios-svalbard.org/sites/sios-svalbard.org/files/common/SIOS_Data_Policy.pdf[SIOS Data Policy]
 [[RD-5]][RD-5]:: SDMS Concepts and acronyms
 [[RD-6]][RD-6]:: SDMS System Requirements Document
 [[RD-7]][RD-7]:: SDMS Architecture Design Document
@@ -60,7 +60,7 @@ SIOS-KC offers help and services related to preparing metadata and data in accor
 [[RD-13]][RD-13]:: http://www.openarchives.org/OAI/openarchivesprotocol.html[The Open Archives Initiative Protocol for Metadata Harvesting, Version 2]
 [[RD-14]][RD-14]:: [[anchor-11]]https://www.openarchives.org/pmh/tools/tools.php[OAI-PMH tools]
 [[RD-15]][RD-15]:: [[anchor-12]]http://www.opengeospatial.org/standards/cat[OGC CSW specification]
-[[RD-26]][RD-16]:: [[anchor-13]]http://gcmd.gsfc.nasa.gov/add/difguide/index.html[GCMD DIF Writers Guide]
+[[RD-16]][RD-16]:: [[anchor-13]]http://gcmd.gsfc.nasa.gov/add/difguide/index.html[GCMD DIF Writers Guide]
 [[RD-17]][RD-17]:: [[anchor-14]]http://gcmd.nasa.gov/learn/keyword_list.html[GCMD Science Keywords]
 [[RD-18]][RD-18]:: [[anchor-15]]http://cfconventions.org/standard-names.html[Climate and Forecast Standard Names]
 [[RD-19]][RD-19]:: [[anchor-16]]http://wis.wmo.int/2013/metadata/version_1-3-0/WMO_Core_Metadata_Profile_v1.3_Part_2.pdf[WMO Code Lists]

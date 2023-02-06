@@ -19,10 +19,12 @@ NOTE: A separate document is developed on the harvest process (release pending c
 Regardless of the metadata standard used and the mechanism for transport of the information the following recommendation should be implemented at the repositories.
 
 [horizontal]
-[[anchor-26]]*Recommendation:*:: 
+[[anchor-26]]*Requirement:*:: 
 All datasets should have a unique identifier issued by the host data centre. This is used to track datasets in the central repository and check for duplicates. The identifier is set by the authoritative source for the dataset.
 
 This implies that SIOS Data Access Portal will not specify or change a unique identifier unless the dataset is hosted by the SIOS Data Access Portal.
+
+NOTE: The only exception to this is when SIOS is harvesting discovery metadata using THREDDS Data Catalogues (described later) and the underlying NetCDF files doesn't have a proper and guaranteed unique identifier.
 
 *Recommendation*::
 Always include a license in the discovery metadata. Following the xref:siosdatapolicy[SIOS Data Policy], SIOS recommends usage of the Creative Commons Attribution License and use identifiers and URL to license text from https://spdx.org/licenses/. It is recommended to include both a standardised identifier and a link to the full license text. 
