@@ -117,7 +117,15 @@ NOTE: More information on schema.org to be added.
 
 ==== Information structures for discovery metadata
 
-include::sdms_iog_ch02-discovery-iso19115.adoc[]
+===== Internal discovery model
 
-include::sdms_iog_ch02-discovery-gcmd.adoc[]
+SIOS is harvesting discovery metadata from data centres using established discovery metadata schemes and transforms this information into the internal information model used. 
+<<discovery-model-elements>> below shows the elements of the information model and mappings against ISO19115 and GCMD DIF.
+Further mappings are under development.
+
+include::discovery-model-mapping.adoc[]
+
+include::discovery-iso19115.adoc[]
+
+include::discovery-gcmd.adoc[]
 

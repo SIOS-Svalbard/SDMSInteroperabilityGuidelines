@@ -1,6 +1,6 @@
 ===== GCMD DIF
 
-The Global Change Master Directory (GCMD) Directory Interchange Format (DIF) <<#anchor-13,[15]>> is a metadata standard that is widely used (e.g. by the Antarctic Master Directory) and that was
+The Global Change Master Directory (GCMD) Directory Interchange Format (DIF) <<RD-16>> is a metadata standard that is widely used (e.g. by the Antarctic Master Directory) and that was the foundation for data management during the International Polar Year.
 
 <<gcmd-dif-elements>> shows elements in GCMD DIF and whether these are **M**andatory, **R**ecommended or **O**ptional, as well as whether they are **U**nique (only one occurrence allowed) and require utilisation of **C**ontrolled vocabularies.
 
