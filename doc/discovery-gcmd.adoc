@@ -2,6 +2,7 @@
 
 The Global Change Master Directory (GCMD) Directory Interchange Format (DIF) <<RD-16>> is a metadata standard that is widely used (e.g. by the Antarctic Master Directory) and that was the foundation for data management during the International Polar Year.
 
+////
 <<gcmd-dif-elements>> shows elements in GCMD DIF and whether these are **M**andatory, **R**ecommended or **O**ptional, as well as whether they are **U**nique (only one occurrence allowed) and require utilisation of **C**ontrolled vocabularies.
 
 [[gcmd-dif-elements]]
@@ -86,13 +87,17 @@ bibliographic citations pertaining to the data set. |R |R
 
 |Extended Metadata |The *<Extended_Metadata>* field will allow organizations to store user defined values within the metadata record without reusing existing GCMD defined metadata fields. |O |Ofootnote:[Depends on potential requirements within SDMS.]
 |=======================================================================
+////
 
 [horizontal]
-*Recommendation*::
-GCMD comes with a number of predefined controlled vocabularies that should be used in specific sections of the metadata. As indicated in the table above some sections are free text in GCMD while it is suggested to use controlled vocabularies in SDMS context.
-*Recommendation:*::
-GCMD do not require a controlled vocabulary for the quality element.  SDMS should to improve search resultsfootnote:[This work should relate to international activities in this field in the context of e.g. GEO, ICES, WMO etc. and must be coordinated within SDMS by the Terminology Team. ].
-*Recommendation:*:: 
-Related_URL has several subtypes. The existing http://gcmdservices.gsfc.nasa.gov/static/kms/rucontenttype/rucontenttype.csv[list of type and subtype] must be used to allow the SIOS Data Portal to filter the purpose of the URLs provided. When types are “View Data Set Landing Page”, “View Extended Metadata”, “View Professional Home Page”, and “View Project Home Page”, no subtype is needed.
-*Recommendation:*::
- All times must be encoded as ISO8601 either as YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ.
+Recommendation::
+GCMD comes with a number of predefined controlled vocabularies that should be used in specific sections of the metadata. 
+As indicated in the table above some sections are free text in GCMD while it is suggested to use controlled vocabularies in SDMS context.
+Recommendation::
+GCMD do not require a controlled vocabulary for the quality element. 
+SDMS should to improve search resultsfootnote:[This work should relate to international activities in this field in the context of e.g. GEO, ICES, WMO etc. and must be coordinated within SDMS by the Terminology Team. ].
+Recommendation::
+Related_URL has several subtypes. The existing http://gcmdservices.gsfc.nasa.gov/static/kms/rucontenttype/rucontenttype.csv[list of type and subtype] must be used to allow the SIOS Data Portal to filter the purpose of the URLs provided. 
+When types are “View Data Set Landing Page”, “View Extended Metadata”, “View Professional Home Page”, and “View Project Home Page”, no subtype is needed.
+Recommendation::
+All times must be encoded as ISO8601 either as YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ.
