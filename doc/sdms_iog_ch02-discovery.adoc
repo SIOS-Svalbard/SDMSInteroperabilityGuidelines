@@ -141,9 +141,9 @@ SIOS is harvesting discovery metadata from data centres using established discov
 <<discovery-model-elements>> below shows the elements of the information model and mappings against ISO19115 and GCMD DIF.
 Further mappings are under development.
 
-include::discovery-model-mapping.adoc[]
+include::sdms_iog_ch02-discovery-model-mapping.adoc[]
 
-include::discovery-iso19115.adoc[]
+include::sdms_iog_ch02-discovery-iso19115.adoc[]
 
-include::discovery-gcmd.adoc[]
+include::sdms_iog_ch02-discovery-gcmd.adoc[]
 
