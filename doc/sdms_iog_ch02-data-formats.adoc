@@ -4,66 +4,91 @@
 [[introduction-3]]
 ===== Introduction
 
-Most of the exchange mechanisms mentioned above transfer files. In order to properly understand the content of a file some use metadata is usually necessary. File formats that embed use metadata (and also discovery metadata) are preferred (e.g. NetCDF/CF and Darwin Core Archive). NetCDF in itself is not self describing, but NetCDF following the Climate and Forecast Convention is self describing. Adding the http://wiki.esipfed.org/index.php?title=Category:Attribute_Conventions_Dataset_Discovery[NetCDF Attribute Convention for Dataset Discovery] embeds full discovery metadata (e.g. originator/PI, constraints etc.) in the file.
+Most of the exchange mechanisms mentioned above transfer files. In order to properly understand the content of a file some use metadata is usually necessary. 
+File formats that embed use metadata (and also discovery metadata) are preferred (e.g. NetCDF/CF and Darwin Core Archive). 
+NetCDF in itself is not self describing, but NetCDF following the Climate and Forecast Convention is self describing. 
+Adding the http://wiki.esipfed.org/index.php?title=Category:Attribute_Conventions_Dataset_Discovery[NetCDF Attribute Convention for Dataset Discovery] embeds full discovery metadata (e.g. originator/PI, constraints etc.) in the file.
 
-When it is not possible to encode data as NetCDF-CF or Darwin Core Archive, data can be uploaded in a non-proprietary file format that is easy to consume for users (without specific software) accompanied by a detailed product manualfootnote:[There is currently no template for product manuals available. This is to be developed.] (in PDF format). _This approach cannot be used for SIOS Core Data_.
+When it is not possible to encode data as NetCDF-CF or Darwin Core Archive, data can be uploaded in a non-proprietary file format that is easy to consume for users (without specific software) accompanied by a detailed product manualfootnote:[There is currently no template for product manuals available. This is to be developed.] (in PDF format). 
+_This approach cannot be used for SIOS Core Data_.
 
 [[darwincorearchive]]
 ===== Darwin Core Archive
-Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity. It is the backbone of the Global Biodiversity Information facility (GBIF) and the Ocean Biodiversity Information System (OBIS). In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content. A second file (eml.xml) describes the content and strucuture of the CSVs and links the column headers to the Darwin Core terms. SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS. Further information is available at https://dwc.tdwg.org/terms/. 
+Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity. 
+It is the backbone of the Global Biodiversity Information facility (GBIF) and the Ocean Biodiversity Information System (OBIS). 
+In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content. 
+A second file (eml.xml) describes the content and strucuture of the CSVs and links the column headers to the Darwin Core terms. 
+SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS. 
+Further information is available at https://dwc.tdwg.org/terms/. 
 
 [horizontal]
-*Recommendation:*::
+Recommendation::
 Darwin Core Archive is recommended for use for biodiversity data within SDMS.
 
 [[jsongeojsonjson-ld]]
 ===== JSON/GeoJSON/JSON-LD
 
-JavaScript Object Notation (http://www.json.org/[JSON]) and the geographical extension http://geojson.org/[GeoJSON] of this is similar to NetCDF in that it is a container lacking standardised metadata.  http://json-ld.org/[JSON-LD] (JavaScript Object Notation for Linked Data,) enables encoding of Linked Data using JSON.
+JavaScript Object Notation (http://www.json.org/[JSON]) and the geographical extension http://geojson.org/[GeoJSON] of this is similar to NetCDF in that it is a container lacking standardised metadata.  
+http://json-ld.org/[JSON-LD] (JavaScript Object Notation for Linked Data,) enables encoding of Linked Data using JSON.
 
-There is currently no standardised FAIR compliant implementation of JSON for the types of data SDMS is handling. The CF convention could be implemented in JSON and there is work internationally pushing in this direction, but not yet mature enough.
+There is currently no standardised FAIR compliant implementation of JSON for the types of data SDMS is handling. 
+The CF convention could be implemented in JSON and there is work internationally pushing in this direction, but not yet mature enough.
 
-IMPORTANT: SDMS is currently *not* able to consume JSON files.
+IMPORTANT: SDMS is currently *not* able to consume JSON files as they are not sufficiently standartdised across providers.
 
-NOTE: SDMS should work to enable ACDD and CF elements in GeoJSON files. 
+NOTE: SDMS should work to enable ACDD and CF elements in GeoJSON files when the new OGC API's emerge. 
 
 [[netcdfcf]]
 ===== NetCDF/CF
-NetCDF is a container like JSON and XML, and as such not a recommended file format for data within SDMS. However, the Climate and Forecast convention constrains the degrees of freedom within NetCDF and enforces structures and application of controlled vocabularies to describe the content of the data. NetCDF/CF is thus a FAIR compliant file format and recommended for use within SDMS. However, even NetCDF/CF have too many degrees of freedom to allow higher orders services to be established for datasets. Thus some further constraints on granularity and structures are recommended.  NetCDF/CF is the backbone of the Earth System Grid Federation serving IPCC data, Copernicus Marine Environmental Monitoring Service (CMEMS), SeaDataNet and several other services. The file format is recommended for meteorological, oceanographic, hydrological and glaciological data (although exceptions exist). Work is in progress within WMO to identify specific CF profiles for NetCDF for use within WMO.
+NetCDF is a container like JSON and XML, and as such not a recommended file format for data within SDMS. 
+However, the Climate and Forecast convention constrains the degrees of freedom within NetCDF and enforces structures and application of controlled vocabularies to describe the content of the data. 
+CF-NetCDF is thus a FAIR compliant file format and recommended for use within SDMS. 
+However, even NetCDF/CF have too many degrees of freedom to allow higher orders services to be established for datasets. 
+Thus some further constraints on granularity and structures are recommended.  NetCDF/CF is the backbone of the Earth System Grid Federation serving IPCC data, Copernicus Marine Environmental Monitoring Service (CMEMS), SeaDataNet and several other services. 
+The file format is recommended for meteorological, oceanographic, hydrological and glaciological data (although exceptions exist). 
+Work is in progress within WMO to identify specific CF profiles for NetCDF for use within WMO.
 
 [horizontal]
-*Recommendation:*::
+Recommendation::
 NetCDF following the Climate and Forecast Convention with NetCDF Attribute Convention for Dataset Discovery is recommended as the go-to file format where possible, as it is a dynamic standard with a semantic framework and it maps directly to the generic Common Data Model.
-*Recommendation:*::
+Recommendation::
 NetCDF/CF files should be encoded according to CF-1.8 or higher.
-*Recommendation:*::
+Recommendation::
 NetCDF/CF files should also include global attributes according to the http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery_1-3#Global_Attributes[Attribute Convention for Dataset Discovery].
-*Recommendation:*::
+Recommendation::
 For datasets representing time series or profiles it is required to add the global attribute featureType with the appropriate content. If no featureType is found in the data it is assumed that the data are gridded in nature.
-*Recommendation:*::
+Recommendation::
 It is *not* recommended to combine information from several stations in a single NetCDF/CF file (granularity issue).
-*Recommendation:*::
+Recommendation::
 You can check your NetCDF file against the CF and ACDD conventions at https://sios-svalbard.org/dataset_validation/form
 
 [[wmo-bufr]]
 ===== WMO BUFR
 
-Binary Universal Form for the Representation of meteorological data (BUFR) is a binary data format maintained by WMO. Its main purpose is operational exchange of real time data and it is adapted for robust transfer on varying bandwidth connections. Data that are supposed to be exchanged using WMO Global Telecommunication System (GTS) should be encoded in WMO BUFR. BUFR is a table driven file format, implying that the format is not self explaining and the user has to have the correct table to understand the content.
+Binary Universal Form for the Representation of meteorological data (BUFR) is a binary data format maintained by WMO. 
+Its main purpose is operational exchange of real time data and it is adapted for robust transfer on varying bandwidth connections. 
+Data that are supposed to be exchanged using WMO Global Telecommunication System (GTS) should be encoded in WMO BUFR. 
+BUFR is a table driven file format, implying that the format is not self explaining and the user has to have the correct table to understand the content.
 
-BUFR is, although being a standardised format, not recommended for data sharing within SDMS.
+IMPORTANT: BUFR is, although being a standardised format, not recommended for data sharing within SDMS.
 
-NOTE: SDMS will extract information in BUFR format and convert this to NetCDF-CF and make this available in the SIOS Data Portal.
+NOTE: SDMS will extract information in BUFR format and convert this to CF-NetCDF and make this available in the SIOS Data Portal.
 
 [[wmo-grib]]
 ===== WMO Grib
 
-GRIdded Binary (GRIB) is a binary format maintained by WMO. As BUFR, this format is best suited for real time exchange over WMO GTS. It is also a table driven format like BUFR, having the same limitations.
+GRIdded Binary (GRIB) is a binary format maintained by WMO. 
+As BUFR, this format is best suited for real time exchange over WMO GTS. 
+It is also a table driven format like BUFR, having the same limitations.
 
-GRIB is, although being a standardised format, not recommended for data sharing within SDMS.
+IMPORTANT: GRIB is, although being a standardised format, not recommended for data sharing within SDMS.
 
 [[xml]]
 ===== XML
 
-Extensible Markup Language (XML) is similar to NetCDF in that it is a container lacking standardised metadata describing its contents. There are many variants of XML and the overhead is large, as the format is text-based.
+Extensible Markup Language (XML) is similar to NetCDF in that it is a container lacking standardised metadata describing its contents. 
+There are many variants of XML and the overhead is large, as the format is text-based.
 
-SDMS is currently *not* able to consume XML files nor is XML recommended as exchange format although standardised representations (e.g. WaterML) exist.
+NOTE: XML is more or less fully replaced by various flavours of JSON now. The bnew OGC API's also include CF-NetCDF as a information container.
+
+IMPORTANT: SDMS is currently *not* able to consume XML files nor is XML recommended as exchange format although standardised representations (e.g. WaterML) exist.
