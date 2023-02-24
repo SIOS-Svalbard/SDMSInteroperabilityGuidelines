@@ -2,7 +2,7 @@
 :pdf-folio-placement: physical
 :title-logo-image: image::Pictures/sios-fc.png[pdfwidth=15cm,align=right]
 = Technical documentation
-Guidance for data centres contributing to SDMS
+Guidance 4 for data centres contributing to SDMS
 :sectanchors:
 :toc: macro
 :toclevels: 4
