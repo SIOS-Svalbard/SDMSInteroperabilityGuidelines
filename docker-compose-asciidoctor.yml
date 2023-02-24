@@ -15,4 +15,4 @@ services:
       dockerfile: Dockerfile.asciidoctor
     volumes:
       - ./doc:/workdir
-    command: asciidoctor-pdf -a pdf-themesdir=./ -a pdf-theme=sdms -n sdms_iog.adoc
+    command: asciidoctor-pdf -a pdf-themesdir=./workdir -a pdf-theme=sdms -n sdms_iog.adoc
