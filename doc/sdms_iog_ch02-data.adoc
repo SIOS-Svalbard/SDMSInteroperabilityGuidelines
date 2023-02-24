@@ -3,12 +3,14 @@
 ==== Background
 
 While interoperability at the metadata level is important for SDMS, exchange of observations and data products is vital to the success of SDMS. 
-This implies both exchange of archived data as well as exchange of real time information. In order to facilitate such exchange of information within the SDMS community a certain level of standardisation is required, especially in order to be able to automatically combine multiple datasets into a new dataset fulfilling user requirements (e.g.  for CalVal activities). 
+This implies both exchange of archived data as well as exchange of real time information. 
+In order to facilitate such exchange of information within the SDMS community a certain level of standardisation is required, especially in order to be able to automatically combine multiple datasets into a new dataset fulfilling user requirements (e.g.  for CalVal activities). 
 This standardisation is also required to ensure that all users can easily understand the data that is made available and perform intercomparisons as well as use it in analyses.
 
-In this context documentation of data through standardised use metadata is required. Use metadata helps one to identify variables, their structure (e.g. spatiotemporal dimensions and mapping to file format), units of variables, encoding of missing values, quality/accuracy estimates, map projection and coordinate reference system etc.
+In this context documentation of data through standardised use metadata is required. 
+Use metadata helps one to identify variables, their structure (e.g. spatiotemporal dimensions and mapping to file format), units of variables, encoding of missing values, quality/accuracy estimates, map projection and coordinate reference system etc.
 
-Application of a common data model simplifies integration and intercomparison of datasets. Application of NetCDF <<RD-20>> as the file format, utilising the Climate and Forecast<<RD-18>> convention and serving data through OPeNDAP<<RD-22>> simplifies the issue of integration and combination of data through the Common Data Model<<RD-23>>. 
+Application of a common data model simplifies integration and intercomparison of datasets. Application of NetCDF <<RD-20>> as the file format, utilising the Climate and Forecast <<RD-18>> convention and serving data through OPeNDAP <<RD-22>> simplifies the issue of integration and combination of data through the Common Data Model <<RD-23>>. 
 Other solutions may be added, but this is an easy win and address requirements both within numerical simulation communities, satellite CalVal communities and WMO programmes.
 
 include::sdms_iog_ch02-data-protocols.adoc[]
