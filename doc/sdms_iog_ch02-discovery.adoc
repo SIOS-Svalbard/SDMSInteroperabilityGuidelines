@@ -99,6 +99,7 @@ Similar to OAI-PMH records are exposed using XML.
 Compared to OAI-PMH, OGC CSW is more expensive to implement from the specification although there are several tools supporting it. 
 It is the recommended exchange mechanism for metadata within the European framework INSPIREfootnote:[Not required for scientific data.] and is supported by the SIOS Data Access Portal. 
 
+[horizontal]
 Requirement:: 
 Do not use SOAP.
 Requirement::

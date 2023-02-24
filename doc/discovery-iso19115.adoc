@@ -1,25 +1,32 @@
 ===== ISO19115
 
-ISO19115 is an information container that can be populated with several controlled vocabularies in some of the elements. The search model for the SIOS Data Portal is currently built around parameter descriptions using the GCMD Science Keywords <<#anchor-14,[16]>>. A mapping exist between Climate and Forecast standard names <<#anchor-15,[17]>> and GCMD Science Keywords. ISO 19115 is used by e.g. INSPIRE at the European level and WMO (WMO Core Profile <<#anchor-9,[10]>>) at the global level.
+ISO19115 is an information container that can be populated with several controlled vocabularies in some of the elements. 
+The search model for the SIOS Data Portal is currently built around parameter descriptions using the GCMD Science Keywords <<RD-17>>. 
+A mapping exist between Climate and Forecast standard names <<RD-18>> and GCMD Science Keywords. 
+ISO 19115 is used by e.g. INSPIRE at the European level and WMO (WMO Core Profile <<RD-11>>) at the global level.
 
 [horizontal]
-*Requirement:*::  
+Requirement::  
 ISO19115 records *must* at least state the unique id, temporal and spatial location, scientific content, responsible data centre and PI as well as links to the actual datafootnote:[This recommendation will be revisited. ]. Datasets without such specifications are not ingested in the catalogue.
-*Requirement:*::  
+Requirement::  
 All times *must* be encoded as ISO8601.
-*Recommendation:*::  
-ISO19115 records *should* contain GCMD Science Keywords (with full hierarchy from Earth Science and using > as separator) or some other machine readable vocabulary following the FAIR guiding principles <<#anchor-22,[24]>>. The vocabulary used must be identified.
-*Recommendation:*::  
-For stations where it is relevant (e.g. stations contributing to WMO GCW through CryoNet) it is mandatory to have one keyword from the WMO CategoryCode list <<#anchor-16,[18]>>footnote:[There is currently no way of including this information in GCMD DIF, although a mapping to ISO TopicCategories may be used. ]. Relevant keywords for SDMS are e.g. weatherObservations, meteorology, hydrology, climatology, glaciology. In the context of SDMS alone, this is not a requirement.
-*Recommendation:*::
+Recommendation::  
+ISO19115 records *should* contain GCMD Science Keywords (with full hierarchy from Earth Science and using > as separator) or some other machine readable vocabulary following the FAIR guiding principles <<RD-25>>. 
+The vocabulary used must be identified.
+Recommendation::  
+For stations where it is relevant (e.g. stations contributing to WMO GCW through CryoNet) it is mandatory to have one keyword from the WMO CategoryCode list <<RD-19>>footnote:[There is currently no way of including this information in GCMD DIF, although a mapping to ISO TopicCategories may be used. ]. Relevant keywords for SDMS are e.g. weatherObservations, meteorology, hydrology, climatology, glaciology. In the context of SDMS alone, this is not a requirement.
+Recommendation::
 Metadata records *should* include information on the host data centre for the dataset.
 
 NOTE: More details to be added on ISO19115 guidance. In particular on how to embed references to the vocabularies used and information on the data centre hosting the data.
 
+////
+This table is removed for the time being, using the mapping table instead
 <<iso19115-core-elements>> shows elements in ISO19115 and whether these are **M**andatory,
 **R**ecommended or **O**ptional, as well as whether they are **U**nique
 (only one occurrence allowed) and require utilisation of **C**ontrolled
 vocabularies.
+////
 
 NOTE: SDMS interprets both gmd:MD_Metadata and gmi:MI_Metadata. 
 
@@ -27,6 +34,7 @@ NOTE: How to add dataset landing pages etc are still a bit fuzzy. SDMS still int
 
 NOTE: SDMS will extract name of the project that has generated the data from the descriptiveKeywords if these have gmd:type/gmd:MD_KeywordTypeCode set to 'project'. More details need to be agreed on this.
 
+////
 WARNING: The table below is under review.
 
 [[iso19115-core-elements]]
@@ -73,3 +81,5 @@ WARNING: The table below is under review.
 |gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor |The host data center of the dataset. This should have both a long and short name, but only specification for the long name is currently identified. The long name goes into gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString and the URL for the data center into gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL. More information to be added. |O |M
 
 |=======================================================================
+
+////
