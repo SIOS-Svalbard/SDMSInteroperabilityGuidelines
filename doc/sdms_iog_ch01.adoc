@@ -68,7 +68,7 @@ You can find information about training courses, online material, and what suppo
 [[RD-2]][RD-2]:: Robert Huber and Michael Klages (lead authors), 2012.  http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[SIOS Data Management System – User Requirements Document]. SIOS Deliverable D6.3.
 [[RD-3]][RD-3]:: http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=+attachment%3B+filename%3D%22SIOSHandbook2014.pdf%22&blobkey=id&blobtable=MungoBlobs&blobwhere=1274505415457&ssbinary=true[Distributed SIOS Data Management System Implementation Plan, 2014, SIOS Deliverable D6.6.]
 [[RD-4]][RD-4]:: [[siosdatapolicy]] https://sios-svalbard.org/sites/sios-svalbard.org/files/common/SIOS_Data_Policy.pdf[SIOS Data Policy]
-[[RD-5]][RD-5]:: SDMS Concepts and acronyms
+[[RD-5]][RD-5]:: https://github.com/SIOS-Svalbard/SDMSAcronyms/blob/master/doc/sdms_acronyms.pdf[SDMS Acronyms and Concepts Document]
 [[RD-6]][RD-6]:: SDMS System Requirements Document
 [[RD-7]][RD-7]:: SDMS Architecture Design Document
 [[RD-8]][RD-8]:: SDMS System implementation and integration plan
