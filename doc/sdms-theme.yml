@@ -4,12 +4,11 @@ page:
   margin-inner: 1.5cm
   margin-outer: 1.0cm
 header:
-  #margin: [2cm,0cm,2cm,0cm]
   font-color: #000000
   border-color: #000000
   border-style: solid
+  border-width: 1
   height: 1.5cm
-  content-margin: 1cm
   recto:
     left:
       content: |
@@ -17,7 +16,7 @@ header:
         {docdate}
     right:
       content: |
-        {document-title} +
+        {document-subtitle} +
         Page {page-number} of {page-count}
   verso:
     right:
@@ -26,12 +25,13 @@ header:
         {docdate}
     left:
       content: |
-        {document-title} +
+        {document-subtitle} +
         Page {page-number} of {page-count}
 footer:
   height: 1cm 
   border-color: #000000
   border-style: solid
+  border-width: 1
   line_height: 1
   recto:
     right: 
@@ -39,3 +39,14 @@ footer:
   verso:
     left: 
       content: ' '
+title-page:
+  align: right
+  revision:
+    delimeter: ','
+  logo:
+    image: image:Pictures/sios-fc.png[pdfwidth=400px]
+    align: right
+  title:
+    font-size: 18pt
+  subtitle:
+    font-size: 14pt
