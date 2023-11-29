@@ -26,6 +26,7 @@ The data values can be located at a single point, along a line or transect, in a
 A dataset can be stored on paper, in files (one or more), or in a database, and is often accompanied by descriptions (metadata) of its content. 
 The purpose of the SDMS is to provide the SIOS user community a single entry point to relevant datasets. 
 It is however not the purpose to centralise all data, but rather to integrate existing and future data centres contributing to SIOS using machine readable interfaces to metadata and data.
+Some guidance on granularity of datasets is provided in <<RD-29>>.
 
 The first version of this document is based on a similar document
 developed for WMO Global Cryosphere Watch.
@@ -70,9 +71,9 @@ You can find information about training courses, online material, and what suppo
 [[RD-4]][RD-4]:: [[siosdatapolicy]] https://sios-svalbard.org/sites/sios-svalbard.org/files/common/SIOS_Data_Policy.pdf[SIOS Data Policy]
 [[RD-5]][RD-5]:: https://github.com/SIOS-Svalbard/SDMSAcronyms/blob/master/doc/sdms_acronyms.pdf[SDMS Acronyms and Concepts Document]
 [[RD-6]][RD-6]:: SDMS System Requirements Document
-[[RD-7]][RD-7]:: SDMS Architecture Design Document
+[[RD-7]][RD-7]:: SDMS Architecture Design Document (not public available)
 [[RD-8]][RD-8]:: SDMS System implementation and integration plan
-[[RD-9]][RD-9]:: SDMS Operations Manual
+[[RD-9]][RD-9]:: SDMS Operations Manual (not public available)
 [[RD-10]][RD-10]:: http://www.wmo.int/pages/prog/www/WIS/[WMO Information System]
 [[RD-11]][RD-11]:: http://www.wmo.int/pages/prog/www/WIS/metadata_en.html[WMO Core Profile of the ISO 19115]
 [[RD-12]][RD-12]:: https://www.wmo.int/pages/prog/www/wigos/index_en.html[WIGOS], including the metadata standard
@@ -92,3 +93,4 @@ You can find information about training courses, online material, and what suppo
 [[RD-26]][RD-26]:: https://spdx.org/licenses/[SPDX License List]
 [[RD-27]][RD-27]:: https://github.com/OSGeo/Cat-Interop/blob/master/LinkPropertyLookupTable.csv[[#osgeo]#OSGeo Link Properties Lookup Table#]
 [[RD-28]][RD-28]:: https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/rucontenttype/?format=csv[GCMD URL Types]
+[[RD-29]][RD-29]:: https://github.com/SIOS-Svalbard/SDMSGranularityPerspectives/blob/main/doc/sdms_gpd.pdf[SDMS Granularity Perspectives Document]
