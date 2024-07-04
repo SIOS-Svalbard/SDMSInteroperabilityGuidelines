@@ -2,7 +2,7 @@
 # Interoperability Guidelines for the SIOS Data Management System (SDMS).
 
 ## Purpose
-The purpose of this repository is to establish a collaborative work flow developing the SIOS Data Management System (SDMS) interoperability guidelines. These are used to define how contributing data centres can connect to the SDMS. 
+The purpose of this repository is to establish a collaborative work flow developing the SIOS Data Management System (SDMS) interoperability guidelines. These are used to define how contributing data centres can connect to the SDMS.
 
 The guidelines are automatically processed into a PDF and HTML variant. These versions are available through the links below. Please beware that the document provided through the links is the most recent working copy.
 
@@ -17,8 +17,8 @@ Documents are transformed from the original OpenDocumentFormat into ASCIIDOC. Gu
 The document has been seperated into several logical building blocks which can be further separated if required.
 
 ## Work flow
-The intention is to collaborate on the document using issues which are translated into pull requestsn (PR) when agreed. 
-Major revisions will always require a separate review of the PR. 
+The intention is to collaborate on the document using issues which are translated into pull requestsn (PR) when agreed.
+Major revisions will always require a separate review of the PR.
 In this context every modification should follow the process (assuming all contributors are members of the project, ask if not):
 1. Do a git pull to update your local code
 1. Create a new local branch using git checkout -b [name_of_your_new_branch]
@@ -28,6 +28,26 @@ In this context every modification should follow the process (assuming all contr
 
 ![WorkFlow](/doc/Pictures/github-workflow4documents.png)
 
+## How to generate the HTML and PDF using asciidoc
+
+To install asciidoctor on Linux, you can do the following:
+
+1. Install Ruby
+```
+sudo apt-get update
+sudo apt-get install ruby-full
+```
+2. Install asciidoctor and asciidoctor PDF
+```
+sudo gem install asciidoctor
+sudo gem install asciidoctor-pdf
+```
+
+Then, to convert the AsciiDoc to HTML5 and PDF
+```
+asciidoctor -b html5 doc/sdms_iog.adoc
+asciidoctor-pdf doc/sdms_iog.adoc
+```
 
 ## License
 This work is licensed under a [Creative Commons Attribution 4.0 International
