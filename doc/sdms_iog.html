@@ -1801,6 +1801,9 @@ Adding the <a href="http://wiki.esipfed.org/index.php?title=Category:Attribute_C
 It is the backbone of the Global Biodiversity Information Facility (GBIF) and the Ocean Biodiversity Information System (OBIS).
 In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content.
 A second file (eml.xml) describes the content and strucuture of the CSVs and links the column headers to the Darwin Core terms.
+These XML files can be created quite easily using GBIF&#8217;s Integrated Publishing Toolkit software. This not only provides a user interface for
+creating Darwin Core Archives - the software also hosts the published Darwin Core Archives which can be registered
+to be made available via GBIF.
 SDMS cannot do much on top of Darwin Core Archives (the diversity of types of data is too large), but the format is more or less machine-actionable and is recommended for use within SDMS.
 Further information is available at <a href="https://dwc.tdwg.org/terms/" class="bare">https://dwc.tdwg.org/terms/</a>.</p>
 </div>
@@ -1812,6 +1815,14 @@ Recommendation
 </td>
 <td class="hdlist2">
 <p>Darwin Core Archive is recommended for biodiversity and associated data (e.g. experimental, measurements/traits, data derived from metabarcoding) within SDMS.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Recommendation
+</td>
+<td class="hdlist2">
+<p>Data centres with suitable data should consider hosting an IPT. GBIF may be able to help with the installation. This provides a way to make biodiversity data available via both GBIF and SIOS since metadata are not currently harvested from GBIF.</p>
 </td>
 </tr>
 </table>
