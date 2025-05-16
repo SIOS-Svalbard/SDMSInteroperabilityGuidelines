@@ -4,7 +4,7 @@
 [[introduction-3]]
 ===== Introduction
 
-Most of the exchange mechanisms mentioned above transfer files. In order to properly understand the content of a file some use metadata is usually necessary.
+Most of the exchange mechanisms mentioned above transfer files. In order to properly understand the content of a file, some *use* metadata is usually necessary.
 File formats that embed use metadata (and also discovery metadata) are preferred (e.g. NetCDF/CF and Darwin Core Archive).
 NetCDF in itself is not self describing, but NetCDF following the Climate and Forecast Convention is self describing.
 Adding the http://wiki.esipfed.org/index.php?title=Category:Attribute_Conventions_Dataset_Discovery[NetCDF Attribute Convention for Dataset Discovery] embeds full discovery metadata (e.g. originator/PI, constraints etc.) in the file.
@@ -15,15 +15,15 @@ _This approach cannot be used for SIOS Core Data_.
 [[darwincorearchive]]
 ===== Darwin Core Archive
 Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity.
-It is the backbone of the Global Biodiversity Information facility (GBIF) and the Ocean Biodiversity Information System (OBIS).
+It is the backbone of the Global Biodiversity Information Facility (GBIF) and the Ocean Biodiversity Information System (OBIS).
 In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content.
 A second file (eml.xml) describes the content and strucuture of the CSVs and links the column headers to the Darwin Core terms.
-SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less machine-actionable and is recommended for use within SDMS.
+SDMS cannot do much on top of Darwin Core Archives (the diversity of types of data is too large), but the format is more or less machine-actionable and is recommended for use within SDMS.
 Further information is available at https://dwc.tdwg.org/terms/.
 
 [horizontal]
 Recommendation::
-Darwin Core Archive is recommended for use for biodiversity and associated data (e.g. experimental, measurements/traits, data derived from metabarcoding) within SDMS.
+Darwin Core Archive is recommended for biodiversity and associated data (e.g. experimental, measurements/traits, data derived from metabarcoding) within SDMS.
 
 [[jsongeojsonjson-ld]]
 ===== JSON/GeoJSON/JSON-LD
@@ -34,7 +34,7 @@ http://json-ld.org/[JSON-LD] (JavaScript Object Notation for Linked Data,) enabl
 There is currently no standardised FAIR implementation of JSON for the types of data SDMS is handling.
 The CF convention could be implemented in JSON and there is work internationally pushing in this direction, but not yet mature enough.
 
-IMPORTANT: SDMS is currently *not* able to consume JSON files as they are not sufficiently standartdised across providers.
+IMPORTANT: While SDMS can make JSON files available for download, it is *not* able to support services (e.g. visualisation, aggregation, subsetting) based on them, as the format is not sufficiently standardised across providers.
 
 NOTE: SDMS should work to enable ACDD and CF elements in GeoJSON files when the new OGC API's emerge.
 
@@ -89,6 +89,6 @@ IMPORTANT: GRIB is, although being a standardised format, not recommended for da
 Extensible Markup Language (XML) is similar to NetCDF in that it is a container lacking standardised metadata describing its contents.
 There are many variants of XML and the overhead is large, as the format is text-based.
 
-NOTE: XML is more or less fully replaced by various flavours of JSON now. The bnew OGC API's also include CF-NetCDF as a information container.
+NOTE: XML is more or less fully replaced by various flavours of JSON now. The new OGC API's also include CF-NetCDF as a information container.
 
-IMPORTANT: SDMS is currently *not* able to consume XML files nor is XML recommended as exchange format although standardised representations (e.g. WaterML) exist.
+IMPORTANT: While SDMS can make XML files available for download, it is *not* able to support services (e.g. visualisation, aggregation, subsetting) based on them. XML is *not* recommended as exchange format even though standardised representations (e.g. WaterML) exist.

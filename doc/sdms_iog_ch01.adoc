@@ -11,7 +11,7 @@ It is also located in the region with the strongest inflow and outflow processes
 In addition, Svalbard is the only region in the world (and has the facilities) where one can study and quantify one of the remaining unknowns in the climate puzzle; the extraterrestrial and especially solar influence on climate.
 
 The vision for the Svalbard Integrated Arctic Earth Observing System (SIOS) is to be a regional observational system for long term acquisition and proliferation of fundamental knowledge on global environmental change within an Earth System Science (ESS) perspective in and around Svalbard. 
-SIOS will systematically develop and implement methods for how observational networks are to be construed and thus become a leading observational system in the Arctic and Polar regions. 
+SIOS will systematically develop and implement methods for how observational networks are to be developed and thus become a leading observational system in the Arctic and Polar regions. 
 The SIOS Data Management System (SDMS) <<RD-2>> https://sios-svalbard.org/metsis/search?f%5B0%5D=dataset_level%3ALevel-1[Data Access Portal] is the entry point to SIOS datasets. 
 It offers a web interface that contains information about datasets (metadata).
 These metadata are harvested on a regular basis from <<RD-3>> https://sios-svalbard.org/DataSubmission[data centres contributing to SIOS]. 
@@ -24,7 +24,7 @@ For the SDMS the term “dataset” is defined in line with the INSPIRE Directiv
 A dataset can contain observations (remote or in situ), derived quantities (from either of these two types of data sources) or forecasts of future states of environmental parameters. 
 The data values can be located at a single point, along a line or transect, in a regular or irregular grid, and be captured or estimated at one or more altitudes/depths. 
 A dataset can be stored on paper, in files (one or more), or in a database, and is often accompanied by descriptions (metadata) of its content. 
-The purpose of the SDMS is to provide the SIOS user community a single entry point to relevant datasets. 
+The purpose of the SDMS is to provide the SIOS user community with a single entry point to relevant datasets. 
 It is however not the purpose to centralise all data, but rather to integrate existing and future data centres contributing to SIOS using machine readable interfaces to metadata and data.
 Some guidance on granularity of datasets is provided in <<RD-29>>.
 
@@ -46,7 +46,7 @@ Emphasis is primarily on the semantics and structure of interfaces to metadata a
 
 The requirements in the document represent long term goals, requiring funding for full implementation. 
 Some partners have implemented parts of the interfaces mentioned, while others have a longer way to go. 
-This is reflected in the prioritised functionality to implement as outlined in the implementation plan of the SIOS Preparatory Phase <<RD-8>>, see section 5.3.1footnote:[The official version of this document has some issues with references, an updated version will be made available within the collaboration area for the SDMS WG. ].
+This is reflected in the prioritised functionality outlined in the implementation plan of the SIOS Preparatory Phase <<RD-8>>, see section 5.3.1footnote:[The official version of this document has some issues with references, an updated version will be made available within the collaboration area for the SDMS WG. ].
 
 [[intended-audience]]
 === Intended audience
@@ -80,14 +80,14 @@ You can find information about training courses, online material, and what suppo
 [[RD-13]][RD-13]:: http://www.openarchives.org/OAI/openarchivesprotocol.html[The Open Archives Initiative Protocol for Metadata Harvesting, Version 2]
 [[RD-14]][RD-14]:: https://www.openarchives.org/pmh/tools/tools.php[OAI-PMH tools]
 [[RD-15]][RD-15]:: http://www.opengeospatial.org/standards/cat[OGC CSW specification]
-[[RD-16]][RD-16]:: http://gcmd.gsfc.nasa.gov/add/difguide/index.html[GCMD DIF Writers Guide]
-[[RD-17]][RD-17]:: http://gcmd.nasa.gov/learn/keyword_list.html[GCMD Science Keywords]
+[[RD-16]][RD-16]:: https://www.earthdata.nasa.gov/about/esdis/esco/standards-practices/directory-interchange-format-standard[GCMD DIF Writers Guide]
+[[RD-17]][RD-17]:: https://gcmd.earthdata.nasa.gov/KeywordViewer/[GCMD Science Keywords]
 [[RD-18]][RD-18]:: http://cfconventions.org/standard-names.html[Climate and Forecast Standard Names]
 [[RD-19]][RD-19]:: http://wis.wmo.int/2013/metadata/version_1-3-0/WMO_Core_Metadata_Profile_v1.3_Part_2.pdf[WMO Code Lists]
 [[RD-20]][RD-20]:: http://www.unidata.ucar.edu/software/netcdf/[NetCDF]
 [[RD-21]][RD-21]:: http://cfconventions.org/[Climate and Forecast Conventions]
 [[RD-22]][RD-22]:: http://opendap.org/[OPeNDAP]
-[[RD-23]][RD-23]:: http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[UNIDATA's Common Data Model]
+[[RD-23]][RD-23]:: https://docs.unidata.ucar.edu/netcdf-java/5.0/userguide/common_data_model_overview.html[UNIDATA's Common Data Model]
 [[RD-24]][RD-24]:: http://www.opensearch.org/[OpenSearch]
 [[RD-25]][RD-25]:: Wilkinson et al., 2016: http://www.nature.com/articles/sdata201618[The FAIR Guiding Principles for scientific data management and stewardship]
 [[RD-26]][RD-26]:: https://spdx.org/licenses/[SPDX License List]

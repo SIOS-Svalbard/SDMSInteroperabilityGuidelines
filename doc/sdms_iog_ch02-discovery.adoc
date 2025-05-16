@@ -35,7 +35,7 @@ All datasets should have a unique identifier issued by the host data centre. Thi
 
 This implies that SIOS Data Access Portal will not specify or change a unique identifier unless the dataset is hosted by the SIOS Data Access Portal.
 
-NOTE: The only exception to this is when SIOS is harvesting discovery metadata using THREDDS Data Catalogues (described later) and the underlying NetCDF files doesn't have a proper and guaranteed unique identifier.
+NOTE: The only exception to this is when SIOS is harvesting discovery metadata using THREDDS Data Catalogues (described later) and the underlying NetCDF files don't have a proper and guaranteed unique identifier.
 
 [horizontal]
 Recommendation::
@@ -47,12 +47,12 @@ It is recommended to include both a standardised identifier and a link to the fu
 ===== Introduction
 
 Metadata should be exposed using a suitable interface that allows information on existing datasets as well as changes to the inventory to be conveyed to the SIOS Data Access Portal. 
-Suitable interfaces for this are OAI-PMH and OGC CSW. Other interfaces are constantly evaluated, but to ensure a cost effective solution the number interfaces must be limited.
+Suitable interfaces for this are OAI-PMH and OGC CSW. Other interfaces are constantly evaluated, but to ensure a cost effective solution the number of interfaces must be limited.
 
 [horizontal]
 Recommendation::
 OAI-PMH is the recommended interface to use due to its simplicity and cost effective nature. 
-A number of software solutions supporting this is freely available.
+A number of software solutions supporting this are freely available.
 
 Although OAI-PMH is recommended, OGC CSW will also be harvested. 
 Work is in progress to enable support for other exchange mechanisms for discovery metadata.
@@ -61,7 +61,7 @@ Work is in progress to enable support for other exchange mechanisms for discover
 
 The Open Archives Initiatives Protocol for Metadata Harvesting (OAI-PMH) is the recommended interface for providing discovery metadata to the SIOS Data Access Portal. 
 It is a cost-effective and robust implementation for exchange of metadata between data centres. 
-It is much cheaper to implement than most alternatives and there are a number of open source tools available that implements this (e.g. pycsw, GeoNetwork).
+It is much cheaper to implement than most alternatives and there is a number of open source tools available that implements this (e.g. pycsw, GeoNetwork).
 Some of these are listed on <<RD-14>>. 
 The central node of SDMS is using https://pycsw.org/[pyCSW] to provide OAI-PMH (and other machine readable en points).
 
@@ -122,11 +122,11 @@ WARNING: SWE is not supported for data discovery purposes, but is considered for
 
 ===== Other
 
-Harvesting of discovery information using OpenSearch being tested, but is yet not supported for regular exchange of discovery metadata within SIOS. 
+Harvesting of discovery information using OpenSearch is being tested, but is yet not supported for regular exchange of discovery metadata within SIOS. 
 According to <<RD-24>> OpenSearch is a “collection of simple formats for the sharing of search results. 
 The OpenSearch description document format can be used to describe a search engine so that it can be used by search client applications.”
 
-Within the Polar Data Management Community an effort has been addressing exchange of discovery metadata using schema.org.
+Within the Polar Data Management Community, there is an ongoing effort to support the exchange of discovery metadata using schema.org.
 The intention is to make it easier for data repositories to announce their datasets by embedding schema.org in web pages.
 The work is based on ESIP's Science on schema.orgfootnote:[https://github.com/ESIPFed/science-on-schema.org].
 Harvesting information from data repositories serving schema.org is under testing for third party data repositories. 

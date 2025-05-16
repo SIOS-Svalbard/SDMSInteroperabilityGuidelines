@@ -655,7 +655,7 @@ In addition, Svalbard is the only region in the world (and has the facilities) w
 </div>
 <div class="paragraph">
 <p>The vision for the Svalbard Integrated Arctic Earth Observing System (SIOS) is to be a regional observational system for long term acquisition and proliferation of fundamental knowledge on global environmental change within an Earth System Science (ESS) perspective in and around Svalbard.
-SIOS will systematically develop and implement methods for how observational networks are to be construed and thus become a leading observational system in the Arctic and Polar regions.
+SIOS will systematically develop and implement methods for how observational networks are to be developed and thus become a leading observational system in the Arctic and Polar regions.
 The SIOS Data Management System (SDMS) <a href="#RD-2">[RD-2]</a> <a href="https://sios-svalbard.org/metsis/search?f%5B0%5D=dataset_level%3ALevel-1">Data Access Portal</a> is the entry point to SIOS datasets.
 It offers a web interface that contains information about datasets (metadata).
 These metadata are harvested on a regular basis from <a href="#RD-3">[RD-3]</a> <a href="https://sios-svalbard.org/DataSubmission">data centres contributing to SIOS</a>.
@@ -670,7 +670,7 @@ The SIOS Data Management System (SDMS) will be a functionality-enabling componen
 A dataset can contain observations (remote or in situ), derived quantities (from either of these two types of data sources) or forecasts of future states of environmental parameters.
 The data values can be located at a single point, along a line or transect, in a regular or irregular grid, and be captured or estimated at one or more altitudes/depths.
 A dataset can be stored on paper, in files (one or more), or in a database, and is often accompanied by descriptions (metadata) of its content.
-The purpose of the SDMS is to provide the SIOS user community a single entry point to relevant datasets.
+The purpose of the SDMS is to provide the SIOS user community with a single entry point to relevant datasets.
 It is however not the purpose to centralise all data, but rather to integrate existing and future data centres contributing to SIOS using machine readable interfaces to metadata and data.
 Some guidance on granularity of datasets is provided in <a href="#RD-29">[RD-29]</a>.</p>
 </div>
@@ -695,7 +695,7 @@ Emphasis is primarily on the semantics and structure of interfaces to metadata a
 <div class="paragraph">
 <p>The requirements in the document represent long term goals, requiring funding for full implementation.
 Some partners have implemented parts of the interfaces mentioned, while others have a longer way to go.
-This is reflected in the prioritised functionality to implement as outlined in the implementation plan of the SIOS Preparatory Phase <a href="#RD-8">[RD-8]</a>, see section 5.3.1<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+This is reflected in the prioritised functionality outlined in the implementation plan of the SIOS Preparatory Phase <a href="#RD-8">[RD-8]</a>, see section 5.3.1<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -840,7 +840,7 @@ You can find information about training courses, online material, and what suppo
 <a id="RD-16"></a>[RD-16]
 </td>
 <td class="hdlist2">
-<p><a href="http://gcmd.gsfc.nasa.gov/add/difguide/index.html">GCMD DIF Writers Guide</a></p>
+<p><a href="https://www.earthdata.nasa.gov/about/esdis/esco/standards-practices/directory-interchange-format-standard">GCMD DIF Writers Guide</a></p>
 </td>
 </tr>
 <tr>
@@ -848,7 +848,7 @@ You can find information about training courses, online material, and what suppo
 <a id="RD-17"></a>[RD-17]
 </td>
 <td class="hdlist2">
-<p><a href="http://gcmd.nasa.gov/learn/keyword_list.html">GCMD Science Keywords</a></p>
+<p><a href="https://gcmd.earthdata.nasa.gov/KeywordViewer/">GCMD Science Keywords</a></p>
 </td>
 </tr>
 <tr>
@@ -896,7 +896,7 @@ You can find information about training courses, online material, and what suppo
 <a id="RD-23"></a>[RD-23]
 </td>
 <td class="hdlist2">
-<p><a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">UNIDATA&#8217;s Common Data Model</a></p>
+<p><a href="https://docs.unidata.ucar.edu/netcdf-java/5.0/userguide/common_data_model_overview.html">UNIDATA&#8217;s Common Data Model</a></p>
 </td>
 </tr>
 <tr>
@@ -1032,7 +1032,7 @@ A separate document is developed on the harvest process (release pending convers
 <div class="title">Note</div>
 </td>
 <td class="content">
-The only exception to this is when SIOS is harvesting discovery metadata using THREDDS Data Catalogues (described later) and the underlying NetCDF files doesn&#8217;t have a proper and guaranteed unique identifier.
+The only exception to this is when SIOS is harvesting discovery metadata using THREDDS Data Catalogues (described later) and the underlying NetCDF files don&#8217;t have a proper and guaranteed unique identifier.
 </td>
 </tr>
 </table>
@@ -1057,7 +1057,7 @@ It is recommended to include both a standardised identifier and a link to the fu
 <h5 id="_introduction_2"><a class="anchor" href="#_introduction_2"></a>2.1.2.1. Introduction</h5>
 <div class="paragraph">
 <p>Metadata should be exposed using a suitable interface that allows information on existing datasets as well as changes to the inventory to be conveyed to the SIOS Data Access Portal.
-Suitable interfaces for this are OAI-PMH and OGC CSW. Other interfaces are constantly evaluated, but to ensure a cost effective solution the number interfaces must be limited.</p>
+Suitable interfaces for this are OAI-PMH and OGC CSW. Other interfaces are constantly evaluated, but to ensure a cost effective solution the number of interfaces must be limited.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1067,7 +1067,7 @@ Recommendation
 </td>
 <td class="hdlist2">
 <p>OAI-PMH is the recommended interface to use due to its simplicity and cost effective nature.
-A number of software solutions supporting this is freely available.</p>
+A number of software solutions supporting this are freely available.</p>
 </td>
 </tr>
 </table>
@@ -1082,7 +1082,7 @@ Work is in progress to enable support for other exchange mechanisms for discover
 <div class="paragraph">
 <p>The Open Archives Initiatives Protocol for Metadata Harvesting (OAI-PMH) is the recommended interface for providing discovery metadata to the SIOS Data Access Portal.
 It is a cost-effective and robust implementation for exchange of metadata between data centres.
-It is much cheaper to implement than most alternatives and there are a number of open source tools available that implements this (e.g. pycsw, GeoNetwork).
+It is much cheaper to implement than most alternatives and there is a number of open source tools available that implements this (e.g. pycsw, GeoNetwork).
 Some of these are listed on <a href="#RD-14">[RD-14]</a>.
 The central node of SDMS is using <a href="https://pycsw.org/">pyCSW</a> to provide OAI-PMH (and other machine readable en points).</p>
 </div>
@@ -1230,12 +1230,12 @@ SWE is not supported for data discovery purposes, but is considered for other pu
 <div class="sect4">
 <h5 id="_other"><a class="anchor" href="#_other"></a>2.1.2.5. Other</h5>
 <div class="paragraph">
-<p>Harvesting of discovery information using OpenSearch being tested, but is yet not supported for regular exchange of discovery metadata within SIOS.
+<p>Harvesting of discovery information using OpenSearch is being tested, but is yet not supported for regular exchange of discovery metadata within SIOS.
 According to <a href="#RD-24">[RD-24]</a> OpenSearch is a “collection of simple formats for the sharing of search results.
 The OpenSearch description document format can be used to describe a search engine so that it can be used by search client applications.”</p>
 </div>
 <div class="paragraph">
-<p>Within the Polar Data Management Community an effort has been addressing exchange of discovery metadata using schema.org.
+<p>Within the Polar Data Management Community, there is an ongoing effort to support the exchange of discovery metadata using schema.org.
 The intention is to make it easier for data repositories to announce their datasets by embedding schema.org in web pages.
 The work is based on ESIP&#8217;s Science on schema.org<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.
 Harvesting information from data repositories serving schema.org is under testing for third party data repositories.</p>
@@ -1410,7 +1410,7 @@ Extracts information from the Distribution element FIXME</p></td>
 <div class="paragraph">
 <p>ISO19115 is an information container that can be populated with several controlled vocabularies in some of the elements.
 The search model for the SIOS Data Portal is currently built around parameter descriptions using the GCMD Science Keywords <a href="#RD-17">[RD-17]</a>.
-A mapping exist between Climate and Forecast standard names <a href="#RD-18">[RD-18]</a> and GCMD Science Keywords.
+A mapping exists between Climate and Forecast standard names <a href="#RD-18">[RD-18]</a> and GCMD Science Keywords.
 ISO 19115 is used by e.g. INSPIRE at the European level and WMO (WMO Core Profile <a href="#RD-11">[RD-11]</a>) at the global level.</p>
 </div>
 <div class="hdlist">
@@ -1420,7 +1420,7 @@ ISO 19115 is used by e.g. INSPIRE at the European level and WMO (WMO Core Profil
 Requirement
 </td>
 <td class="hdlist2">
-<p>ISO19115 records <strong>must</strong> at least state the unique id, temporal and spatial location, scientific content, responsible data centre and PI as well as links to the actual data<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup>. Datasets without such specifications are not ingested in the catalogue.</p>
+<p>ISO19115 records <strong>must</strong> at least state the unique id, temporal and spatial locations, scientific content, responsible data centre and PI as well as links to the actual data<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup>. Datasets without such specifications are not ingested in the catalogue.</p>
 </td>
 </tr>
 <tr>
@@ -1510,7 +1510,7 @@ SDMS will extract name of the project that has generated the data from the descr
 <div class="sect4">
 <h5 id="_gcmd_dif"><a class="anchor" href="#_gcmd_dif"></a>2.1.3.3. GCMD DIF</h5>
 <div class="paragraph">
-<p>The Global Change Master Directory (GCMD) Directory Interchange Format (DIF) <a href="#RD-16">[RD-16]</a> is a metadata standard that is widely used (e.g. by the Antarctic Master Directory) and that was the foundation for data management during the International Polar Year.</p>
+<p>The Global Change Master Directory (GCMD) Directory Interchange Format (DIF) <a href="#RD-16">[RD-16]</a> is a metadata standard that is widely used (e.g. by the Antarctic Metadata Directory) and that was the foundation for data management during the International Polar Year.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1570,7 +1570,7 @@ Use metadata helps one to identify variables, their structure (e.g. spatiotempor
 </div>
 <div class="paragraph">
 <p>Application of a common data model simplifies integration and intercomparison of datasets. Application of NetCDF <a href="#RD-20">[RD-20]</a> as the file format, utilising the Climate and Forecast <a href="#RD-18">[RD-18]</a> convention and serving data through OPeNDAP <a href="#RD-22">[RD-22]</a> simplifies the issue of integration and combination of data through the Common Data Model <a href="#RD-23">[RD-23]</a>.
-Other solutions may be added, but this is an easy win and address requirements both within numerical simulation communities, satellite CalVal communities and WMO programmes.</p>
+Other solutions may be added, but this is an easy win and addresses requirements both within numerical simulation communities, satellite CalVal communities and WMO programmes.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1578,14 +1578,14 @@ Other solutions may be added, but this is an easy win and address requirements b
 <div class="sect4">
 <h5 id="introduction-2"><a class="anchor" href="#introduction-2"></a>2.2.2.1. Introduction</h5>
 <div class="paragraph">
-<p>Traditionally data has been exchanged using FTP in various file formats.  Modern technology opens up for other mechanisms for transporting data.
+<p>Traditionally, data have been exchanged using FTP in various file formats.  Modern technology opens up for other mechanisms for transporting data.
 Many technologies share some features, but there are differences in complexity and cost of implementation.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="httpftp"><a class="anchor" href="#httpftp"></a>2.2.2.2. HTTP/FTP</h5>
 <div class="paragraph">
-<p>This is the easiest manner to support data exchange, but it has limitations for large datasets as well as there is no common data model or standardisation of file formats.
+<p>This is the easiest manner to support data exchange, but it has limitations for large datasets and there is no common data model or standardisation of file formats.
 Often data are served in various ASCII formats that differs from data centre to data centre without any standardised metadata simplifying the process of understanding and using the data.
 Integration of data from various data centres usually takes much human effort.
 This is simplified if standardised formats like WMO BUFR or WMO Grib are used, but also for these additional information is required to fully understand the content.
@@ -1610,12 +1610,12 @@ Recommendation
 <div class="sect4">
 <h5 id="opendap"><a class="anchor" href="#opendap"></a>2.2.2.3. OPeNDAP</h5>
 <div class="paragraph">
-<p>The Data Access Protocol simplifies integration of data from various data centres as it is utilising the <a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">Common Data Model</a>, provided input data are encoded according to Climate and Forecast conventions use metadata follows the data and the application of a data stream removes the step of downloading a file and keeping track of this while working on the data.
+<p>The Data Access Protocol simplifies integration of data from various data centres by utilising the <a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">Common Data Model</a>. This is possible when input data are encoded according to Climate and Forecast conventions. The use of a data stream removes the need to download files and manually keep track of them during analysis.
 It also allows segmentation of data in variable space and time and it is RESTful<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup>.
 OPenDAP can relate to files or relational database systems and is extensively used by e.g. Copernicus services, Earth System Grid Federation and others.</p>
 </div>
 <div class="paragraph">
-<p>SDMS is currently able to consume OPeNDAP enabled datasets, but the level of support depends on the structure and standards (CF) conformance of the data served.</p>
+<p>SDMS is able to consume OPeNDAP enabled datasets, but the level of support depends on the structure and standards (CF) conformance of the data served and the granularity of the data.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1639,7 +1639,7 @@ Recommendation
 <div class="title">Important</div>
 </td>
 <td class="content">
-To enable automatic visualisation of timeseries data at stations, data has to be encoded as NetCDF-CF with the featureType global attribute set. It is furthermore important to avoid mixing stations in a file, vbut rather have one file per station.
+To enable automatic visualisation of timeseries data at stations, data has to be encoded as NetCDF-CF with the featureType global attribute set. It is furthermore important to avoid mixing stations in a file, but rather have one file per station.
 </td>
 </tr>
 </table>
@@ -1653,7 +1653,7 @@ There is no standardised form for use metadata in GML.  GML behaves like NetCDF 
 GML is a XML schema and so it can be combined/extended with other XML schemas.</p>
 </div>
 <div class="paragraph">
-<p>SDMS is currently <strong>not</strong> able to consume OGC WFS and implementation is not recommended until the OGC API is more mature. The new OGC API will be able to serve data as e.g. NetCDF/CF and GeoJSON in addition to the other formats.</p>
+<p>SDMS is currently <strong>not</strong> able to process OGC WFS and implementation is not recommended until the OGC API is more mature. The new OGC API will be able to serve data as e.g. NetCDF/CF and GeoJSON in addition to the other formats.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1675,7 +1675,7 @@ No such activity is undertaken for the old OGC WFS.
 <div class="title">Important</div>
 </td>
 <td class="content">
-The data portal is not able to consume data through OGC WFS.
+The data portal is not able to process data through OGC WFS.
 </td>
 </tr>
 </table>
@@ -1784,7 +1784,7 @@ SDMS is not capable of parsing WMS layers for specific datasets from service spe
 <div class="sect4">
 <h5 id="introduction-3"><a class="anchor" href="#introduction-3"></a>2.2.3.1. Introduction</h5>
 <div class="paragraph">
-<p>Most of the exchange mechanisms mentioned above transfer files. In order to properly understand the content of a file some use metadata is usually necessary.
+<p>Most of the exchange mechanisms mentioned above transfer files. In order to properly understand the content of a file, some <strong>use</strong> metadata is usually necessary.
 File formats that embed use metadata (and also discovery metadata) are preferred (e.g. NetCDF/CF and Darwin Core Archive).
 NetCDF in itself is not self describing, but NetCDF following the Climate and Forecast Convention is self describing.
 Adding the <a href="http://wiki.esipfed.org/index.php?title=Category:Attribute_Conventions_Dataset_Discovery">NetCDF Attribute Convention for Dataset Discovery</a> embeds full discovery metadata (e.g. originator/PI, constraints etc.) in the file.</p>
@@ -1798,10 +1798,10 @@ Adding the <a href="http://wiki.esipfed.org/index.php?title=Category:Attribute_C
 <h5 id="darwincorearchive"><a class="anchor" href="#darwincorearchive"></a>2.2.3.2. Darwin Core Archive</h5>
 <div class="paragraph">
 <p>Darwin Core Archive is a file format much used within the biological community and in particular within biodiversity.
-It is the backbone of the Global Biodiversity Information facility (GBIF) and the Ocean Biodiversity Information System (OBIS).
+It is the backbone of the Global Biodiversity Information Facility (GBIF) and the Ocean Biodiversity Information System (OBIS).
 In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content.
 A second file (eml.xml) describes the content and strucuture of the CSVs and links the column headers to the Darwin Core terms.
-SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less machine-actionable and is recommended for use within SDMS.
+SDMS cannot do much on top of Darwin Core Archives (the diversity of types of data is too large), but the format is more or less machine-actionable and is recommended for use within SDMS.
 Further information is available at <a href="https://dwc.tdwg.org/terms/" class="bare">https://dwc.tdwg.org/terms/</a>.</p>
 </div>
 <div class="hdlist">
@@ -1811,7 +1811,7 @@ Further information is available at <a href="https://dwc.tdwg.org/terms/" class=
 Recommendation
 </td>
 <td class="hdlist2">
-<p>Darwin Core Archive is recommended for use for biodiversity and associated data (e.g. experimental, measurements/traits, data derived from metabarcoding) within SDMS.</p>
+<p>Darwin Core Archive is recommended for biodiversity and associated data (e.g. experimental, measurements/traits, data derived from metabarcoding) within SDMS.</p>
 </td>
 </tr>
 </table>
@@ -1834,7 +1834,7 @@ The CF convention could be implemented in JSON and there is work internationally
 <div class="title">Important</div>
 </td>
 <td class="content">
-SDMS is currently <strong>not</strong> able to consume JSON files as they are not sufficiently standartdised across providers.
+While SDMS can make JSON files available for download, it is <strong>not</strong> able to support services (e.g. visualisation, aggregation, subsetting) based on them, as the format is not sufficiently standardised across providers.
 </td>
 </tr>
 </table>
@@ -1982,7 +1982,7 @@ There are many variants of XML and the overhead is large, as the format is text-
 <div class="title">Note</div>
 </td>
 <td class="content">
-XML is more or less fully replaced by various flavours of JSON now. The bnew OGC API&#8217;s also include CF-NetCDF as a information container.
+XML is more or less fully replaced by various flavours of JSON now. The new OGC API&#8217;s also include CF-NetCDF as a information container.
 </td>
 </tr>
 </table>
@@ -1994,7 +1994,7 @@ XML is more or less fully replaced by various flavours of JSON now. The bnew OGC
 <div class="title">Important</div>
 </td>
 <td class="content">
-SDMS is currently <strong>not</strong> able to consume XML files nor is XML recommended as exchange format although standardised representations (e.g. WaterML) exist.
+While SDMS can make XML files available for download, it is <strong>not</strong> able to support services (e.g. visualisation, aggregation, subsetting) based on them. XML is <strong>not</strong> recommended as exchange format even though standardised representations (e.g. WaterML) exist.
 </td>
 </tr>
 </table>
