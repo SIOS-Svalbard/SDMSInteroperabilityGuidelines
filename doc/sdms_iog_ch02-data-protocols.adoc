@@ -20,7 +20,7 @@ Segmentation of real time data has to be supported by the contributing data cent
 
 [horizontal]
 Recommendation::
-Whenever data are served as direct download through HTTP or FTP, data should be served in a FAIR compliant data format, see <<file-formats>> using standardised encoding structures and vocabularies.
+Whenever data are served as direct download through HTTP or FTP, data should be served in a machine-actionable data format as guided by the FAIR principles, see <<file-formats>> using standardised encoding structures and vocabularies.
 
 [[opendap]]
 ===== OPeNDAP

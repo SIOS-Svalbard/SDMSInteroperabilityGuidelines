@@ -18,7 +18,7 @@ Darwin Core Archive is a file format much used within the biological community a
 It is the backbone of the Global Biodiversity Information facility (GBIF) and the Ocean Biodiversity Information System (OBIS).
 In essence it is a set of comma separated files (CSV) bundled with a metadata file (meta.xml) and using controlled vocabularies to describe the content.
 A second file (eml.xml) describes the content and strucuture of the CSVs and links the column headers to the Darwin Core terms.
-SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less FAIR compliant and is recommended for use within SDMS.
+SDMS cannot do much on top of Darwin Core Archives (the diversity of types if data is too large), but the format is more or less machine-actionable and is recommended for use within SDMS.
 Further information is available at https://dwc.tdwg.org/terms/.
 
 [horizontal]
@@ -31,7 +31,7 @@ Darwin Core Archive is recommended for use for biodiversity and associated data 
 JavaScript Object Notation (http://www.json.org/[JSON]) and the geographical extension http://geojson.org/[GeoJSON] of this is similar to NetCDF in that it is a container lacking standardised metadata.
 http://json-ld.org/[JSON-LD] (JavaScript Object Notation for Linked Data,) enables encoding of Linked Data using JSON.
 
-There is currently no standardised FAIR compliant implementation of JSON for the types of data SDMS is handling.
+There is currently no standardised FAIR implementation of JSON for the types of data SDMS is handling.
 The CF convention could be implemented in JSON and there is work internationally pushing in this direction, but not yet mature enough.
 
 IMPORTANT: SDMS is currently *not* able to consume JSON files as they are not sufficiently standartdised across providers.
@@ -42,7 +42,7 @@ NOTE: SDMS should work to enable ACDD and CF elements in GeoJSON files when the 
 ===== NetCDF/CF
 NetCDF is a container like JSON and XML, and as such not a recommended file format for data within SDMS.
 However, the Climate and Forecast convention constrains the degrees of freedom within NetCDF and enforces structures and application of controlled vocabularies to describe the content of the data.
-CF-NetCDF is thus a FAIR compliant file format and recommended for use within SDMS.
+CF-NetCDF is thus a machine-actionable data format and recommended for use within SDMS.
 However, even NetCDF/CF have too many degrees of freedom to allow higher orders services to be established for datasets.
 Thus some further constraints on granularity and structures are recommended.  NetCDF/CF is the backbone of the Earth System Grid Federation serving IPCC data, Copernicus Marine Environmental Monitoring Service (CMEMS), SeaDataNet and several other services.
 The file format is recommended for meteorological, oceanographic, hydrological and glaciological data (although exceptions exist).

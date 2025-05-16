@@ -2,14 +2,14 @@
 == Outline for Product Manual
 
 === Introduction
-When datasets cannot be presented in a FAIR compliant file format (i.e. self describing), a product manual describing the dataset and how to interpret it *should* accompany the dataset. 
+When datasets cannot be presented in a machine-actionable data format as guided by the FAIR principles (i.e. self describing), a product manual describing the dataset and how to interpret it *should* accompany the dataset. 
 
 IMPORTANT: This product manual has to be served as a PDF document and have the sections identified below.
 
-IMPORTANT: The product manual must be løinked to the data through the discovery metadata at least, preferably it should be available in the same bundle as well.
+IMPORTANT: The product manual must be linked to the data through the discovery metadata at least, preferably it should be available in the same bundle as well.
 
 === Outline
-Outline of sections that should be covered by a product manual for data that cannot be described in a FAIR compliant file format. 
+Outline of sections that should be covered by a product manual for data that cannot be described in a machine-actionable data format. 
 
 IMPORTANT: The file formats used should always be free and open, not commercial. 
 
