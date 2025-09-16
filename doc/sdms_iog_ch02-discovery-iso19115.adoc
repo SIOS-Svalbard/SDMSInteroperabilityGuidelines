@@ -18,8 +18,6 @@ For stations where it is relevant (e.g. stations contributing to WMO GCW through
 Recommendation::
 Metadata records *should* include information on the host data centre for the dataset.
 
-NOTE: More details to be added on ISO19115 guidance. In particular on how to embed references to the vocabularies used and information on the data centre hosting the data.
-
 ////
 This table is removed for the time being, using the mapping table instead
 <<iso19115-core-elements>> shows elements in ISO19115 and whether these are **M**andatory,
@@ -28,13 +26,165 @@ This table is removed for the time being, using the mapping table instead
 vocabularies.
 ////
 
-NOTE: SDMS interprets both gmd:MD_Metadata and gmi:MI_Metadata. 
+NOTE: SDMS interprets both gmd:MD_Metadata (ISO 19115-1) and gmi:MI_Metadata (ISO 19115-2). The mdb:MD_Metadata (ISO 19115-3) is not supported.
 
-NOTE: How to add dataset landing pages etc are still a bit fuzzy. SDMS still interprets dataSetURI as a dataset landing page, but this is deprecated in ISO. Some data centres put dataset landing pages in gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource and use a combination of various elements like gmd:function/gmd:CI_OnLineFunctionCode, gmd:name/gco:CharacterString to identify relevant additional information. SDMS is currently interpreting phrases like "Extended human readable information about the dataset" and "Landing page" as Dataset landing pages when found. Information tagged "Project on RiS" is translated into the category Other documentation and "Homepage" is interpreted as a project home page reference. More details need to be agreed on this.
-
+//// 
+This is now in the table below.
 NOTE: SDMS will extract name of the project that has generated the data from the descriptiveKeywords if these have gmd:type/gmd:MD_KeywordTypeCode set to 'project'. More details need to be agreed on this.
+////
+
+Below is a mapping table between the internal metadata model described in <<discovery-model-elements>> and the ISO19115 elements.
+[.landscape]
+<<<
+[[discovery-model-iso-mapping]]
+[cols="10%,50%,40%",title="Mapping between the discovery model elements and ISO19115"]
+|=======================================================================
+|Internal metadata model element |ISO19115 |Comment/Note
+
+>|metadata_identifier 
+|gmd:fileIdentifier/gco:CharacterString  
+|
+
+>|last_metadata_update 
+|gmd:dateStamp 
+|ISO supports both gco:Date or gco:DateTime. A default time is added when a gco:Date type is provided.
+
+>|title 
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString 
+|
+
+>|abstract 
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract 
+|
+
+>|dataset_production_status 
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:status
+|Valid entries for gmd:MD_ProgressCode/@codeListValue will parsed. A default "Not available" will be used otherwise.
+
+>|temporal_extent 
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod
+|Relies on gml:beginPosition always to be present and in the date/datetime domain: The use of indeterminatePosition is not supported. 
+If gml:endPosition is missing or of type indeterminatePosition it will not be parsed and considered an ongoing observational effort.  
+A default time is added when a date only entry is provided. 
+
+>|geographic_extent 
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox 
+|
+
+>|iso_topic_category
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory/gmd:MD_TopicCategoryCode 
+|If this element is not provided a default "Not available" will be used.
+
+>|keywords
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString
+|The scope for keywords has to be identified by identification of the purpose (parameter/variable definitions, projects etc) of keywords in ISO records.
+Details on how this is done is provided in the <<keywordsiso>> section below.
+
+>|personnel 
+a|* gmd:contact/gmd:CI_ResponsibleParty 
+* gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty
+|Extraction and crediting people involved relies on gmd:role/gmd:CI_RoleCode to have attribute codeListValue set according to a predefined set of values. ISO codes principalInvestigator, pointOfContact, and author are translated into roles of Principal Investigator, Technical Contact, Metadata Author respectively. Roles not listed above are translated into Technical Contact. 
+
+>|data_access
+|gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource
+|This implies that elements gmd:protocol/gco:CharacterString and gmd:linkage/gmd:URL must be set.
+See <<data_accessiso>> section below.
+
+>|related_information
+a|* gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource +
+ * gmd:dataSetURI/gco:CharacterString
+|A combination of gmd:function/gmd:CI_OnLineFunctionCode/@codeListValue and gmd:name/gco:CharacterString is used to parse this information. See <<related_informationiso>> section below.
+
+>|use_constraint 
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation or +
+gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_Constraints/gmd:useLimitation or +
+gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useConstraints
+|See <<use_constraintsiso>> section below more information.
+
+>|data_center 
+|gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor with gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode/@codeListValue = 'distributor' or 'publisher'.
+|The long name goes into gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString and the URL for the data center into gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL.
+
+>|project 
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString with /gmd:type/gmd:MD_KeywordTypeCode[@codeListValue = 'project']
+|Project information is conveyed through keywords in ISO19115 profiles.
+
+
+>|dataset_language 
+|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:language 
+|
+
+>|storage_information 
+|/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format
+|use gmd:name/gco:CharacterString to provide the format of the dataset
+
+>|platform 
+|/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode with codeListValue="platform"
+|Not parsed.footnote:[This field is currently not parsed and mapping information might be modified in the future.]
+
+|=======================================================================
+
+[.portrait]
+<<<
+[#keywordsiso]
+====== Keywords and vocabulary
+
+The following approach is currently used for keywords and vocabularies:
+
+* parsing of keyword type in gmd:type/gmd:MD_KeywordTypeCode/@codeListValue is performed looking for the values 'theme' or 'project' to fill the keywords or project elements in the internal metadata model 
+* parsing of thesauri in gmd:thesaurusName/gmd:CI_Citation/gmd:title is performed looking for GEMET or CF Standard names
+* parsing of gmd:keyword/gco:CharacterString or gmd:keyword/gmx:Anchor is performed for GEMET and CF Standard names
+* parsing of gmd:keyword/gco:CharacterString including "EARTH SCIENCE" is used to discriminate GCMD Science Keywords
+
+
+[#use_constraintsiso]
+====== Use constraints
+
+The recommended way to provide a license is:
+[source,xml]
+----
+<gmx:Anchor xlink:href="http://spdx.org/licenses/CC-BY-4.0">CC-BY-4.0</gmx:Anchor>
+----
+
+Where the identifier (adhering to the SPDX formatting) goes into gmx:Anchor and the link to the text into the attribute of this xlink:href. This is currently a recommended field, but it is strongly recommended and  suggested to become mandatory in the future.
+Licenses that cannot be mapped to standard licenses will be parsed as text. Some mapping stragegy is also in place during harvesting license.footnote:[An internal mapping is done upon harvesting to parse license title or exact maching urls. If provided, a gco:CharacterString can also parsed.]
+
+[#related_informationiso]
+====== Related information (URLs)
+
+Links to related information can be quite difficult to parse due to the degrees of freedom in ISO.
+The internal model is supporting related information of different types based on the https://vocab.met.no/mmd/Related_Information_Types[Related Information Types] controlled list.
+Currently:
+
+* SDMS still interprets gmd:dataSetURI as a "Dataset landing page", but this is deprecated in ISO.
+* gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource
+and a combination of gmd:function/gmd:CI_OnLineFunctionCode/@codeListValue='information' and
+gmd:name/gco:CharacterString can also be used to identify a dataset landing page.
+SDMS is currently interpreting phrases like "Extended human readable information about the dataset" and "Landing page" as URL of type "Dataset landing page" when found.
+* Information tagged "Project on RiS" is translated into the category "Other documentation"
+* "Homepage" is interpreted as a "Project home page" reference.
+
+[#data_accessiso]
+====== Data access
+
+The gmd:protocol containing a predefined keywordfootnote:[OSGEO or GeoNetwork keywords are required for proper interpretation. These keywords are translated in the harvesting routine.] and the gmd:linkage/gmd:URL are used to parse the different data access links.
+This is used both to identify direct download of datasets (i.e. HTTP or FTP) as well as services on top of dataset (e.g. OPeNDAP, OGC WMS).
+It is important to note that direct download should not refer to a website requiring manual intervention. Direct download will be handled by the basket in the data portal and enables bundling of data for download etc.
+
+Below the list of currently mapped protocols:
+[%header, cols="2,3,1", header=True]
+|===
+| ISO Inspire gmd:protocol (OSGEO) | ISO Inspire gmd:protocol (GeoNetwork)|Internal model
+|download                          |WWW:DOWNLOAD-1.0-http--download       |HTTP
+|OPeNDAP:OPeNDAP                   |WWW:LINK-1.0-http--opendap            |OPeNDAP
+|OGC:WMS                           |OGC:WMS                               |OCG WMS
+|OGC:WFS                           |OGC:WFS                               |OCG WFS
+|OGC:WCS                           |OGC:WCS                               |OCG WCS
+|ftp                               |WWW:DOWNLOAD-1.0-ftp--download        |FTP
+|===
 
 ////
+
 WARNING: The table below is under review.
 
 [[iso19115-core-elements]]

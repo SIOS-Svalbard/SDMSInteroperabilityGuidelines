@@ -138,7 +138,8 @@ NOTE: More information on schema.org to be added.
 ===== Internal discovery model
 
 SIOS is harvesting discovery metadata from data centres using established discovery metadata schemes and transforms this information into the internal information model used. 
-<<discovery-model-elements>> below shows the elements of the information model and mappings against ISO19115 and GCMD DIF.
+The <<discovery-model-elements>> below shows the elements of the information model while the mapping between the information model and the metadata 
+standard ISO 19115 and GCMD DIF are presented in the following sections.
 Further mappings are under development.
 
 include::sdms_iog_ch02-discovery-model-mapping.adoc[]
