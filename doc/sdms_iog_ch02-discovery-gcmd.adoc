@@ -127,11 +127,6 @@ Below is a mapping table between the internal metadata model described in <<disc
 |Entry_Title
 |
 
->|dataset_production_status
-|Data_Set_Progress
-|Dataset_Progress
-|
-
 >|abstract 
 |Summary/Abstract
 |Summary/Abstract
@@ -220,15 +215,15 @@ When provided, the DIF element Location is mapped into keywords of type https://
 Below a mapping between the internal model and  https://vocab.met.no/mmd/Related_Information_Types[Related information types] and DIF Related_URL (Type and Subtype)
 [%header, cols="1,2,2", header=True]
 |===
-|Internal model          |DIF 9 (Type/Subtype)                             |DIF 10.2 (Type/Subtype)
-|Project home page       |VIEW PROJECT HOME PAGE/ |PROJECT HOME PAGE/
-|Users guide             |VIEW RELATED INFORMATION/USER'S GUIDE|VIEW RELATED INFORMATION/USER'S GUIDE
-|Dataset landing page    |VIEW DATA SET LANDING PAGE/ |DATA SET LANDING PAGE/
-|Data server landing page|GET DATA/THREDDS DATA |USE SERVICE API/THREDDS DATA
-|Scientific publication  |VIEW RELATED INFORMATION/PUBLICATIONS |VIEW RELATED INFORMATION/PUBLICATIONS
-|Data paper              |VIEW RELATED INFORMATION/PUBLICATIONS |VIEW RELATED INFORMATION/PUBLICATIONS
+|Internal model          |DIF 9 (Type/Subtype)                           |DIF 10.2 (Type/Subtype)
+|Project home page       |VIEW PROJECT HOME PAGE/                        |PROJECT HOME PAGE/
+|Users guide             |VIEW RELATED INFORMATION/USER'S GUIDE          |VIEW RELATED INFORMATION/USER'S GUIDE
+|Dataset landing page    |VIEW DATA SET LANDING PAGE/                    |DATA SET LANDING PAGE/
+|Data server landing page|GET DATA/THREDDS DATA                          |USE SERVICE API/THREDDS DATA
+|Scientific publication  |VIEW RELATED INFORMATION/PUBLICATIONS          |VIEW RELATED INFORMATION/PUBLICATIONS
+|Data paper              |VIEW RELATED INFORMATION/PUBLICATIONS          |VIEW RELATED INFORMATION/PUBLICATIONS
 |Other documentation     |VIEW RELATED INFORMATION/GENERAL DOCUMENTATION |VIEW RELATED INFORMATION/GENERAL DOCUMENTATION
-|Extended metadata       |VIEW EXTENDED METADATA/ |EXTENDED METADATA/
+|Extended metadata       |VIEW EXTENDED METADATA/                        |EXTENDED METADATA/
 |===
 
 [#data_accessdif]
@@ -237,9 +232,11 @@ Below a mapping between the internal model and   https://vocab.met.no/mmd/Data_A
 
 [%header, cols="1,2,2", header=True]
 |===
-|Internal model |DIF 9 (Type/Subtype)                   |DIF 10.2 (Type/Subtype)
-|HTTP           |GET DATA/                              |GET DATA/DIRECT DOWNLOAD
-|OPeNDAP        |GET DATA/OPENDAP DATA (DODS)           |USE SERVICE API/OPENDAP DATA
-|OCG WMS        |GET SERVICE/GET WEB MAP SERVICE (WMS)  |USE SERVICE API/WEB MAP SERVICE (WMS)
-|FTP            |                                       |GET DATA/DIRECT DOWNLOAD
+|Internal model |DIF 9 (Type/Subtype)                      |DIF 10.2 (Type/Subtype)
+|HTTP           |GET DATA/                                 |GET DATA/DIRECT DOWNLOAD
+|OPeNDAP        |GET DATA/OPENDAP DATA (DODS)              |USE SERVICE API/OPENDAP DATA
+|OCG WMS        |GET SERVICE/GET WEB MAP SERVICE (WMS)     |USE SERVICE API/WEB MAP SERVICE (WMS)
+|OGC WFS        |GET SERVICE/GET WEB FEATURE SERVICE (WFS) |USE SERVICE API/WEB FEATURE SERVICE (WFS)
+|OGC WCS        |GET SERVICE/GET WEB COVERAGE SERVICE (WCS)|USE SERVICE API/WEB COVERAGE SERVICE (WCS)
+|FTP            |GET DATA/                                 |GET DATA/DIRECT DOWNLOAD
 |===

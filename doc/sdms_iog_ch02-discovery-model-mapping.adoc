@@ -1,8 +1,6 @@
 ////
 GCMD Data_Set_Citation is missing, need to add.
 ////
-[.landscape]
-<<<
 [[discovery-model-elements]]
 [cols="2,5",title="Discovery model elements"]
 |=======================================================================
@@ -24,19 +22,22 @@ GCMD Data_Set_Citation is missing, need to add.
 |Temporal extent of the dataset. Currently gaps are not handled.  
 
 >|geographic_extent 
-|Spatial extent of the dataset.  Requires all 4 corners (gmd:northBoundLatitude/gco:Decimal etc) of the BoundingBox to be set, also for point measurements. Points are interpreted if values are identical. 
+|Spatial extent of the dataset.  Requires all 4 corners of the BoundingBox to be set, also for point measurements. Points are interpreted if values are identical.
 
 >|iso_topic_category
 |ISO Topic Category, using a controlled vocabulary. 
 
 >|keywords
-|A word or phrase that describes some aspect of a resource. Can be one of several types. It is used to describe the parameters in a dataset, the project affiliation etc. Proper identification of the purpose of the keywords and the vocabularies used is required. Project names are used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020 etc. If the keyword starts with 'EARTH SCIENCE &gt;' keywords are extracted and put in a separate list for GCMD keywords and used in the search interface. The full path of GCMD science keywords including '&gt;' is required. 
+|A word or phrase that describes some aspect of a resource. It can be one of several types. It is used to describe the parameters in a dataset, the project affiliation etc. Proper identification of the purpose of the keywords and the vocabularies used is required. Project names are used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020 etc.
 
 >|personnel 
 |This field is used to identify personnel with various roles in relation to the dataset. It should also include contact information, at least email address and name of the affiliated institution, role (see below) and name. 
 
 >|data_access
 |URL to the actual dataset accompanied with identification of the protocol supported.  
+
+>|related_information
+|URL to relevant information regarding the dataset, accompanied with identification of the protocol supported. This could be, for example, a landing page, project page or scientific publication.
 
 >|use_constraint 
 |License for the metadata using https://spdx.org/licenses/[SPDX License List]. The identifier (adhering to the SPDX formatting) goes into gmx:Anchor and the link to the text into  the attribute of this xlink:href. This is currently a recommended field, but it is strongly recommended and suggested to become mandatory in the future. 
@@ -58,5 +59,3 @@ GCMD Data_Set_Citation is missing, need to add.
 
 |=======================================================================
 
-[.portrait]
-<<<

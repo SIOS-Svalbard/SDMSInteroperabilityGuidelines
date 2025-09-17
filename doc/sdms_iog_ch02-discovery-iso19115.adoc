@@ -37,7 +37,7 @@ Below is a mapping table between the internal metadata model described in <<disc
 [.landscape]
 <<<
 [[discovery-model-iso-mapping]]
-[cols="10%,50%,40%",title="Mapping between the discovery model elements and ISO19115"]
+[cols="15,~,~",title="Mapping between the discovery model elements and ISO19115"]
 |=======================================================================
 |Internal metadata model element |ISO19115 |Comment/Note
 
@@ -56,10 +56,6 @@ Below is a mapping table between the internal metadata model described in <<disc
 >|abstract 
 |gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract 
 |
-
->|dataset_production_status 
-|gmd:identificationInfo/gmd:MD_DataIdentification/gmd:status
-|Valid entries for gmd:MD_ProgressCode/@codeListValue will parsed. A default "Not available" will be used otherwise.
 
 >|temporal_extent 
 |gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod
@@ -131,10 +127,10 @@ gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_
 
 The following approach is currently used for keywords and vocabularies:
 
-* parsing of keyword type in gmd:type/gmd:MD_KeywordTypeCode/@codeListValue is performed looking for the values 'theme' or 'project' to fill the keywords or project elements in the internal metadata model 
+* parsing of keyword type in gmd:type/gmd:MD_KeywordTypeCode/@codeListValue is performed looking for the values 'theme' or 'project' to fill the keywords or project elements in the internal metadata model
 * parsing of thesauri in gmd:thesaurusName/gmd:CI_Citation/gmd:title is performed looking for GEMET or CF Standard names
 * parsing of gmd:keyword/gco:CharacterString or gmd:keyword/gmx:Anchor is performed for GEMET and CF Standard names
-* parsing of gmd:keyword/gco:CharacterString including "EARTH SCIENCE" is used to discriminate GCMD Science Keywords
+* parsing of gmd:keyword/gco:CharacterString starting with 'EARTH SCIENCE &gt;' is used to discriminate GCMD Science keywords. The full path of the GCMD science keywords including '&gt;' is required.
 
 
 [#use_constraintsiso]
