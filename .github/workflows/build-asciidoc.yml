@@ -15,7 +15,12 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Check that docker-compose is available
-      run: which docker compose
+      run: |
+        if docker compose version;then
+          echo "Docker Compose V2 is installed"
+        else
+          echo "Docker Compose V2 is not installed"
+        fi
 
     - name: Build PDF and HTML
       run: docker compose -f docker-compose-asciidoctor.yml up
