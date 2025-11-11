@@ -1,6 +1,7 @@
 ===== GCMD DIF
 
 The Global Change Master Directory (GCMD) Directory Interchange Format (DIF) <<RD-16>> is a metadata standard that is widely used (e.g. by the Antarctic Metadata Directory) and that was the foundation for data management during the International Polar Year.
+SDMS is supporting both DIF 10.2 (the latest version of the standard), and also older versions (DIF 9) although deprecated.
 
 ////
 <<gcmd-dif-elements>> shows elements in GCMD DIF and whether these are **M**andatory, **R**ecommended or **O**ptional, as well as whether they are **U**nique (only one occurrence allowed) and require utilisation of **C**ontrolled vocabularies.
@@ -98,6 +99,144 @@ GCMD do not require a controlled vocabulary for the quality element.
 SDMS should to improve search resultsfootnote:[This work should relate to international activities in this field in the context of e.g. GEO, ICES, WMO etc. and must be coordinated within SDMS by the Terminology Team. ].
 Recommendation::
 Related_URL has several subtypes. The existing http://gcmdservices.gsfc.nasa.gov/static/kms/rucontenttype/rucontenttype.csv[list of type and subtype] must be used to allow the SIOS Data Portal to filter the purpose of the URLs provided. 
-When types are “View Data Set Landing Page”, “View Extended Metadata”, “View Professional Home Page”, and “View Project Home Page”, no subtype is needed.
+See <<related_informationdif>> and <<data_accessdif>> below for more information.
 Recommendation::
 All times must be encoded as ISO8601 either as YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ.
+
+
+Below is a mapping table between the internal metadata model described in <<discovery-model-elements>> and the DIF elements.
+[.landscape]
+<<<
+[[discovery-model-dif-mapping]]
+[cols="15,~,~,~",title="Mapping between the discovery model elements and DIF (version 9 and 10.2)"]
+|=======================================================================
+|Element |GCMD DIF 9 | GCMD DIF 10.2 | Comment/Note
+
+>|metadata_identifier 
+|Entry_ID
+|Entry_ID/ShortName 
+|The subfield ShortName for DIF 10.2
+
+>|last_metadata_update 
+|DIF_Creation_Date and Last_DIF_Revision_Date
+|Metadata_Dates/Metadata_Creation and Metadata_Dates/Metadata_Last_Revision
+|Use the subfields Metadata_Creation and Metadata_Last_Revision in DIF 10.2. Text entries such as "Not provided" are not parsed.
+
+>|title 
+|Entry_Title
+|Entry_Title
+|
+
+>|abstract 
+|Summary/Abstract
+|Summary/Abstract
+|
+
+>|temporal_extent 
+|Temporal_Coverage
+|Temporal_Coverage/Range_DateTime
+|Use Start_Date and Stop_Date for DIF 9 and use Beginning_Date_Time and Ending_Date_Time for DIF 10.2
+
+>|geographic_extent 
+|Spatial_Coverage
+|Spatial_Coverage
+|For DIF 10.2 the subfields dif:Geometry/dif:Bounding_Rectangle, dif:Geometry/dif:Point and dif:Geometry/dif:Polygon are supported.
+
+>|iso_topic_category
+|ISO_Topic_Category
+|ISO_Topic_Category
+|
+
+>|keywords
+|Parameters and Keyword
+|Science_Keywords and Ancillary_Keyword
+|Parameters (DIF 9) and Science_Keywords (DIF 10.2) are translated into GCMD Science Keywords. Keyword (DIF 9) and Ancillary_Keyword (DIF 10.2) are translatde into generic keywords.
+
+>|personnel
+|Personnel and Data_Center/Personnel
+|Personnel and Organization/Personnel
+|Information about Data Center Contact is conveyed through the Personnel subfields of Data_Center (DIF 9) or Organization (DIF 10.2)
+
+>|data_access
+|Related_URL
+|Related_URL
+|Use the appropriate combination of URL_Content_Type/Type and URL_Content_Type/Subtype to identify the type of access and URL to provide the resource.
+Details are provided in the <<data_accessdif>> below.
+
+>|related_information
+|Related_URL
+|Related_URL
+|Use the appropriate combination of URL_Content_Type/Type and URL_Content_Type/Subtype to identify the type of access and URL to provide the resource.
+Details are provided in the <<related_informationdif>> below.
+
+>|use_constraint 
+|Use_Constraint
+|Use_Constraint
+|Use the subfields License_URL/Title and License_URL/URL in DIF 10.2 to provide license indentifier and URL.
+Information that cannot be mapped to standard licenses will be translated into license text.
+
+>|data_center 
+|Data_Center
+|Organization
+|Use the subfields Data_Center_Name/Short_Name, Data_Center_Name/Long_Name and Data_Center_URL in DIF 9.+
+Use the subfields Organization/Short_Name, Organization/Long_Name and Organization_URL in DIF 10.2 with Organization_Type "ARCHIVER"
+
+
+>|project 
+|Project
+|Project
+|Use the subfields Short_Name and Long_Name. 
+
+>|dataset_language 
+|Data_Set_Language
+|Dataset_Language
+|
+
+>|storage_information 
+|Distribution
+|Distribution
+|Use the subfield Distribution_Format.footnote:[This is not parsed for the time being.] 
+
+>|platform
+|Source_Name
+|Platform
+|Subfields Sensor_Name (DIF 9) and Instrument (DIF 10.2) are used to convey information about instruments.footnote:[This is not parsed for the time being.] 
+
+|=======================================================================
+
+[.portrait]
+<<<
+
+====== Location 
+When provided, the DIF element Location is mapped into keywords of type https://vocab.met.no/mmd/Keywords_Vocabulary/GCMDLOC[GCMDLOC].
+
+[#related_informationdif]
+====== Related information (URLs)
+Below a mapping between the internal model and  https://vocab.met.no/mmd/Related_Information_Types[Related information types] and DIF Related_URL (Type and Subtype)
+[%header, cols="1,2,2", header=True]
+|===
+|Internal model          |DIF 9 (Type/Subtype)                           |DIF 10.2 (Type/Subtype)
+|Project home page       |VIEW PROJECT HOME PAGE/                        |PROJECT HOME PAGE/
+|Users guide             |VIEW RELATED INFORMATION/USER'S GUIDE          |VIEW RELATED INFORMATION/USER'S GUIDE
+|Dataset landing page    |VIEW DATA SET LANDING PAGE/                    |DATA SET LANDING PAGE/
+|Data server landing page|GET DATA/THREDDS DATA                          |USE SERVICE API/THREDDS DATA
+|Scientific publication  |VIEW RELATED INFORMATION/PUBLICATIONS          |VIEW RELATED INFORMATION/PUBLICATIONS
+|Data paper              |VIEW RELATED INFORMATION/PUBLICATIONS          |VIEW RELATED INFORMATION/PUBLICATIONS
+|Other documentation     |VIEW RELATED INFORMATION/GENERAL DOCUMENTATION |VIEW RELATED INFORMATION/GENERAL DOCUMENTATION
+|Extended metadata       |VIEW EXTENDED METADATA/                        |EXTENDED METADATA/
+|===
+
+[#data_accessdif]
+====== Data access
+Below a mapping between the internal model and   https://vocab.met.no/mmd/Data_Access_Types[Data Access types] and DIF Related_URL (Type and Subtype)
+
+[%header, cols="1,2,2", header=True]
+|===
+|Internal model |DIF 9 (Type/Subtype)                      |DIF 10.2 (Type/Subtype)
+|HTTP           |GET DATA/                                 |GET DATA/DIRECT DOWNLOAD
+|OPeNDAP        |GET DATA/OPENDAP DATA (DODS)              |USE SERVICE API/OPENDAP DATA
+|OCG WMS        |GET SERVICE/GET WEB MAP SERVICE (WMS)     |USE SERVICE API/WEB MAP SERVICE (WMS)
+|OGC WFS        |GET SERVICE/GET WEB FEATURE SERVICE (WFS) |USE SERVICE API/WEB FEATURE SERVICE (WFS)
+|OGC WCS        |GET SERVICE/GET WEB COVERAGE SERVICE (WCS)|USE SERVICE API/WEB COVERAGE SERVICE (WCS)
+|FTP            |GET DATA/                                 |GET DATA/DIRECT DOWNLOAD
+|===
