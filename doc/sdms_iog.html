@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <title>Technical documentation: Guidance for data centres contributing to SDMS</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -84,10 +84,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -116,7 +116,6 @@ h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title str
 :not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
 pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
-pre>code{display:block}
 pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
 em em{font-style:normal}
 strong strong{font-weight:400}
@@ -140,7 +139,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #content::before{content:none}
 #header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
-#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
 #header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
 #header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
@@ -162,6 +161,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
 #toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
 #toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
@@ -193,7 +193,8 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
 details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
 details{margin-left:1.25rem}
-details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;-webkit-tap-highlight-color:transparent}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
 details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
 details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
 details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
@@ -207,19 +208,17 @@ table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
 .exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
-.exampleblock>.content>:first-child{margin-top:0}
-.exampleblock>.content>:last-child{margin-bottom:0}
 .sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
-.sidebarblock>:first-child{margin-top:0}
-.sidebarblock>:last-child{margin-bottom:0}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
-.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
 .literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
 .literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
 .literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
 .listingblock>.content{position:relative}
+.listingblock pre>code{display:block}
 .listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
 .listingblock:hover code[data-lang]::before{display:block}
 .listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
@@ -235,9 +234,8 @@ pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
 table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
 table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
 table.linenotable td.code{padding-left:.75em}
-table.linenotable td.linenos{border-right:1px solid;opacity:.35;padding-right:.5em}
-pre.pygments .lineno{border-right:1px solid;opacity:.35;display:inline-block;margin-right:.75em}
-pre.pygments .lineno::before{content:"";margin-right:-.125em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
 .quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
@@ -274,7 +272,7 @@ table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-c
 table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
 table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
 table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
-table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
 th.halign-center,td.halign-center{text-align:center}
@@ -290,10 +288,11 @@ ol{margin-left:1.75em}
 ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
-ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
 ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
 ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
 ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
 ul.checklist>li>p:first-child{margin-left:-1em}
 ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
 ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
@@ -329,15 +328,13 @@ a.image{text-decoration:none;display:inline-block}
 a.image object{pointer-events:none}
 sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
 sup.footnote a,sup.footnoteref a{text-decoration:none}
-sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
 #footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
-.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
-.gist .file-data>table td.line-data{width:99%}
 div.unbreakable{page-break-inside:avoid}
 .big{font-size:larger}
 .small{font-size:smaller}
@@ -394,7 +391,7 @@ b.conum *{color:inherit!important}
 dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
 h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
 p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
-p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
 p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
 .exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
@@ -441,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Technical documentation: Guidance for data centres contributing to SDMS</h1>
 <div class="details">
-<span id="revdate">2025-05-16</span>
+<span id="revdate">2025-11-11</span>
 <br><span id="revremark">Consolidated version following internal review.</span>
 </div>
 </div>
@@ -474,6 +471,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1.2</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2025-11-11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Major modification, mappings are updated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lara Ferrighi</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">1.1</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2023-11-29</p></td>
@@ -1260,150 +1263,93 @@ More information on schema.org to be added.
 <h5 id="_internal_discovery_model"><a class="anchor" href="#_internal_discovery_model"></a>2.1.3.1. Internal discovery model</h5>
 <div class="paragraph">
 <p>SIOS is harvesting discovery metadata from data centres using established discovery metadata schemes and transforms this information into the internal information model used.
-<a href="#discovery-model-elements">Table 1</a> below shows the elements of the information model and mappings against ISO19115 and GCMD DIF.
+The <a href="#discovery-model-elements">Table 1</a> below shows the elements of the information model while the mapping between the information model and the metadata
+standard ISO 19115 and GCMD DIF are presented in the following sections.
 Further mappings are under development.</p>
 </div>
-<div style="page-break-after: always;"></div>
 <table id="discovery-model-elements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Discovery model elements and mappings against exchange standards.</caption>
+<caption class="title">Table 1. Discovery model elements</caption>
 <colgroup>
-<col style="width: 15%;">
-<col>
-<col>
-<col>
+<col style="width: 28.5714%;">
+<col style="width: 71.4286%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Element</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">ISO19115</th>
-<th class="tableblock halign-left valign-top">GCMD DIF</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">metadata_identifier</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A unique identifier (A UUID with namespace is recommended) for the dataset.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:fileIdentifier/gco:CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entry_ID</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">last_metadata_update</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Last date of updated metadata using the form YYYY-MM-DDTHH:MM:SSZ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:dateStamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FIXME</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">title</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A short title for the dataset.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entry_Title</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">abstract</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Short summary describing the dataset embedded in gco:CharacterString.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">temporal_extent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temporal extent of the dataset. Currently gaps are not handled.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod<br>
-Relies on gml:beginPosition always to be present, if gml:endPosition is missing it is considered an ongoing observational effort.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temporal_Coverage</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">geographic_extent</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Spatial extent of the dataset.  Requires all 4 corners (gmd:northBoundLatitude/gco:Decimal etc) of the BoundingBox to be set, also for point measurements. Points are interpreted if values are identical.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Spatial_Coverage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spatial extent of the dataset.  Requires all 4 corners of the BoundingBox to be set, also for point measurements. Points are interpreted if values are identical.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">iso_topic_category</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ISO Topic Category, using a controlled vocabulary.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory/gmd:MD_TopicCategoryCode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISO_Topic_Category</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">keywords</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A word or phrase that describes some aspect of a resource. Can be one of several types. It is used to describe the parameters in a dataset, the project affiliation etc. Proper identification of the purpose of the keywords and the vocabularies used is required. Project names are used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020 etc. If the keyword starts with 'EARTH SCIENCE &gt;' keywords are extracted and put in a separate list for GCMD keywords and used in the search interface. The full path of GCMD science keywords including '&gt;' is required.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString <br>
-The scope for keywords has to be identified by identification of the purpose (parameter/variable definitions, projects etc) of keywords in ISO records.
-Details on how this is done is provided below.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameters<br>
-Earth Science keywords.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A word or phrase that describes some aspect of a resource. It can be one of several types. It is used to describe the parameters in a dataset, the project affiliation etc. Proper identification of the purpose of the keywords and the vocabularies used is required. Project names are used to tag datasets in the SDMS system, e.g. as SIOS Core Data, SESS 2020 etc.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">personnel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This field is used to identify personnel with various roles in relation to the dataset. It should also include contact information, at least email address and name of the affiliated institution, role (see below) and name.</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty</p>
-</li>
-<li>
-<p>gmd:contact/gmd:CI_ResponsibleParty</p>
-</li>
-<li>
-<p>Extraction and crediting people involved relies on gmd:role/gmd:CI_RoleCode to have attribute codeListValue set according to a predefined set of values. ISO codes principalInvestigator, pointOfContact, and author are translated into roles of Principal Investigator, Technical Contact, Metadata Author respectively. Roles not listed above are translated into Technical Contact.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Personnel<br>
-Extracts information from Originating_Center as well</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">data_access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URL to the actual dataset accompanied with identification of the protocol supported.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource<br>
-This implies that elements gmd:protocol/gco:CharacterString and gmd:linkage/gmd:URL must be set and the gmd:protocol contains a predefined keyword<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>. This is used both to identify direct download of datasets (i.e. HTTP or FTP) as well as services on top of dataset (e.g. OPeNDAP, OGC WMS). It is important to note that direct download should not refer to a website requiring manual intervention. Direct download will be handled by the basket in the data portal and enables bundling of data for download etc.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Related_URL<br>
-The purpose of the URL has to be properly identified using the relevant fields and vocabularies. Details are provided below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">related_information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL to relevant information regarding the dataset, accompanied with identification of the protocol supported. This could be, for example, a landing page, project page or scientific publication.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">use_constraint</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">License for the metadata using <a href="https://spdx.org/licenses/">SPDX License List</a>. The identifier (adhering to the SPDX formatting) goes into gmx:Anchor and the link to the text into  the attribute of this xlink:href. This is currently a recommended field, but it is strongly recommended and suggested to become mandatory in the future.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use_Constraint</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">data_center</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The host data center of the dataset. This should have both a long and short name, but only specification for the long name is currently identified.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor<br>
-The long name goes into gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString and the URL for the data center into gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL. More information to be added.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data_Center</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The host data center of the dataset. This should have both a long and short name, but only specification for the long name is currently identified for ISO mapping.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">project</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Project where the dataset was generated or collected. Preferably both short and long names should be provided.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FIXME<br>
-Project information is conveyed through keywords in ISO19115 profiles.
-The scope for keywords has to be identified by identification of the purpose (parameter/variable definitions, projects etc) of keywords in ISO records.
-Details on how this is done is provided below.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Project</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">dataset_language</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Should be English.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:language</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data_Set_Language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The language used in production, storage etc. of the dataset. The default for all datasets is English.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">storage_information</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Should be NetCDF/CF or Darwin Core Archive in SDMS. Other standardised formats may be supported later. Non standard formats should have a detailed product manual.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FIXME</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution<br>
-Extracts information from the Distribution element FIXME</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-right valign-top"><p class="tableblock">platform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FIXME</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FIXME</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FIXME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The platform used to collect the data.<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p></td>
 </tr>
 </tbody>
 </table>
-<div style="page-break-after: always;"></div>
 </div>
 <div class="sect4">
 <h5 id="_iso19115"><a class="anchor" href="#_iso19115"></a>2.1.3.2. ISO19115</h5>
@@ -1465,52 +1411,269 @@ Recommendation
 <div class="title">Note</div>
 </td>
 <td class="content">
-More details to be added on ISO19115 guidance. In particular on how to embed references to the vocabularies used and information on the data centre hosting the data.
+SDMS interprets both gmd:MD_Metadata (ISO 19115-1) and gmi:MI_Metadata (ISO 19115-2). The mdb:MD_Metadata (ISO 19115-3) is not supported.
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-SDMS interprets both gmd:MD_Metadata and gmi:MI_Metadata.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Below is a mapping table between the internal metadata model described in <a href="#discovery-model-elements">Table 1</a> and the ISO19115 elements.</p>
 </div>
-<div class="admonitionblock note">
-<table>
+<div style="page-break-after: always;"></div>
+<table id="discovery-model-iso-mapping" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Mapping between the discovery model elements and ISO19115</caption>
+<colgroup>
+<col style="width: 15%;">
+<col>
+<col>
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-How to add dataset landing pages etc are still a bit fuzzy. SDMS still interprets dataSetURI as a dataset landing page, but this is deprecated in ISO. Some data centres put dataset landing pages in gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource and use a combination of various elements like gmd:function/gmd:CI_OnLineFunctionCode, gmd:name/gco:CharacterString to identify relevant additional information. SDMS is currently interpreting phrases like "Extended human readable information about the dataset" and "Landing page" as Dataset landing pages when found. Information tagged "Project on RiS" is translated into the category Other documentation and "Homepage" is interpreted as a project home page reference. More details need to be agreed on this.
-</td>
+<th class="tableblock halign-left valign-top">Internal metadata model element</th>
+<th class="tableblock halign-left valign-top">ISO19115</th>
+<th class="tableblock halign-left valign-top">Comment/Note</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">metadata_identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:fileIdentifier/gco:CharacterString</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">last_metadata_update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:dateStamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO supports both gco:Date or gco:DateTime. A default time is added when a gco:Date type is provided.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">abstract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">temporal_extent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relies on gml:beginPosition always to be present and in the date/datetime domain: The use of indeterminatePosition is not supported.
+If gml:endPosition is missing or of type indeterminatePosition it will not be parsed and considered an ongoing observational effort.
+A default time is added when a date only entry is provided.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">geographic_extent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">iso_topic_category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory/gmd:MD_TopicCategoryCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If this element is not provided a default "Not available" will be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">keywords</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The scope for keywords has to be identified by identification of the purpose (parameter/variable definitions, projects etc) of keywords in ISO records.
+Details on how this is done is provided in the <a href="#keywordsiso">Section 2.1.3.2.1</a> section below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">personnel</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>gmd:contact/gmd:CI_ResponsibleParty</p>
+</li>
+<li>
+<p>gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extraction and crediting people involved relies on gmd:role/gmd:CI_RoleCode to have attribute codeListValue set according to a predefined set of values. ISO codes principalInvestigator, pointOfContact, and author are translated into roles of Principal Investigator, Technical Contact, Metadata Author respectively. Roles not listed above are translated into Technical Contact.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">data_access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This implies that elements gmd:protocol/gco:CharacterString and gmd:linkage/gmd:URL must be set.
+See <a href="#data_accessiso">Section 2.1.3.2.4</a> section below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">related_information</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource<br></p>
+</li>
+<li>
+<p>gmd:dataSetURI/gco:CharacterString</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A combination of gmd:function/gmd:CI_OnLineFunctionCode/@codeListValue and gmd:name/gco:CharacterString is used to parse this information. See <a href="#related_informationiso">Section 2.1.3.2.3</a> section below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">use_constraint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation or<br>
+gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_Constraints/gmd:useLimitation or<br>
+gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useConstraints</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="#use_constraintsiso">Section 2.1.3.2.2</a> section below more information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">data_center</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor with gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode/@codeListValue = 'distributor' or 'publisher'.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The long name goes into gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString and the URL for the data center into gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString with /gmd:type/gmd:MD_KeywordTypeCode[@codeListValue = 'project']</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project information is conveyed through keywords in ISO19115 profiles.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">dataset_language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmd:identificationInfo/gmd:MD_DataIdentification/gmd:language</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">storage_information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use gmd:name/gco:CharacterString to provide the format of the dataset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode with codeListValue="platform"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not parsed.<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup></p></td>
+</tr>
+</tbody>
 </table>
+<div style="page-break-after: always;"></div>
+<div class="sect5">
+<h6 id="keywordsiso"><a class="anchor" href="#keywordsiso"></a>2.1.3.2.1. Keywords and vocabulary</h6>
+<div class="paragraph">
+<p>The following approach is currently used for keywords and vocabularies:</p>
 </div>
-<div class="admonitionblock note">
-<table>
+<div class="ulist">
+<ul>
+<li>
+<p>parsing of keyword type in gmd:type/gmd:MD_KeywordTypeCode/@codeListValue is performed looking for the values 'theme' or 'project' to fill the keywords or project elements in the internal metadata model</p>
+</li>
+<li>
+<p>parsing of thesauri in gmd:thesaurusName/gmd:CI_Citation/gmd:title is performed looking for GEMET or CF Standard names</p>
+</li>
+<li>
+<p>parsing of gmd:keyword/gco:CharacterString or gmd:keyword/gmx:Anchor is performed for GEMET and CF Standard names</p>
+</li>
+<li>
+<p>parsing of gmd:keyword/gco:CharacterString starting with 'EARTH SCIENCE &gt;' is used to discriminate GCMD Science keywords. The full path of the GCMD science keywords including '&gt;' is required.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="use_constraintsiso"><a class="anchor" href="#use_constraintsiso"></a>2.1.3.2.2. Use constraints</h6>
+<div class="paragraph">
+<p>The recommended way to provide a license is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;gmx:Anchor xlink:href="http://spdx.org/licenses/CC-BY-4.0"&gt;CC-BY-4.0&lt;/gmx:Anchor&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where the identifier (adhering to the SPDX formatting) goes into gmx:Anchor and the link to the text into the attribute of this xlink:href. This is currently a recommended field, but it is strongly recommended and  suggested to become mandatory in the future.
+Licenses that cannot be mapped to standard licenses will be parsed as text. Some mapping stragegy is also in place during harvesting license.<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup></p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="related_informationiso"><a class="anchor" href="#related_informationiso"></a>2.1.3.2.3. Related information (URLs)</h6>
+<div class="paragraph">
+<p>Links to related information can be quite difficult to parse due to the degrees of freedom in ISO.
+The internal model is supporting related information of different types based on the <a href="https://vocab.met.no/mmd/Related_Information_Types">Related Information Types</a> controlled list.
+Currently:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SDMS still interprets gmd:dataSetURI as a "Dataset landing page", but this is deprecated in ISO.</p>
+</li>
+<li>
+<p>gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource
+and a combination of gmd:function/gmd:CI_OnLineFunctionCode/@codeListValue='information' and
+gmd:name/gco:CharacterString can also be used to identify a dataset landing page.
+SDMS is currently interpreting phrases like "Extended human readable information about the dataset" and "Landing page" as URL of type "Dataset landing page" when found.</p>
+</li>
+<li>
+<p>Information tagged "Project on RiS" is translated into the category "Other documentation"</p>
+</li>
+<li>
+<p>"Homepage" is interpreted as a "Project home page" reference.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="data_accessiso"><a class="anchor" href="#data_accessiso"></a>2.1.3.2.4. Data access</h6>
+<div class="paragraph">
+<p>The gmd:protocol containing a predefined keyword<sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup> and the gmd:linkage/gmd:URL are used to parse the different data access links.
+This is used both to identify direct download of datasets (i.e. HTTP or FTP) as well as services on top of dataset (e.g. OPeNDAP, OGC WMS).
+It is important to note that direct download should not refer to a website requiring manual intervention. Direct download will be handled by the basket in the data portal and enables bundling of data for download etc.</p>
+</div>
+<div class="paragraph">
+<p>Below the list of currently mapped protocols:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 50%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-SDMS will extract name of the project that has generated the data from the descriptiveKeywords if these have gmd:type/gmd:MD_KeywordTypeCode set to 'project'. More details need to be agreed on this.
-</td>
+<th class="tableblock halign-left valign-top">ISO Inspire gmd:protocol (OSGEO)</th>
+<th class="tableblock halign-left valign-top">ISO Inspire gmd:protocol (GeoNetwork)</th>
+<th class="tableblock halign-left valign-top">Internal model</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">download</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WWW:DOWNLOAD-1.0-http&#8212;&#8203;download</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OPeNDAP:OPeNDAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WWW:LINK-1.0-http&#8212;&#8203;opendap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OPeNDAP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OGC:WMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OGC:WMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCG WMS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OGC:WFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OGC:WFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCG WFS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OGC:WCS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OGC:WCS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCG WCS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ftp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WWW:DOWNLOAD-1.0-ftp&#8212;&#8203;download</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FTP</p></td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_gcmd_dif"><a class="anchor" href="#_gcmd_dif"></a>2.1.3.3. GCMD DIF</h5>
 <div class="paragraph">
-<p>The Global Change Master Directory (GCMD) Directory Interchange Format (DIF) <a href="#RD-16">[RD-16]</a> is a metadata standard that is widely used (e.g. by the Antarctic Metadata Directory) and that was the foundation for data management during the International Polar Year.</p>
+<p>The Global Change Master Directory (GCMD) Directory Interchange Format (DIF) <a href="#RD-16">[RD-16]</a> is a metadata standard that is widely used (e.g. by the Antarctic Metadata Directory) and that was the foundation for data management during the International Polar Year.
+SDMS is supporting both DIF 10.2 (the latest version of the standard), and also older versions (DIF 9) although deprecated.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1529,7 +1692,7 @@ Recommendation
 </td>
 <td class="hdlist2">
 <p>GCMD do not require a controlled vocabulary for the quality element.
-SDMS should to improve search results<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>.</p>
+SDMS should to improve search results<sup class="footnote">[<a id="_footnoteref_12" class="footnote" href="#_footnotedef_12" title="View footnote.">12</a>]</sup>.</p>
 </td>
 </tr>
 <tr>
@@ -1538,7 +1701,7 @@ Recommendation
 </td>
 <td class="hdlist2">
 <p>Related_URL has several subtypes. The existing <a href="http://gcmdservices.gsfc.nasa.gov/static/kms/rucontenttype/rucontenttype.csv">list of type and subtype</a> must be used to allow the SIOS Data Portal to filter the purpose of the URLs provided.
-When types are “View Data Set Landing Page”, “View Extended Metadata”, “View Professional Home Page”, and “View Project Home Page”, no subtype is needed.</p>
+See <a href="#related_informationdif">Section 2.1.3.3.2</a> and <a href="#data_accessdif">Section 2.1.3.3.3</a> below for more information.</p>
 </td>
 </tr>
 <tr>
@@ -1549,6 +1712,256 @@ Recommendation
 <p>All times must be encoded as ISO8601 either as YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ.</p>
 </td>
 </tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Below is a mapping table between the internal metadata model described in <a href="#discovery-model-elements">Table 1</a> and the DIF elements.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<table id="discovery-model-dif-mapping" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Mapping between the discovery model elements and DIF (version 9 and 10.2)</caption>
+<colgroup>
+<col style="width: 15%;">
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">GCMD DIF 9</th>
+<th class="tableblock halign-left valign-top">GCMD DIF 10.2</th>
+<th class="tableblock halign-left valign-top">Comment/Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">metadata_identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entry_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entry_ID/ShortName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The subfield ShortName for DIF 10.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">last_metadata_update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DIF_Creation_Date and Last_DIF_Revision_Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata_Dates/Metadata_Creation and Metadata_Dates/Metadata_Last_Revision</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the subfields Metadata_Creation and Metadata_Last_Revision in DIF 10.2. Text entries such as "Not provided" are not parsed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entry_Title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entry_Title</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">abstract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Summary/Abstract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Summary/Abstract</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">temporal_extent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temporal_Coverage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temporal_Coverage/Range_DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use Start_Date and Stop_Date for DIF 9 and use Beginning_Date_Time and Ending_Date_Time for DIF 10.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">geographic_extent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spatial_Coverage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spatial_Coverage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For DIF 10.2 the subfields dif:Geometry/dif:Bounding_Rectangle, dif:Geometry/dif:Point and dif:Geometry/dif:Polygon are supported.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">iso_topic_category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO_Topic_Category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO_Topic_Category</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">keywords</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameters and Keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Science_Keywords and Ancillary_Keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameters (DIF 9) and Science_Keywords (DIF 10.2) are translated into GCMD Science Keywords. Keyword (DIF 9) and Ancillary_Keyword (DIF 10.2) are translatde into generic keywords.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">personnel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Personnel and Data_Center/Personnel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Personnel and Organization/Personnel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about Data Center Contact is conveyed through the Personnel subfields of Data_Center (DIF 9) or Organization (DIF 10.2)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">data_access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Related_URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Related_URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the appropriate combination of URL_Content_Type/Type and URL_Content_Type/Subtype to identify the type of access and URL to provide the resource.
+Details are provided in the <a href="#data_accessdif">Section 2.1.3.3.3</a> below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">related_information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Related_URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Related_URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the appropriate combination of URL_Content_Type/Type and URL_Content_Type/Subtype to identify the type of access and URL to provide the resource.
+Details are provided in the <a href="#related_informationdif">Section 2.1.3.3.2</a> below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">use_constraint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use_Constraint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use_Constraint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the subfields License_URL/Title and License_URL/URL in DIF 10.2 to provide license indentifier and URL.
+Information that cannot be mapped to standard licenses will be translated into license text.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">data_center</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data_Center</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the subfields Data_Center_Name/Short_Name, Data_Center_Name/Long_Name and Data_Center_URL in DIF 9.+
+Use the subfields Organization/Short_Name, Organization/Long_Name and Organization_URL in DIF 10.2 with Organization_Type "ARCHIVER"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the subfields Short_Name and Long_Name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">dataset_language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data_Set_Language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dataset_Language</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">storage_information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the subfield Distribution_Format.<sup class="footnote">[<a id="_footnoteref_13" class="footnote" href="#_footnotedef_13" title="View footnote.">13</a>]</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source_Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subfields Sensor_Name (DIF 9) and Instrument (DIF 10.2) are used to convey information about instruments.<sup class="footnote">[<a id="_footnoteref_14" class="footnote" href="#_footnotedef_14" title="View footnote.">14</a>]</sup></p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<div class="sect5">
+<h6 id="_location"><a class="anchor" href="#_location"></a>2.1.3.3.1. Location</h6>
+<div class="paragraph">
+<p>When provided, the DIF element Location is mapped into keywords of type <a href="https://vocab.met.no/mmd/Keywords_Vocabulary/GCMDLOC">GCMDLOC</a>.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="related_informationdif"><a class="anchor" href="#related_informationdif"></a>2.1.3.3.2. Related information (URLs)</h6>
+<div class="paragraph">
+<p>Below a mapping between the internal model and  <a href="https://vocab.met.no/mmd/Related_Information_Types">Related information types</a> and DIF Related_URL (Type and Subtype)</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Internal model</th>
+<th class="tableblock halign-left valign-top">DIF 9 (Type/Subtype)</th>
+<th class="tableblock halign-left valign-top">DIF 10.2 (Type/Subtype)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project home page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW PROJECT HOME PAGE/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PROJECT HOME PAGE/</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Users guide</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW RELATED INFORMATION/USER&#8217;S GUIDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW RELATED INFORMATION/USER&#8217;S GUIDE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dataset landing page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW DATA SET LANDING PAGE/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DATA SET LANDING PAGE/</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data server landing page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET DATA/THREDDS DATA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">USE SERVICE API/THREDDS DATA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scientific publication</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW RELATED INFORMATION/PUBLICATIONS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW RELATED INFORMATION/PUBLICATIONS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data paper</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW RELATED INFORMATION/PUBLICATIONS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW RELATED INFORMATION/PUBLICATIONS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Other documentation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW RELATED INFORMATION/GENERAL DOCUMENTATION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW RELATED INFORMATION/GENERAL DOCUMENTATION</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended metadata</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VIEW EXTENDED METADATA/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXTENDED METADATA/</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="data_accessdif"><a class="anchor" href="#data_accessdif"></a>2.1.3.3.3. Data access</h6>
+<div class="paragraph">
+<p>Below a mapping between the internal model and   <a href="https://vocab.met.no/mmd/Data_Access_Types">Data Access types</a> and DIF Related_URL (Type and Subtype)</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Internal model</th>
+<th class="tableblock halign-left valign-top">DIF 9 (Type/Subtype)</th>
+<th class="tableblock halign-left valign-top">DIF 10.2 (Type/Subtype)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET DATA/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET DATA/DIRECT DOWNLOAD</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OPeNDAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET DATA/OPENDAP DATA (DODS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">USE SERVICE API/OPENDAP DATA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCG WMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET SERVICE/GET WEB MAP SERVICE (WMS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">USE SERVICE API/WEB MAP SERVICE (WMS)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OGC WFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET SERVICE/GET WEB FEATURE SERVICE (WFS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">USE SERVICE API/WEB FEATURE SERVICE (WFS)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OGC WCS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET SERVICE/GET WEB COVERAGE SERVICE (WCS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">USE SERVICE API/WEB COVERAGE SERVICE (WCS)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET DATA/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET DATA/DIRECT DOWNLOAD</p></td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
@@ -1611,7 +2024,7 @@ Recommendation
 <h5 id="opendap"><a class="anchor" href="#opendap"></a>2.2.2.3. OPeNDAP</h5>
 <div class="paragraph">
 <p>The Data Access Protocol simplifies integration of data from various data centres by utilising the <a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/">Common Data Model</a>. This is possible when input data are encoded according to Climate and Forecast conventions. The use of a data stream removes the need to download files and manually keep track of them during analysis.
-It also allows segmentation of data in variable space and time and it is RESTful<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup>.
+It also allows segmentation of data in variable space and time and it is RESTful<sup class="footnote">[<a id="_footnoteref_15" class="footnote" href="#_footnotedef_15" title="View footnote.">15</a>]</sup>.
 OPenDAP can relate to files or relational database systems and is extensively used by e.g. Copernicus services, Earth System Grid Federation and others.</p>
 </div>
 <div class="paragraph">
@@ -1790,7 +2203,7 @@ NetCDF in itself is not self describing, but NetCDF following the Climate and Fo
 Adding the <a href="http://wiki.esipfed.org/index.php?title=Category:Attribute_Conventions_Dataset_Discovery">NetCDF Attribute Convention for Dataset Discovery</a> embeds full discovery metadata (e.g. originator/PI, constraints etc.) in the file.</p>
 </div>
 <div class="paragraph">
-<p>When it is not possible to encode data as NetCDF-CF or Darwin Core Archive, data can be uploaded in a non-proprietary file format that is easy to consume for users (without specific software) accompanied by a detailed product manual<sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup> (in PDF format).
+<p>When it is not possible to encode data as NetCDF-CF or Darwin Core Archive, data can be uploaded in a non-proprietary file format that is easy to consume for users (without specific software) accompanied by a detailed product manual<sup class="footnote">[<a id="_footnoteref_16" class="footnote" href="#_footnotedef_16" title="View footnote.">16</a>]</sup> (in PDF format).
 <em>This approach cannot be used for SIOS Core Data</em>.</p>
 </div>
 </div>
@@ -2134,7 +2547,7 @@ The file formats used should always be free and open, not commercial.
 <a href="#_footnoteref_5">5</a>. <a href="https://github.com/ESIPFed/science-on-schema.org" class="bare">https://github.com/ESIPFed/science-on-schema.org</a>
 </div>
 <div class="footnote" id="_footnotedef_6">
-<a href="#_footnoteref_6">6</a>. OSGEO or GCMD keywords are required for proper interpretation. More details to be added for this. These keywords are translated in the harvesting routine.
+<a href="#_footnoteref_6">6</a>. This is a complex field, with several subfields. It currently support a limited vocabulary.
 </div>
 <div class="footnote" id="_footnotedef_7">
 <a href="#_footnoteref_7">7</a>. This recommendation will be revisited.
@@ -2143,18 +2556,33 @@ The file formats used should always be free and open, not commercial.
 <a href="#_footnoteref_8">8</a>. There is currently no way of including this information in GCMD DIF, although a mapping to ISO TopicCategories may be used.
 </div>
 <div class="footnote" id="_footnotedef_9">
-<a href="#_footnoteref_9">9</a>. This work should relate to international activities in this field in the context of e.g. GEO, ICES, WMO etc. and must be coordinated within SDMS by the Terminology Team.
+<a href="#_footnoteref_9">9</a>. This field is currently not parsed and mapping information might be modified in the future.
 </div>
 <div class="footnote" id="_footnotedef_10">
-<a href="#_footnoteref_10">10</a>. <a href="http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/" class="bare">http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/</a>
+<a href="#_footnoteref_10">10</a>. An internal mapping is done upon harvesting to parse license title or exact maching urls. If provided, a gco:CharacterString can also parsed.
 </div>
 <div class="footnote" id="_footnotedef_11">
-<a href="#_footnoteref_11">11</a>. There is currently no template for product manuals available. This is to be developed.
+<a href="#_footnoteref_11">11</a>. OSGEO or GeoNetwork keywords are required for proper interpretation. These keywords are translated in the harvesting routine.
+</div>
+<div class="footnote" id="_footnotedef_12">
+<a href="#_footnoteref_12">12</a>. This work should relate to international activities in this field in the context of e.g. GEO, ICES, WMO etc. and must be coordinated within SDMS by the Terminology Team.
+</div>
+<div class="footnote" id="_footnotedef_13">
+<a href="#_footnoteref_13">13</a>. This is not parsed for the time being.
+</div>
+<div class="footnote" id="_footnotedef_14">
+<a href="#_footnoteref_14">14</a>. This is not parsed for the time being.
+</div>
+<div class="footnote" id="_footnotedef_15">
+<a href="#_footnoteref_15">15</a>. <a href="http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/" class="bare">http://apievangelist.com/2014/12/05/history-of-apis-noaa-apis-have-been-restful-for-over-20-years/</a>
+</div>
+<div class="footnote" id="_footnotedef_16">
+<a href="#_footnoteref_16">16</a>. There is currently no template for product manuals available. This is to be developed.
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-05-16 12:41:29 +0200
+Last updated 2025-11-11 22:43:13 UTC
 </div>
 </div>
 </body>
